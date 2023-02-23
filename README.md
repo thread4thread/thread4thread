@@ -1,6 +1,5 @@
 # Project **thread4thread**
 ## Team
----
 **Marala Berdyeva**
 Frontend / PM
 
@@ -16,12 +15,15 @@ UI/UX / PM / Business / Graphic design
 **Jasper Maynard-Zhang (Project Lead)**
 PM / Backend / Frontend
 
-## Problem Statement
 ---
+
+## Problem Statement
 How might we help Seattle's trans and LGBTQ+ community gain greater access to community-circulated clothing so that more gender-affirming clothing is redistributed to people in need rather than wasted?
 
-## Problem Background
 ---
+
+## Problem Background
+
 ### Context
 *Why does this problem matter? What is the need not being met? What is the impact of inaction?*
 
@@ -41,24 +43,28 @@ Although LGBTQ clothing exchange events and resources exist, not everyone has th
 
 The consequence of inaction is that individuals in the trans+ community continue to struggle alone when they have the potential to help each other.
 
+---
+
 ### Information Problem
 *What aspects of the problem can we solve through an information solution?*
 
-**Connecting More People**
+**1. Connecting More People**
 
 Using an online web application connects a much greater range people in the local community who could mutually benefit each other. This creates a bigger pool of clothing that people can give and take from.
 
-**Browsing Clothing**
+**2. Browsing Clothing**
 
 Large amounts of clothing information can be stored and organized into a browsable format, which people can search and filter to tailor to their specific needs.
 
-**Accessibility & Flexibility**
+**3. Accessibility & Flexibility**
 
 People can give OR get clothing depending on their current situation. Not only that, but people can also post at ANY time. This could fill in the gaps of local clothing exchanges events, which happen quite infrequently.
 
-**Privacy & Safety**
+**4. Privacy & Safety**
 
 Online shopping can be more discrete than in-person since it cuts out most social interaction. Our priority as product designers will be to ensure the protection of our users' data privacy.
+
+---
 
 ### References
 Henninger, C. E., Alevizou, P. J., Goworek, H., Ryding, D., & Springer International Publishing Ag. (2018). *Sustainability in Fashion A Cradle to Upcycle Approach*. Cham Springer International Publishing Palgrave Macmillan.
