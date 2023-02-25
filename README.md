@@ -3,6 +3,9 @@
 **Marala Berdyeva**
 Frontend / PM
 
+**Rena Bo**
+Frontend / Backend / UI/UX
+
 **Sabrina Burka**
 Frontend / UX/UI / Backend
 
@@ -14,6 +17,9 @@ UI/UX / PM / Business / Graphic design
 
 **Jasper Maynard-Zhang (Project Lead)**
 PM / Backend / Frontend
+
+**Nila Ragu**
+UI/UX
 
 ## Problem Statement
 How might we help Seattle's trans and LGBTQ+ community gain greater access to community-circulated clothing so that more gender-affirming clothing is redistributed to people in need rather than wasted?
