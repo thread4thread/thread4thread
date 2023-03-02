@@ -116,6 +116,16 @@ body {
     padding: .5rem 2rem;
 }
 
+.signup-btn {
+    background-color: #FFB01F;
+    color: white;
+    width: 50%;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
 /*  */
 /* TEXT */
 /*  */
@@ -156,20 +166,6 @@ body {
     background: rgba(218, 218, 218, 0.47);
     outline: none;
     border: none;
-}
-
-button {
-    color: white;
-    width: 50%;
-    border-radius: 8px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-
-}
-
-.signup-btn {
-    background-color: #FFB01F;
 }
 
 .check {
