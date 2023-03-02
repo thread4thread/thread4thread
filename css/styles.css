@@ -16,6 +16,12 @@ body {
     padding-bottom: 1em;
 }
 
+.no-space {
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
 /*  */
 /* FLEXBOX */
 /*  */
@@ -25,8 +31,17 @@ body {
     flex-flow: row wrap;
 }
 
+.tight-box {
+    display: flex;
+    gap: 0;
+}
+
 .column {
     flex-direction: column;
+}
+
+div.centered {
+    align-items: center;
 }
 
 .size-box {
@@ -52,10 +67,6 @@ body {
     display: flex;
     justify-content: space-between;
     /* padding-bottom: .5em; */
-}
-
-.listing {
-
 }
 
 /*  */
@@ -129,12 +140,17 @@ body {
 /*  */
 /* TEXT */
 /*  */
-.centered {
+p.centered {
     text-align: center;
     margin: 0;
 }
 
 .char-name {
+    margin: 0;
+}
+
+.listing-title {
+    padding: 0;
     margin: 0;
 }
 
