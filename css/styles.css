@@ -165,13 +165,32 @@ button {
     padding: 10px;
     border: none;
     cursor: pointer;
+
 }
 
 .signup-btn {
-    background-color: #FFB01F;;
+    background-color: #FFB01F;
 }
 
 .check {
     text-align: left;
 }
+
+.login-btn {
+    background-color: #FFB01F;
+}
+
+
+.login {
+    width: 100%;
+    height: 80%; 
+    text-align: center;
+    padding: 15px;
+    margin: 20% auto 0;
+ }
+ .login h2 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
 
