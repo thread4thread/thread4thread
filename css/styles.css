@@ -128,7 +128,7 @@ div.centered {
 }
 
 .signup-btn {
-    background-color: #FFB01F;
+    background-color: #8991DC;
     color: white;
     width: 50%;
     border-radius: 8px;
@@ -224,5 +224,47 @@ button.arrow-btn {
     display: inline-block;
     vertical-align: middle;
     margin-right: 15px;
+    display: center;
     
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    height: 50px;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search input[type="text"] {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+  }
+  
+  .search button {
+    background-color: #ddd;
+    border: none;
+    color: #333;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+  
+  .add {
+    font-size: 24px;
   }
