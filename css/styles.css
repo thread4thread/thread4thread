@@ -277,7 +277,7 @@ button.arrow-btn {
   .following {
     background-color: white;
     color: black;
-    border: solid #8991DC;
+    /* border: solid #8991DC; */
     font-size: 16px;
     padding: 10px 20px;
     width: 100%;
