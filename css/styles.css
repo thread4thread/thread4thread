@@ -7,13 +7,24 @@ body {
     min-height: 100vh;
 }
 
-.content-wrap {
-    padding: 1em;
-    /* padding-bottom: 12em; */
+.side-wrap {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
-.section {
-    padding-bottom: 1em;
+.gray-bg {
+    background-color: rgb(245, 245, 245);
+}
+
+.top-bot-wrap {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.no-space {
+    margin: 0;
+    padding: 0;
+    gap: 0;
 }
 
 /*  */
@@ -29,9 +40,23 @@ body {
     flex-direction: column;
 }
 
+.tight-box {
+    display: flex;
+    gap: 0;
+}
+
+.listing-box {
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
 .size-box {
     justify-content: center;
     gap: 0;
+}
+
+.center-align-hor {
+    align-items: center;
 }
 
 /* Sticking one item to the left and one to the right (source: https://stackoverflow.com/questions/38948102/center-one-and-right-left-align-other-flexbox-element) */
@@ -43,19 +68,11 @@ body {
     margin-left:auto;
 }
 
-.listing-box {
-    flex-grow: 1;
-    justify-content: space-evenly;
-}
 
-.listing-row {
+.item-row {
     display: flex;
     justify-content: space-between;
     /* padding-bottom: .5em; */
-}
-
-.listing {
-
 }
 
 /*  */
@@ -72,9 +89,24 @@ body {
 }
 
 /* IMAGES */
+.center-item-vert { /* Source: https://www.w3schools.com/howto/howto_css_image_center.asp */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-lg {
+    height: 18em;
+}
+
 .img-small {
     width: 7em;
     height: 7em;
+}
+
+.img-mini {
+    width: 2.5em;
+    height: 2.5em;
 }
 
 /*  */
@@ -111,17 +143,20 @@ body {
     padding: .5rem 2rem;
 }
 
+.signup-btn {
+    background-color: #8991DC;
+    color: white;
+    width: 50%;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
 /*  */
 /* TEXT */
 /*  */
-.centered {
-    text-align: center;
-    margin: 0;
-}
 
-.char-name {
-    margin: 0;
-}
 
 /*  */
 /* INPUTS */
@@ -129,3 +164,127 @@ body {
 .size-input {
     width: 4em;
 }
+
+.sign-up {
+   width: 100%;
+   height: 80%; 
+   text-align: center;
+   padding: 15px;
+   margin: 20% auto 0;
+   
+}
+
+.sign-up h2 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.input-box {
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    background: rgba(218, 218, 218, 0.47);
+    outline: none;
+    border: none;
+}
+
+.check {
+    text-align: left;
+}
+
+.login-btn {
+    background-color: #FFB01F;
+}
+
+
+.login {
+    width: 100%;
+    height: 80%; 
+    text-align: center;
+    padding: 15px;
+    margin: 20% auto 0;
+ }
+ .login h2 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+
+button.arrow-btn {
+    background-color: #8991DC; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 15%;
+  }
+  
+  .arrow {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    display: center;
+    
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    height: 50px;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search input[type="text"] {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+  }
+  
+  .search button {
+    background-color: #ddd;
+    border: none;
+    color: #333;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+
+  .twitter-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .following {
+    background-color: white;
+    color: black;
+    /* border: solid #8991DC; */
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .following:hover {
+    background-color: #8991DC;
+  }
+
