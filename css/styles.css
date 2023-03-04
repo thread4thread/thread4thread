@@ -288,3 +288,9 @@ button.arrow-btn {
     background-color: #8991DC;
   }
 
+  .edit-icon:hover {
+    opacity: 50%;
+  }
+
+
+
