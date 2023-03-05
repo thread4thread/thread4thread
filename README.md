@@ -46,7 +46,6 @@ Although LGBTQ clothing exchange events and resources exist, not everyone has th
 The consequence of inaction is that individuals in the trans+ community continue to struggle alone when they have the potential to help each other.
 
 ---
-
 ### Information Problem
 *What aspects of the problem can we solve through an information solution?*
 
@@ -67,7 +66,6 @@ People can give OR get clothing depending on their current situation. Not only t
 Online shopping can be more discrete than in-person since it cuts out most social interaction. Our priority as product designers will be to ensure the protection of our users' data privacy.
 
 ---
-
 ### References
 Henninger, C. E., Alevizou, P. J., Goworek, H., Ryding, D., & Springer International Publishing Ag. (2018). *Sustainability in Fashion A Cradle to Upcycle Approach*. Cham Springer International Publishing Palgrave Macmillan.
 
