@@ -2,7 +2,12 @@
 /* PAGE LAYOUT */
 /*  */
 /* Sticking footer to bottom of page (credit to https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/) */
+* {
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
     position: relative;
     min-height: 100vh;
 }
@@ -78,14 +83,20 @@ body {
 /*  */
 /* NAV BARS */
 /*  */
-.topnav {
-
+.navbar-brand img {
+    height: 3rem;
 }
 
-.botnav-flexbox {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em 0em;
+.search-bar {
+    width: 50%;
+}
+
+.nav-btn {
+    width: 2rem;
+}
+
+.bottom-nav img {
+    height: 3rem;
 }
 
 /* IMAGES */
@@ -167,11 +178,11 @@ body {
 
 .sign-up {
    width: 100%;
-   height: 80%; 
+   height: 80%;
    text-align: center;
    padding: 15px;
    margin: 20% auto 0;
-   
+
 }
 
 .sign-up h2 {
@@ -199,7 +210,7 @@ body {
 
 .login {
     width: 100%;
-    height: 80%; 
+    height: 80%;
     text-align: center;
     padding: 15px;
     margin: 20% auto 0;
@@ -223,74 +234,10 @@ button.arrow-btn {
     cursor: pointer;
     width: 15%;
   }
-  
+
   .arrow {
     display: inline-block;
     vertical-align: middle;
     margin-right: 15px;
-    display: center;
-    
-  }
 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #333;
-    height: 50px;
-    padding: 0 20px;
   }
-  
-  .logo img {
-    height: 30px;
-  }
-  
-  .search {
-    display: flex;
-    align-items: center;
-  }
-  
-  .search input[type="text"] {
-    width: 200px;
-    height: 30px;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ddd;
-  }
-  
-  .search button {
-    background-color: #ddd;
-    border: none;
-    color: #333;
-    height: 30px;
-    width: 30px;
-    border-radius: 10px;
-    margin-left: 10px;
-  }
-
-  .twitter-buttons {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .following {
-    background-color: white;
-    color: black;
-    /* border: solid #8991DC; */
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .following:hover {
-    background-color: #8991DC;
-  }
-
-  .edit-icon:hover {
-    opacity: 50%;
-  }
-
-
-
