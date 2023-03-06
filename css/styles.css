@@ -90,12 +90,21 @@ div.centered {
     width: 50%;
 }
 
+.form-control.search {
+    border-radius: 25px;
+    background-color: lightgray;
+}
+
 .nav-btn {
     width: 2rem;
 }
 
 .bottom-nav img {
-    height: 3rem;
+    height: 2.25rem;
+}
+
+.container-fluid.nav-container {
+    padding: 0px;
 }
 
 /* IMAGES */
