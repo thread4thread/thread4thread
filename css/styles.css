@@ -297,3 +297,18 @@ button.arrow-btn {
   .text-ex-sm {
     margin-top: 20px;
   }
+
+  .btn-back {
+    color: #fff;
+    background-color: #8991DC;
+    border-color: #8991DC;
+    width: 60px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  
+  .btn-back:hover {
+    color: #fff;
+    background-color: #8991DC;
+    border-color: #8991DC;
+  }
