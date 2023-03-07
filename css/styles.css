@@ -32,6 +32,14 @@ body {
     gap: 0;
 }
 
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
 /*  */
 /* FLEXBOX */
 /*  */
@@ -87,16 +95,29 @@ body {
     height: 3rem;
 }
 
+.topnav.navbar {
+    justify-content: center;
+}
+
 .search-bar {
     width: 50%;
 }
 
+.form-control.search {
+    border-radius: 25px;
+    background-color: lightgray;
+}
+
 .nav-btn {
-    width: 2rem;
+    height: 2rem;
 }
 
 .bottom-nav img {
-    height: 3rem;
+    height: 2.25rem;
+}
+
+.container-fluid.nav-container {
+    padding: 0px;
 }
 
 /* IMAGES */
@@ -134,7 +155,7 @@ body {
 
 .btn-select {
     color: white;
-    background-color: darkblue;
+    background-color: #8991DC;
     border-radius: .25em;
 }
 
@@ -146,7 +167,7 @@ body {
 /* Save, post, apply, etc. (bottom right) */
 .btn-save {
     color: white;
-    background-color: darkblue;
+    background-color: #8991DC;
     position: fixed;
     bottom: 5%;
     right: 5%;
@@ -154,7 +175,17 @@ body {
     padding: .5rem 2rem;
 }
 
-.signup-btn {
+/* .signup-btn {
+    background-color: #FFB01F;
+    color: white;
+    width: 50%;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+} */
+
+.purp-button {
     background-color: #8991DC;
     color: white;
     width: 50%;
@@ -162,6 +193,11 @@ body {
     padding: 10px;
     border: none;
     cursor: pointer;
+}
+
+.accent-button {
+    background-color: white;
+    color: #8991DC;
 }
 
 /*  */
@@ -185,7 +221,7 @@ body {
 
 }
 
-.sign-up h2 {
+.sign-up h1 {
     margin-bottom: 10px;
     text-align: left;
 }
@@ -203,9 +239,10 @@ body {
     text-align: left;
 }
 
-.login-btn {
-    background-color: #FFB01F;
-}
+/* .login-btn {
+    background-color: #8991DC;
+    border-radius: 25px;
+} */
 
 
 .login {
@@ -215,7 +252,7 @@ body {
     padding: 15px;
     margin: 20% auto 0;
  }
- .login h2 {
+ .login h1 {
     margin-bottom: 10px;
     text-align: left;
 }
@@ -223,8 +260,9 @@ body {
 
 
 button.arrow-btn {
-    background-color: #8991DC; /* Green */
+    background-color: white; /* Green */
     border: none;
+    border-radius: 2em;
     color: white;
     padding: 12px 16px;
     text-align: center;
@@ -235,80 +273,12 @@ button.arrow-btn {
     width: 15%;
   }
 
-  .arrow {
+.arrow-btn img {
+    height: 1.5rem;
+}
+  /* .arrow {
     display: inline-block;
     vertical-align: middle;
     margin-right: 15px;
 
-  }
-
-.text-sm {
-    font-size: 13px;
-}
-
-.text-ex-sm {
-    font-size: 11px;
-    color: darkgrey;
-
-}
-
-.text-sm-accept {
-    color: darkgrey;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-
-.box-x {
-    width: 47px;
-    height: 16px;
-    background-color: #8991DC;
-    position: relative;
-  }
-
-  .offer-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  .circle {
-    width: 16px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #8991DC;
-    margin-top: 10px;
-  }
-
-  .text-sm-notif {
-    font-size: 13px;
-
-
-  }
-
-  .text-ex-sm-notif {
-    font-size: 11px;
-    color: darkgrey;
-
-  }
-  .text-ex-sm {
-    margin-top: 20px;
-  }
-
-  .btn-back {
-    color: #fff;
-    background-color: #8991DC;
-    border-color: #8991DC;
-    width: 60px;
-    height: 40px;
-    margin-top: 10px;
-  }
-  
-  .btn-back:hover {
-    color: #fff;
-    background-color: #8991DC;
-    border-color: #8991DC;
-  }
+  } */
