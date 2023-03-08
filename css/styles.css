@@ -12,6 +12,11 @@ body {
     min-height: 100vh;
 }
 
+main {
+    margin-top: 74px;
+    margin-bottom: 52px;
+}
+
 .side-wrap {
     padding-left: 1em;
     padding-right: 1em;
@@ -91,12 +96,26 @@ h2 {
 /*  */
 /* NAV BARS */
 /*  */
-.navbar-brand img {
-    height: 3rem;
+
+.topnav {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background-color: white;
 }
 
 .topnav.navbar {
     justify-content: center;
+}
+
+.place-holder-bottom {
+    height: 52px;
+    width: 390px;
+    background-color: white;
+}
+
+.navbar-brand img {
+    height: 3rem;
 }
 
 .search-bar {
@@ -110,6 +129,12 @@ h2 {
 
 .nav-btn {
     height: 2rem;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0%;
+    background-color: white;
 }
 
 .bottom-nav img {
