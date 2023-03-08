@@ -207,16 +207,32 @@ h2 {
     color: #8991DC;
 }
 
-
+.btn-outline-secondary {
+    width:100%;
+    border-color: #ced4da;
+    border-radius: .25rem;
+}
 
 /*  */
 /* TEXT */
 /*  */
+.strong {
+    font-weight: bold;
+}
 
+.warning {
+    color: red;
+}
 
 /*  */
 /* INPUTS */
 /*  */
+
+/* TODO: Center dropdown menu */
+.dropdown-menu {
+    width: 90%;
+}
+
 .size-input {
     width: 4em;
 }

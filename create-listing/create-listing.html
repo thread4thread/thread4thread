@@ -28,57 +28,185 @@
     <link rel="stylesheet" href="../css/styles.css"/>
 
     <!-- Icon Attributions (we'll make our own icons before publishing though) -->
+    <!-- <a href="https://www.flaticon.com/free-icons/add-image" title="add image icons">Add image icons created by nawicon - Flaticon</a> -->
+
+    <!-- Code sources -->
+    <!-- Select menu (bootstrap): https://getbootstrap.com/docs/5.0/forms/select/ -->
+    <!-- Dropdown button: https://www.geeksforgeeks.org/bootstrap-5-dropdowns-via-data-attributes/ -->
+    <!-- Input group (bootstrap): https://getbootstrap.com/docs/4.0/components/input-group/ -->
 </head>
 
 <body>
 <main class="box column side-wrap">
     <!-- Fields -->
     <div class="box column">
-        <!-- Title -->
+    <!-- TODO: use aria-describedby to connect labels to inputs -->
+    
+        <!-- Listing Title (text input) -->
         <div class="section">
-            <p id="item-name-label" class="no-space">Item Name</p>
-            <div class="input-group mb-3">
+            <!-- Label -->
+            <label id="list-name-label" class="no-space strong">Title *</label>
+
+            <!-- Input -->
+            <div class="input-group no-space">
                 <input type="text" class="form-control"
-                 placeholder="Type here"
-                 aria-describedby="item-name-label">
+                 placeholder="Ex: Trans Tape, Blue Shirt"
+                 aria-describedby="list-name-label">
             </div>
         </div>
 
-        <!-- Type -->
+        <!-- Exchange Type (select input) -->
         <div class="section">
-            <!-- <form name="list-type-dropdown" id="list-type-dropdown" action -->
-            <!-- <select name="list-type" selected="list-type">
-                <option value="" selected="selected">Choose listing type</option>
-            </select> -->
-            <button type="button" class="btn btn-success
-                btn-lg dropdown-toggle"
-                data-bs-toggle="dropdown">
-                Dropdown with button
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">
-                    Data Structures</a></li>
-                <li><a class="dropdown-item" href="#">
-                    Algorithms</a></li>
-                <li><a class="dropdown-item" href="#">
-                    Competitive Programming</a></li>
-                <li><a class="dropdown-item" href="#">
-                    Web Development</a></li>
-            </ul>
+            <!-- Label -->
+            <label for="exch-type" class="no-space strong">Exchange Type *</label>
+
+            <!-- Input -->
+            <select id="exch-type" class="form-select" aria-label="Exchange type choices">
+                <option selected>Click to select</option>
+                <option value="1">Donation</option>
+                <option value="2">Request</option>
+                <option value="3">Trade</option>
+            </select>
         </div>
 
-        <!-- Type -->
+        <!-- Item Type (select input) -->
+        <div class="section">
+            <!-- Label -->
+            <label for="item-type-label" class="no-space strong">Item Type *</label>
 
-        <!-- Appearance -->
+            <!-- Input -->
+            <select id="exch-type" class="form-select" aria-label="Exchange types">
+                <option selected>Click to select</option>
+                <option value="1">Top</option>
+                <option value="2">Bottom</option>
+                <option value="3">Underwear</option>
+                <option value="1">Outerwear</option>
+                <option value="2">Shoes</option>
+                <option value="3">Gender-Affirming Item</option>
+                <option value="3">Other</option>
+            </select>
+        </div>
 
-        <!-- Color -->
+        <!-- Item Size (text input group) -->
+        <div class="section">
+            <!-- Label -->
+            <label for="size-text" class="no-space strong">Size *</label>
 
-        <!-- Condition -->
+            <!-- Characteristics -->
+            <p class="no-space warning">Select an item type first!</p>
+            <!-- TODO: Decide how to display sizes -->
+            <!-- Idea 1 -->
+            <!-- <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+              </div> -->
 
-        <!-- Measurements -->
+            <!-- Idea 2 -->
+            <!-- <div class="box">
+                <div class="size-box column">
+                    <label for="measure1-">Measure 1:</label>
+                    <input type="number" class="form-control size-input" id="filter-bust">
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Image (image input) -->
+        <!-- TODO: Figure out image input -->
+        <div class="section">
+            <label class="form-label strong" for="customFile">Image</label>
+            <input type="file" class="form-control" id="customFile" />
+        </div>
+
+        <!-- Item Description (text area input) -->
+        <div class="section">
+            <!-- Label -->
+            <label for="item-desc" class="no-space strong">Description</label>
+
+            <!-- Input -->
+            <div class="input-group">
+                <textarea type="text" id="item-desc" class="form-control"
+                 placeholder="Type here"
+                 aria-describedby="list-desc-label"></textarea>
+            </div>
+        </div>
+
+        <!-- Item Appearance (multiple select input) -->
+        <div class="section">
+            <!-- Label -->
+            <label for="app-choices" class="no-space strong">Appearance</label>
+
+            <!-- Input -->
+            <div id="app-choices" class="box">
+                <button type="button" class="btn btn-unselect">Feminine</button>
+                <button type="button" class="btn btn-unselect">Androgynous</button>
+                <button type="button" class="btn btn-unselect">Masculine</button>
+            </div>
+        </div>
+
+        <!-- Item Color (multiple select input) -->
+        <div class="section">
+            <!-- Label -->
+            <label for="color-choices" class="no-space strong">Color</label>
+
+            <!-- Input -->
+            <div id="color-choices" class="box">
+                <button type="button" class="btn btn-unselect">Pink</button>
+                <button type="button" class="btn btn-unselect">Red</button>
+                <button type="button" class="btn btn-unselect">Orange</button>
+                <button type="button" class="btn btn-unselect">Yellow</button>
+                <button type="button" class="btn btn-unselect">Green</button>
+                <button type="button" class="btn btn-unselect">Blue</button>
+                <button type="button" class="btn btn-unselect">Purple</button>
+                <button type="button" class="btn btn-unselect">Black</button>
+                <button type="button" class="btn btn-unselect">White</button>
+                <button type="button" class="btn btn-unselect">Brown</button>
+                <button type="button" class="btn btn-unselect">Beige</button>
+                <button type="button" class="btn btn-unselect">Gray</button>
+            </div>
+        </div>
+
+        <!-- Item Condition (select input) -->
+        <div class="section">
+            <!-- Label -->
+            <label for="condition-choices" class="no-space strong">Condition</label>
+
+            <!-- Input -->
+            <select id="condition-choices" class="form-select" aria-label="Condition choices">
+                <option selected>Click to select</option>
+                <option value="1">New</option>
+                <option value="2">Excellent</option>
+                <option value="3">Good</option>
+                <option value="4">Fair</option>
+            </select>
+        </div>
+
+        <!-- Item Brand (text input) -->
+        <div class="section">
+            <!-- Label -->
+            <label id="brand-label" class="no-space strong">Brand</label>
+
+            <!-- Input -->
+            <div class="input-group no-space">
+                <input type="text" class="form-control"
+                 placeholder="Ex: gc2b, TomboyX"
+                 aria-describedby="brand-label">
+            </div>
+        </div>
     </div>
 
-    <!-- Button -->
+    <!-- Post button -->
+    <button type="button" class="btn btn-save">Publish</button>
+    <!-- Invisible placeholder to add extra space at bottom -->
+    <button type="button" class="btn invisible">Apply</button>
 </main>
 </body>
 </html>
