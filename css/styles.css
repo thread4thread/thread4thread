@@ -169,10 +169,17 @@ h2 {
     color: white;
     background-color: #8991DC;
     position: fixed;
-    bottom: 5%;
-    right: 5%;
+    bottom: 2%;
+    left: 30%;
+    right: 30%;
     font-size: 1.25rem;
     padding: .5rem 2rem;
+}
+
+.invisible {
+    visibility: hidden;
+    font-size: 1.25rem;
+    padding: 1rem;
 }
 
 /* .signup-btn {
@@ -200,6 +207,8 @@ h2 {
     color: #8991DC;
 }
 
+
+
 /*  */
 /* TEXT */
 /*  */
@@ -208,6 +217,11 @@ h2 {
 /*  */
 /* INPUTS */
 /*  */
+.dropdown {
+    position: relative;
+    display: inline-block
+}
+
 .size-input {
     width: 4em;
 }
