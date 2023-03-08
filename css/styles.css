@@ -201,6 +201,12 @@ h2 {
     padding: .5rem 2rem;
 }
 
+.list-btn {
+    bottom: 8%;
+    left: 25%;
+    right: 25%;
+}
+
 .invisible {
     visibility: hidden;
     font-size: 1.25rem;
