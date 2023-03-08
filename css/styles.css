@@ -282,3 +282,58 @@ button.arrow-btn {
     margin-right: 15px;
 
   } */
+.ext-sm {
+    font-size: 13px;
+}
+
+.text-ex-sm {
+    font-size: 11px;
+    color: darkgrey;
+
+}
+
+.text-sm-accept {
+    color: darkgrey;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.box-x {
+    width: 47px;
+    height: 16px;
+    background-color: #8991DC;
+    position: relative;
+  }
+
+  .offer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .circle {
+    width: 16px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #8991DC;
+    margin-top: 10px;
+  }
+
+  .text-sm-notif {
+    font-size: 13px;
+
+
+  }
+
+  .text-ex-sm-notif {
+    font-size: 11px;
+    color: darkgrey;
+
+  }
+  .text-ex-sm {
+    margin-top: 20px;
+  }
