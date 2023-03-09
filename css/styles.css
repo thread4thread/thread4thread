@@ -1,5 +1,5 @@
 /*  */
-/* PAGE LAYOUT */
+/* SPACING */
 /*  */
 /* Sticking footer to bottom of page (credit to https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/) */
 * {
@@ -10,6 +10,11 @@ body {
     font-family: 'Roboto', sans-serif;
     position: relative;
     min-height: 100vh;
+}
+
+main {
+    margin-top: 74px;
+    margin-bottom: 52px;
 }
 
 .side-wrap {
@@ -49,6 +54,7 @@ h2 {
     flex-flow: row wrap;
 }
 
+
 .column {
     flex-direction: column;
 }
@@ -85,18 +91,55 @@ h2 {
 .item-row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 25%;
     /* padding-bottom: .5em; */
+}
+
+/*  */
+/* GRID LAYOUT */
+/*  */
+.grid {
+    display: grid;
+    justify-items: center;
+    gap: .5em;
+}
+
+.by-3 {
+    grid-template-columns: repeat(3, auto);
+}
+
+.by-2 {
+    grid-template-columns: repeat(2, auto);
+}
+
+.grid-item {
+    width: 100%;
 }
 
 /*  */
 /* NAV BARS */
 /*  */
-.navbar-brand img {
-    height: 3rem;
+
+.topnav {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background-color: white;
 }
 
 .topnav.navbar {
     justify-content: center;
+}
+
+.place-holder-bottom {
+    height: 52px;
+    width: 390px;
+    background-color: white;
+}
+
+.navbar-brand img {
+    height: 3rem;
 }
 
 .search-bar {
@@ -112,12 +155,32 @@ h2 {
     height: 2rem;
 }
 
+.bottom-nav {
+    position: fixed;
+    bottom: 0%;
+    background-color: white;
+}
+
 .bottom-nav img {
     height: 2.25rem;
 }
 
 .container-fluid.nav-container {
     padding: 0px;
+}
+
+.navbar form {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.fil-search.arrow-btn {
+    margin: 0;
+}
+
+.fil-search.search-bar {
+    width: 80%;
 }
 
 /* IMAGES */
@@ -169,10 +232,23 @@ h2 {
     color: white;
     background-color: #8991DC;
     position: fixed;
-    bottom: 5%;
-    right: 5%;
+    bottom: 2%;
+    left: 30%;
+    right: 30%;
     font-size: 1.25rem;
     padding: .5rem 2rem;
+}
+
+.list-btn {
+    bottom: 8%;
+    left: 25%;
+    right: 25%;
+}
+
+.invisible {
+    visibility: hidden;
+    font-size: 1.25rem;
+    padding: 1rem;
 }
 
 /* .signup-btn {
@@ -200,14 +276,32 @@ h2 {
     color: #8991DC;
 }
 
+.btn-outline-secondary {
+    width:100%;
+    border-color: #ced4da;
+    border-radius: .25rem;
+}
+
 /*  */
 /* TEXT */
 /*  */
+.strong {
+    font-weight: bold;
+}
 
+.warning {
+    color: red;
+}
 
 /*  */
 /* INPUTS */
 /*  */
+
+/* TODO: Center dropdown menu */
+.dropdown-menu {
+    width: 90%;
+}
+
 .size-input {
     width: 4em;
 }
@@ -256,8 +350,6 @@ h2 {
     margin-bottom: 10px;
     text-align: left;
 }
-
-
 
 button.arrow-btn {
     background-color: white; /* Green */

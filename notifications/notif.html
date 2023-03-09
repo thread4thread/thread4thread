@@ -17,8 +17,25 @@
 </head>
 
 <body>
-    <nav class="topnav navbar navbar-expand-lg bg-body-tertiary">
+    <!-- Top Nav Bar -->
+    <nav class="content-wrap topnav navbar navbar-expand-lg side-wrap">
+        <div class="container-fluid nav-container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/t4t-Logo" alt="link to index">
+            </a>
+            <a href="../view-listings/search-filter.html">
+                <form class="d-flex input-group search-bar" role="search">
+                    <input type="search" class="form-control search" placeholder="Search" aria-label="Search">
+                </form>
+            </a>
+            <a href="../create-listing/create-listing.html">
+                <button type="button" class="btn">
+                    <img src="../icon/add-circle.png" alt="add a clothes for exchange" class="nav-btn">
+                </button>
+            </a>
+        </div>
     </nav>
+
     <!-- Page Content -->
     <main class="side-wrap box column">
         <!-- <nav>
@@ -64,5 +81,16 @@
             </div>
           </div>
     </main>
+
+    <!--Bottom Nav-->
+    <nav class="container-fluid bottom-nav text-center top-bot-wrap">
+        <div class="row">
+            <a class="col" href="../index.html"><img src="../icon/dog-house-2.png" alt="home"></a>
+            <a class="col" href="../notifications/notif.html"><img src="../icon/email-action-unread-bold.png" alt="message"></a>
+            <a class="col" href="../create-listing/create-listing.html"><img src="../icon/add-circle.png" alt="add"></a>
+            <a class="col" href=""><img src="../icon/love-it.png" alt="liked"></a>
+            <a class="col" href="../profile/own-profile.html"><img src="../icon/user.png" alt="profile"></a>
+        </div>
+    </nav>
 </body>
 

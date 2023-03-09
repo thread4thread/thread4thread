@@ -22,66 +22,67 @@
 
 <body>
     <!-- Top Nav Bar -->
-    <nav class="topnav">
+    <nav class="content-wrap topnav navbar navbar-expand-lg side-wrap">
+        <div class="container-fluid nav-container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/t4t-Logo" alt="link to index">
+            </a>
+            <a href="../view-listings/search-filter.html">
+                <form class="d-flex input-group search-bar" role="search">
+                    <input type="search" class="form-control search" placeholder="Search" aria-label="Search">
+                </form>
+            </a>
+            <a href="../create-listing/create-listing.html">
+                <button type="button" class="btn">
+                    <img src="../icon/add-circle.png" alt="add a clothes for exchange" class="nav-btn">
+                </button>
+            </a>
+        </div>
     </nav>
 
     <!-- Page Content -->
     <main class="side-wrap box column">
         <!-- Offers (Donations) -->
-        <div class="box column ">
+        <div class="box column top-bot-wrap">
          
+            
             <!-- Offers heading + "See more" button -->
             <div class="box">
                 <h1 class="left-item">All Offers</h1>
-                <button type="button" class="btn btn-light right-item">Filters</button>
+                <a href="search-filter.html">
+                    <button type="button" class="btn accent-button right-item"><u>Filters</u></button>
+                </a>
             </div>
+
 
             <!-- Offer listings -->
-            <div class="listing box column">
-                <div class="item-row">
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                </div>
-
-                <div class="item-row">
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                </div>
-
-                <div class="item-row">
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                </div>
-
-                <div class="item-row">
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                </div>
-
-                <div class="item-row">
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                </div>
-
-                <div class="item-row">
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                    <div class="listing"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="img-small"></div>
-                </div>
+            <div class="grid by-2">
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
             </div>
-        </div>
 
-        <p class="center-item-vert">End of results!</p>
+            <!-- End of results -->
+            <p class="center-item-vert">End of results!</p>
+        </div>
  
     </main>
 
-    <!-- Bottom Nav Bar -->
-    <nav class="botnav-flexbox">
+    <!--Bottom Nav-->
+    <nav class="container-fluid bottom-nav text-center top-bot-wrap">
+        <div class="row">
+            <a class="col" href="../index.html"><img src="../icon/dog-house-2-bold.png" alt="home"></a>
+            <a class="col" href="../notifications/notif.html"><img src="../icon/email-action-unread.png" alt="message"></a>
+            <a class="col" href="../create-listing/create-listing.html"><img src="../icon/add-circle.png" alt="add"></a>
+            <a class="col" href=""><img src="../icon/love-it.png" alt="liked"></a>
+            <a class="col" href="../profile/own-profile.html"><img src="../icon/user.png" alt="profile"></a>
+        </div>
     </nav>
 </body>
 

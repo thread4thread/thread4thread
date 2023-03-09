@@ -22,7 +22,22 @@
 
 <body>
     <!-- Top Nav Bar -->
-    <nav class="topnav">
+    <nav class="content-wrap topnav navbar navbar-expand-lg side-wrap">
+        <div class="container-fluid nav-container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/t4t-Logo" alt="link to index">
+            </a>
+            <a href="../view-listings/search-filter.html">
+                <form class="d-flex input-group search-bar" role="search">
+                    <input type="search" class="form-control search" placeholder="Search" aria-label="Search">
+                </form>
+            </a>
+            <a href="../create-listing/create-listing.html">
+                <button type="button" class="btn">
+                    <img src="../icon/add-circle.png" alt="add a clothes for exchange" class="nav-btn">
+                </button>
+            </a>
+        </div>
     </nav>
 
     <!-- Page Content -->
@@ -31,17 +46,19 @@
         <!-- User Profile -->
         <div class="box column">
 
-            <!-- Profile Pic / Statistics / Rating -->
-            <div class="box">
+            <!-- User Metrics -->
+            <div class="box text-center">
 
                 <!-- Profile Pic -->
-                <img src="../img/blank-pfp.png" class="img-small me-3">
+                <img src="../img/blank-pfp.png" class="w-25 h-25 no-space">
 
 
                 <!-- Statistics + Rating-->
                 <div class="box column">
 
+                    <!-- Statistics + Edit Button -->
                     <div class="box text-center">
+
                         <!-- Statistics -->
                             <div class="no-space">
                                 <p class="fs-4 fw-bold mb-0">0</p>
@@ -57,7 +74,7 @@
                             </div>
 
                         <!-- Edit Button -->
-                        <div class="box ms-5 ps-5">
+                        <div class="box ms-1 ps-1">
                             <div class="edit-icon">
                                 <img src="../img/edit.png" height="20px">
                             </div>
@@ -75,7 +92,7 @@
                 </div>
             </div>
 
-            <!-- Username / Pronouns / Name / Bio -->
+            <!-- User Info -->
             <div class="box column">
 
                 <!-- Name and Pronouns-->
@@ -90,24 +107,19 @@
                 <!-- Bio -->
                 <p class="fw-light">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-
             </div>
 
             <!-- Listings / Reviews -->
             <div class="box column top-bot-wrap">
-                <div class="box text-center">
+                <div class="box text-center" height="100%">
                     <!-- Listing -->
                     <h1 class="no-space mx-auto display-4 fs-2">Listings</h1>
                     <!-- Reviews -->
                     <h1 class="no-space mx-auto display-4 fs-2">Reviews</h1>
                 </div>
 
-            <!-- Divider -->
-            <!-- Commenting out divider for now <hr class="no-space"> -->
             
                 <!-- Rectangle -->
                 <svg class="d-flex align-items-end" height="5">
@@ -116,51 +128,30 @@
             </div>
 
             <!-- Listings -->
-                
-                <!-- Row of posts (3)-->
-                <div class="row">
+            <div class="grid by-3">
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+                <a href="listing-details.html"><img src="../img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" class="grid-item"></a>
+            </div>
 
-                    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="../img/pink-skirt.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="../img/pink-skirt.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="../img/pink-skirt.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
                 
-                <!-- Row of posts (3)-->
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="../img/pink-skirt.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="../img/pink-skirt.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="../img/pink-skirt.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
         </div>
     </main>
 
-    <!-- Bottom Nav Bar -->
-    <nav class="botnav-flexbox">
+    <!--Bottom Nav-->
+    <nav class="container-fluid bottom-nav text-center top-bot-wrap">
+        <div class="row">
+            <a class="col" href="../index.html"><img src="../icon/dog-house-2.png" alt="home"></a>
+            <a class="col" href="../notifications/notif.html"><img src="../icon/email-action-unread.png" alt="message"></a>
+            <a class="col" href="../create-listing/create-listing.html"><img src="../icon/add-circle.png" alt="add"></a>
+            <a class="col" href=""><img src="../icon/love-it.png" alt="liked"></a>
+            <a class="col" href="/profile/own-profile.html"><img src="../icon/profile-user.png" alt="profile"></a>
+        </div>
     </nav>
 </body>
 
