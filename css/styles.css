@@ -90,6 +90,8 @@ h2 {
 .item-row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 25%;
     /* padding-bottom: .5em; */
 }
 
