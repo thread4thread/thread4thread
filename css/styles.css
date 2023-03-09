@@ -1,5 +1,5 @@
 /*  */
-/* PAGE LAYOUT */
+/* SPACING */
 /*  */
 /* Sticking footer to bottom of page (credit to https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/) */
 * {
@@ -54,6 +54,7 @@ h2 {
     flex-flow: row wrap;
 }
 
+
 .column {
     flex-direction: column;
 }
@@ -93,6 +94,27 @@ h2 {
     flex-wrap: wrap;
     flex-basis: 25%;
     /* padding-bottom: .5em; */
+}
+
+/*  */
+/* GRID LAYOUT */
+/*  */
+.grid {
+    display: grid;
+    justify-items: center;
+    gap: .5em;
+}
+
+.by-3 {
+    grid-template-columns: repeat(3, auto);
+}
+
+.by-2 {
+    grid-template-columns: repeat(2, auto);
+}
+
+.grid-item {
+    width: 100%;
 }
 
 /*  */
