@@ -169,6 +169,20 @@ h2 {
     padding: 0px;
 }
 
+.navbar form {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.fil-search.arrow-btn {
+    margin: 0;
+}
+
+.fil-search.search-bar {
+    width: 80%;
+}
+
 /* IMAGES */
 .center-item-vert { /* Source: https://www.w3schools.com/howto/howto_css_image_center.asp */
     display: block;
@@ -336,8 +350,6 @@ h2 {
     margin-bottom: 10px;
     text-align: left;
 }
-
-
 
 button.arrow-btn {
     background-color: white; /* Green */
