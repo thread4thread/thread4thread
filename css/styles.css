@@ -429,3 +429,8 @@ button.arrow-btn {
   .text-ex-sm {
     margin-top: 20px;
   }
+
+  .link {
+      text-decoration: none;
+      color: black;
+  }
