@@ -1,0 +1,438 @@
+/*  */
+/* SPACING */
+/*  */
+/* Sticking footer to bottom of page (credit to https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    margin-top: 74px;
+    margin-bottom: 52px;
+}
+
+.side-wrap {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.gray-bg {
+    background-color: rgb(245, 245, 245);
+}
+
+.top-bot-wrap {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.no-space {
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+/*  */
+/* FLEXBOX */
+/*  */
+.box {
+    display: flex;
+    gap: .7em;
+    flex-flow: row wrap;
+}
+
+
+.column {
+    flex-direction: column;
+}
+
+.tight-box {
+    display: flex;
+    gap: 0;
+}
+
+.listing-box {
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+.size-box {
+    justify-content: center;
+    gap: 0;
+}
+
+.center-align-hor {
+    align-items: center;
+}
+
+/* Sticking one item to the left and one to the right (source: https://stackoverflow.com/questions/38948102/center-one-and-right-left-align-other-flexbox-element) */
+.left-item {
+    margin-right:auto;
+}
+
+.right-item {
+    margin-left:auto;
+}
+
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 25%;
+    /* padding-bottom: .5em; */
+}
+
+/*  */
+/* GRID LAYOUT */
+/*  */
+.grid {
+    display: grid;
+    justify-items: center;
+    gap: .5em;
+}
+
+.by-3 {
+    grid-template-columns: repeat(3, auto);
+}
+
+.by-2 {
+    grid-template-columns: repeat(2, auto);
+}
+
+.grid-item {
+    width: 100%;
+}
+
+/*  */
+/* NAV BARS */
+/*  */
+
+.topnav {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background-color: white;
+}
+
+.topnav.navbar {
+    justify-content: center;
+}
+
+.place-holder-bottom {
+    height: 52px;
+    width: 390px;
+    background-color: white;
+}
+
+.navbar-brand img {
+    height: 3rem;
+}
+
+.search-bar {
+    width: 50%;
+}
+
+.form-control.search {
+    border-radius: 25px;
+    background-color: lightgray;
+}
+
+.nav-btn {
+    height: 2rem;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0%;
+    background-color: white;
+}
+
+.bottom-nav img {
+    height: 2.25rem;
+}
+
+.container-fluid.nav-container {
+    padding: 0px;
+}
+
+.navbar form {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.fil-search.arrow-btn {
+    margin: 0;
+}
+
+.fil-search.search-bar {
+    width: 80%;
+}
+
+/* IMAGES */
+.center-item-vert { /* Source: https://www.w3schools.com/howto/howto_css_image_center.asp */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-lg {
+    height: 18em;
+}
+
+.img-small {
+    width: 7em;
+    height: 7em;
+}
+
+.img-mini {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+/*  */
+/* BUTTONS */
+/*  */
+.btn {
+    border-radius:2em;
+}
+
+.btn-light {
+    color: white;
+    background-color: #ccccff;
+}
+
+.btn-select {
+    color: white;
+    background-color: #8991DC;
+    border-radius: .25em;
+}
+
+.btn-unselect {
+    color: black;
+    background-color: lightgray;
+}
+
+/* Save, post, apply, etc. (bottom right) */
+.btn-save {
+    color: white;
+    background-color: #8991DC;
+    position: fixed;
+    bottom: 2%;
+    left: 30%;
+    right: 30%;
+    font-size: 1.25rem;
+    padding: .5rem 2rem;
+}
+
+.list-btn {
+    bottom: 8%;
+    left: 25%;
+    right: 25%;
+}
+
+.invisible {
+    visibility: hidden;
+    font-size: 1.25rem;
+    padding: 1rem;
+}
+
+/* .signup-btn {
+    background-color: #FFB01F;
+    color: white;
+    width: 50%;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+} */
+
+.purp-button {
+    background-color: #8991DC;
+    color: white;
+    width: 50%;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.accent-button {
+    background-color: white;
+    color: #8991DC;
+}
+
+.btn-outline-secondary {
+    width:100%;
+    border-color: #ced4da;
+    border-radius: .25rem;
+}
+
+/*  */
+/* TEXT */
+/*  */
+.strong {
+    font-weight: bold;
+}
+
+.warning {
+    color: red;
+}
+
+/*  */
+/* INPUTS */
+/*  */
+
+/* TODO: Center dropdown menu */
+.dropdown-menu {
+    width: 90%;
+}
+
+.size-input {
+    width: 4em;
+}
+
+.sign-up {
+   width: 100%;
+   height: 80%;
+   text-align: center;
+   padding: 15px;
+   margin: 20% auto 0;
+
+}
+
+.sign-up h1 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.input-box {
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    background: rgba(218, 218, 218, 0.47);
+    outline: none;
+    border: none;
+}
+
+.check {
+    text-align: left;
+}
+
+/* .login-btn {
+    background-color: #8991DC;
+    border-radius: 25px;
+} */
+
+
+.login {
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    padding: 15px;
+    margin: 20% auto 0;
+ }
+ .login h1 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+button.arrow-btn {
+    background-color: white; /* Green */
+    border: none;
+    border-radius: 2em;
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 15%;
+  }
+
+.arrow-btn img {
+    height: 1.5rem;
+}
+  /* .arrow {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+
+  } */
+.ext-sm {
+    font-size: 13px;
+}
+
+.text-sm {
+    font-size: 13px;
+}
+
+.text-ex-sm {
+    font-size: 11px;
+    color: darkgrey;
+
+}
+
+.text-sm-accept {
+    color: darkgrey;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.box-x {
+    width: 47px;
+    height: 16px;
+    background-color: #8991DC;
+    position: relative;
+  }
+
+  .offer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .circle {
+    width: 16px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #8991DC;
+    margin-top: 10px;
+  }
+
+  .text-sm-notif {
+    font-size: 13px;
+  }
+
+  .text-ex-sm-notif {
+    font-size: 11px;
+    color: darkgrey;
+
+  }
+  .text-ex-sm {
+    margin-top: 20px;
+  }
+
+  .link {
+      text-decoration: none;
+      color: black;
+  }
