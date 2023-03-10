@@ -378,6 +378,10 @@ button.arrow-btn {
     font-size: 13px;
 }
 
+.text-sm {
+    font-size: 13px;
+}
+
 .text-ex-sm {
     font-size: 11px;
     color: darkgrey;
@@ -417,8 +421,6 @@ button.arrow-btn {
 
   .text-sm-notif {
     font-size: 13px;
-
-
   }
 
   .text-ex-sm-notif {
