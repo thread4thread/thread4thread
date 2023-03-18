@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/thread4thread/static/css/main.ef7a4d71.css",
+    "main.js": "/thread4thread/static/js/main.b1f95185.js",
+    "index.html": "/thread4thread/index.html",
+    "main.ef7a4d71.css.map": "/thread4thread/static/css/main.ef7a4d71.css.map",
+    "main.b1f95185.js.map": "/thread4thread/static/js/main.b1f95185.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef7a4d71.css",
+    "static/js/main.b1f95185.js"
+  ]
+}
