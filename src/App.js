@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 // import { Route, Switch, Redirect } from 'react-router-dom';
 
 // CSS
-import './styles.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 // COMPONENTS
 
@@ -15,6 +16,7 @@ function App() {
 
     {/* <!-- Page Content --> */}
     <main className="side-wrap box column">
+
         {/* <!-- Place holder--> */}
         {/* <!-- <div className="place-holder box column top-bot-wrap"></div> --> */}
         {/* <!-- Offers (Donations) --> */}
@@ -29,12 +31,13 @@ function App() {
 
             {/* <!-- Offer listings grid --> */}
             <div className="grid by-3">
+                <a href="view-listings/listing-details.html"><img src="./img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
+                <img src=""/>
             </div>
         </div>
 
