@@ -1,5 +1,5 @@
 // PACKAGES
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 // import { Route, Switch, Redirect } from 'react-router-dom';
 
 // CSS
@@ -9,6 +9,7 @@ import './index.css';
 // COMPONENTS
 
 // DATA
+// import pinkSkirtImg from 'public/img/pink-skirt.jpg';
 
 function App() {
   return (
@@ -31,13 +32,12 @@ function App() {
 
             {/* <!-- Offer listings grid --> */}
             <div className="grid by-3">
-                <a href="view-listings/listing-details.html"><img src="./img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
+                <a href="view-listings/listing-details.html"><img src={process.env.PUBLIC_URL + 'img/pink-shirt.jpg'} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
                 <a href="view-listings/listing-details.html"><img src="img/pink-skirt.jpg" alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <img src=""/>
             </div>
         </div>
 
