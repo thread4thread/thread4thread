@@ -10,6 +10,7 @@ import './index.css';
 // View Listings
 import { ListsAllTypes } from './components/view-listings/lists-all-types';
 import { SearchFilter } from './components/view-listings/search-filter';
+import { ListsTypeX } from './components/view-listings/lists-type-X';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <>
             <ListsAllTypes/>
             {/* <SearchFilter/> */}
+            {/* <ListsTypeX/> */}
         </>
     </main>
 
