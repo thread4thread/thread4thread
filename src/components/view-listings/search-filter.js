@@ -1,3 +1,8 @@
+// SEARCH AND FILTER - Displays search bar and several filters: Clothing Type, Size, Style, Color, Condition, Brand.
+// User can type in the search bar to search for listings by text (searches title and description).
+// User can select the category buttons to filter listings by category.
+// User can click the apply button to view listings of all types with the search and filter(s) applied.
+
 export function SearchFilter() {
     return (
         <>
@@ -134,7 +139,7 @@ export function SearchFilter() {
         </a>
         {/* <!-- Invisible placeholder to add extra space at bottom --> */}
         <button type="button" className="btn invisible">Apply</button>
-        
+
         </>
     )
 }
