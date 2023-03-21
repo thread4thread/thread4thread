@@ -5,7 +5,7 @@
 
 export function SearchFilter() {
     return (
-        <>
+        <div className="side-wrap box column">
 
         {/* <!-- Browse by... --> */}
         <h1 className="no-space">Browse by...</h1>
@@ -140,6 +140,6 @@ export function SearchFilter() {
         {/* <!-- Invisible placeholder to add extra space at bottom --> */}
         <button type="button" className="btn invisible">Apply</button>
 
-        </>
+        </div>
     )
 }

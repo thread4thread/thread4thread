@@ -8,7 +8,7 @@ import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 
 export function ListsAllTypes() {
     return (
-        <>
+        <div className="side-wrap box column">
 
         {/* <!-- Place holder--> */}
         {/* <!-- <div className="place-holder box column top-bot-wrap"></div> --> */}
@@ -77,6 +77,6 @@ export function ListsAllTypes() {
         {/* <!-- Place holder--> */}
         {/* <!-- <div className="place-holder-bottom"></div> --> */}
 
-        </>
+        </div>
     )
 }

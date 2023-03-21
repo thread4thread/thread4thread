@@ -9,19 +9,21 @@ import './index.css';
 // COMPONENTS
 // View Listings
 import { ListsAllTypes } from './components/view-listings/lists-all-types';
-import { SearchFilter } from './components/view-listings/search-filter';
 import { ListsTypeX } from './components/view-listings/lists-type-X';
+import { SearchFilter } from './components/view-listings/search-filter';
+import { ListDetails } from './components/view-listings/list-details';
 
 function App() {
   return (
     <>
 
     {/* <!-- Page Content --> */}
-    <main className="side-wrap box column">
+    <main>
         <>
             <ListsAllTypes/>
-            {/* <SearchFilter/> */}
             {/* <ListsTypeX/> */}
+            {/* <SearchFilter/> */}
+            {/* <ListDetails/> */}
         </>
     </main>
 

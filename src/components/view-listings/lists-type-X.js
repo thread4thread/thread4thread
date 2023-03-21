@@ -7,7 +7,7 @@ import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 
 export function ListsTypeX() {
     return (
-        <>
+        <div className="side-wrap box column">
 
         <div className="box column top-bot-wrap">            
             {/* <!-- Offers heading + "See more" button --> */}
@@ -38,6 +38,6 @@ export function ListsTypeX() {
             <p className="center-item-vert">End of results!</p>
         </div>
 
-        </>
+        </div>
     )
 }
