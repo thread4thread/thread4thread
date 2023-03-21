@@ -37,6 +37,10 @@ main {
   gap: 0;
 }
 
+.hide {
+  display: none;
+}
+
 h1 {
   font-size: 24px;
 }
