@@ -8,10 +8,13 @@ import './index.css';
 
 // COMPONENTS
 // View Listings
-import { ListsAllTypes } from './components/view-listings/lists-all-types';
-import { ListsTypeX } from './components/view-listings/lists-type-X';
-import { SearchFilter } from './components/view-listings/search-filter';
-import { ListDetails } from './components/view-listings/list-details';
+import { ListsAllTypes } from './components/browse/lists-all-types';
+import { ListsTypeX } from './components/browse/lists-type-X';
+import { SearchFilter } from './components/browse/search-filter';
+import { ListDetails } from './components/browse/list-details';
+// Create Listing
+import { CreateList } from './components/post/create-list';
+// list-published
 
 function App() {
   return (
@@ -20,10 +23,10 @@ function App() {
     {/* <!-- Page Content --> */}
     <main>
         <>
-            <ListsAllTypes/>
-            {/* <ListsTypeX/> */}
-            {/* <SearchFilter/> */}
-            {/* <ListDetails/> */}
+          <ListsAllTypes/>
+          {/* <ListsTypeX/> */}
+          {/* <SearchFilter/> */}
+          {/* <ListDetails/> */}
         </>
     </main>
 

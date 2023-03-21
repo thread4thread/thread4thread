@@ -16,7 +16,7 @@ export function ListDetails() {
         <div>
             {/* <!-- Header --> */}
             <div className="box center-align-hor side-wrap">
-                <img src={pfp} alt="Blank user profile picture" className="img-mini"/>
+                <img src={pfp} alt="Blank user profile pic" className="img-mini"/>
                 
                 <div className="tight-box column">
                     <strong>Gingham Sweater Vest</strong>
@@ -28,7 +28,7 @@ export function ListDetails() {
 
             {/* <!-- Image --> */}
             <div className="gray-bg">
-                <img src={listImg} alt="image of item" className="center-item-vert img-lg"/>
+                <img src={listImg} alt="listing" className="center-item-vert img-lg"/>
             </div>
         </div>
 
