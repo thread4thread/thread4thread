@@ -5,7 +5,11 @@
 // User clicks heart icon to navigate to fav-lists
 // User clicks profile icon to navigate to my-profile.
 
+// HELPERS
+import NavIcon from './navbar.helpers/nav-icon'
+
 // ICONS
+// TODO: Dynamically bold icons depending on what page you're on
 import home from './navbar.assets/home.png'
 import mail from './navbar.assets/mail.png'
 import add from './navbar.assets/add.png'
@@ -15,10 +19,13 @@ let iconArr = [home, mail, add, heart, profile]
 
 export function BotNav() {
     let iconElemArr = iconArr.map((icon) => {
-        let iconName = icon + ""
+        let iName = icon + ""
 
         return (
-            <NavIcon src={icon} iconName={iconName} key={iconName}/>
+            <NavIcon src={icon}
+             iName={iName}
+             classN={"col"}
+             key={iName}/>
         )
     });
 
@@ -31,10 +38,10 @@ export function BotNav() {
     )
 }
 
-function NavIcon(props) {
-    let {src, iconName} = props;
+// function NavIcon(props) {
+//     let {src, iName} = props;
     
-    return (
-        <a className="col" href="../index.html"><img src={src} alt={iconName}/></a>
-    )
-}
+//     return (
+//         <a className="col" href="../index.html"><img src={src} alt={iName}/></a>
+//     )
+// }

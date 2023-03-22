@@ -8,8 +8,8 @@ import './index.css';
 
 // COMPONENTS
 // Navbars
-import { TopNav } from './components/navbar/topnav';
-import { BotNav } from './components/navbar/botnav';
+import { TopNav } from './components/navbar/top-nav';
+import { BotNav } from './components/navbar/bot-nav';
 // Browsing
 import { ListsAllTypes } from './components/browsing/lists-all-types';
 import { ListsTypeX } from './components/browsing/lists-type-X';
@@ -29,10 +29,10 @@ function App() {
     {/* <!-- Main content --> */}
     <main>
         <>
-          {/* <ListsAllTypes/> */}
+          <ListsAllTypes/>
           {/* <ListsTypeX/> */}
           {/* <SearchFilter/> */}
-          <ListDetails/>
+          {/* <ListDetails/> */}
         </>
     </main>
 

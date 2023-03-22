@@ -3,27 +3,25 @@
 // User clicks search bar to navigate to search-filter.
 // User clicks plus icon to navigate to create-list.
 
+// HELPERS
+import NavIcon from './navbar.helpers/nav-icon'
+
 // ICONS
 import logo from './navbar.assets/logo2.png'
 import addIcon from './navbar.assets/add.png'
 
 export function TopNav() {
     return (
-    <nav className="content-wrap topnav navbar navbar-expand-lg side-wrap">
-        <div className="container-fluid nav-container">
-            <a className="navbar-brand" href="../index.html">
-                <img src={logo} alt="link to index"/>
-            </a>
+    <nav className="content-wrap topnav navbar navbar-expand-lg">
+         <div className="container-fluid nav-container">
+            <NavIcon src={logo} iName={logo+""} classN={"navbar-brand"}/>
             <a href="../view-listings/search-filter.html">
                 <form className="d-flex input-group search-bar" role="search">
                     <input type="search" className="form-control search" placeholder="Search" aria-label="Search"/>
                 </form>
             </a>
-            <a href="../create-listing/create-listing.html">
-                <button type="button" className="btn">
-                    <img src={addIcon} alt="add a clothes for exchange" className="nav-btn"/>
-                </button>
-            </a>
+            <NavIcon src={addIcon} iName={addIcon+""} classN={"navbar-brand"}/>
+
         </div>
     </nav>
     )
