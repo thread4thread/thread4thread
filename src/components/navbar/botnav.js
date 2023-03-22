@@ -6,22 +6,35 @@
 // User clicks profile icon to navigate to my-profile.
 
 // ICONS
-import homeIcon from './navbar.assets/home.png'
-import mailIcon from './navbar.assets/mail.png'
-import addIcon from './navbar.assets/add.png'
-import heartIcon from './navbar.assets/heart.png'
-import profileIcon from './navbar.assets/user.png'
+import home from './navbar.assets/home.png'
+import mail from './navbar.assets/mail.png'
+import add from './navbar.assets/add.png'
+import heart from './navbar.assets/heart.png'
+import profile from './navbar.assets/user.png'
+let iconArr = [home, mail, add, heart, profile]
 
 export function BotNav() {
+    let iconElemArr = iconArr.map((icon) => {
+        let iconName = icon + ""
+
+        return (
+            <NavIcon src={icon} iconName={iconName} key={iconName}/>
+        )
+    });
+
     return (
     <nav className="container-fluid bottom-nav text-center top-bot-wrap">
         <div className="row">
-            <a className="col" href="../index.html"><img src={homeIcon} alt="home"/></a>
-            <a className="col" href="../notifications/notif.html"><img src={mailIcon} alt="message"/></a>
-            <a className="col" href="../create-listing/create-listing.html"><img src={addIcon} alt="add"/></a>
-            <a className="col" href=""><img src={heartIcon} alt="liked"/></a>
-            <a className="col" href="../profile/own-profile.html"><img src={profileIcon} alt="profile"/></a>
+            { iconElemArr }
         </div>
     </nav>
+    )
+}
+
+function NavIcon(props) {
+    let {src, iconName} = props;
+    
+    return (
+        <a className="col" href="../index.html"><img src={src} alt={iconName}/></a>
     )
 }
