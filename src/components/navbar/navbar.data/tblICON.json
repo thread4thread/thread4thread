@@ -1,0 +1,7 @@
+[
+{"IconName":"home","FileName":"logo2.png","NavPath":""},
+{"IconName":"plus","FileName":"add.png","NavPath":"create-listing"},
+{"IconName":"mail","FileName":"mail.png","NavPath":"my-exchanges"},
+{"IconName":"heart","FileName":"heart.png","NavPath":"my-favorite-listings"},
+{"IconName":"profile","FileName":"user.png","NavPath":"my-profile"}
+]
