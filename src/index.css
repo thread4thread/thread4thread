@@ -171,6 +171,7 @@ h2 {
 
 .container-fluid.nav-container {
   padding: 0px;
+  flex-wrap: nowrap;
 }
 
 .navbar form {

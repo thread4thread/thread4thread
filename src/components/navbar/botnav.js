@@ -1,0 +1,1 @@
+// Home icon (to unfiltered list-all-types), mail icon (to exchanges), plus icon (to create-list), heart icon (to favs), profile icon (to my-profile)

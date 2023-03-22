@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 // COMPONENTS
+// Navbars
+import { TopNav } from './components/navbar/topnav';
 // Browsing
 import { ListsAllTypes } from './components/browsing/lists-all-types';
 import { ListsTypeX } from './components/browsing/lists-type-X';
@@ -20,7 +22,10 @@ function App() {
   return (
     <>
 
-    {/* <!-- Page Content --> */}
+    {/* Top nav bar */}
+    <TopNav/>
+
+    {/* <!-- Main content --> */}
     <main>
         <>
           <ListsAllTypes/>
@@ -29,6 +34,8 @@ function App() {
           {/* <ListDetails/> */}
         </>
     </main>
+
+    {/* Bottom nav bar */}
 
     </>
   );
