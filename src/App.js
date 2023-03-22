@@ -2,7 +2,7 @@
 
 // PACKAGES
 // import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // CSS
 import 'bootstrap/dist/css/bootstrap.css';
@@ -30,16 +30,12 @@ function App() {
 
     {/* <!-- Main content --> */}
     <main>
-      <Router>
       <Routes>
-        {/* <Route exact path="/"> */}
         <Route path="/" element={<ListsAllTypes/>}/>
-        {/* </Route> */}
-        {/* <ListsTypeX/> */}
+        {/* <Route path="/lists-type-x" element={<ListsTypeX/>}/> */}
         {/* <SearchFilter/> */}
         {/* <ListDetails/> */}
       </Routes>
-      </Router>
     </main>
 
     {/* Bottom nav bar */}

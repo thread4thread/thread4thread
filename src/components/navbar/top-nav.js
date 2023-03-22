@@ -3,18 +3,24 @@
 // User clicks search bar to navigate to search-filter.
 // User clicks plus icon to navigate to create-list.
 
+// PACKAGES
+import { NavLink } from 'react-router-dom';
+
 // HELPERS
-import NavIcon from './navbar.helpers/nav-icon'
+import NavIcon from './navbar.helpers/nav-icon';
 
 // ICONS
-import logo from './navbar.assets/logo2.png'
-import addIcon from './navbar.assets/add.png'
+import logo from './navbar.assets/logo2.png';
+import addIcon from './navbar.assets/add.png';
 
 export function TopNav() {
     return (
+        // <BrowserRouter>
     <nav className="content-wrap topnav navbar navbar-expand-lg">
          <div className="container-fluid nav-container">
-            <NavIcon src={logo} iName={logo+""} classN={"navbar-brand"}/>
+            <NavLink to="/">
+                <NavIcon src={logo} iName={logo+""} classN={"navbar-brand"}/>
+            </NavLink>
             <a href="../view-listings/search-filter.html">
                 <form className="d-flex input-group search-bar" role="search">
                     <input type="search" className="form-control search" placeholder="Search" aria-label="Search"/>
@@ -24,5 +30,6 @@ export function TopNav() {
 
         </div>
     </nav>
+    // </BrowserRouter>
     )
 }
