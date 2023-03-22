@@ -1,3 +1,5 @@
+// APP - Contains all code
+
 // PACKAGES
 // import React, { useState, useEffect } from 'react';
 // import { Route, Switch, Redirect } from 'react-router-dom';
@@ -28,11 +30,15 @@ function App() {
 
     {/* <!-- Main content --> */}
     <main>
-        <>
-          <ListsAllTypes/>
+      <>
+        {/* <Switch> */}
+          {/* <Route exact path="/"> */}
+            <ListsAllTypes/>
+          {/* </Route> */}
           {/* <ListsTypeX/> */}
           {/* <SearchFilter/> */}
           {/* <ListDetails/> */}
+        {/* </Switch> */}
         </>
     </main>
 
