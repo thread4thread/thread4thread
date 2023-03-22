@@ -7,13 +7,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 // COMPONENTS
-// View Listings
-import { ListsAllTypes } from './components/browse/lists-all-types';
-import { ListsTypeX } from './components/browse/lists-type-X';
-import { SearchFilter } from './components/browse/search-filter';
-import { ListDetails } from './components/browse/list-details';
-// Create Listing
-import { CreateList } from './components/post/create-list';
+// Browsing
+import { ListsAllTypes } from './components/browsing/lists-all-types';
+import { ListsTypeX } from './components/browsing/lists-type-X';
+import { SearchFilter } from './components/browsing/search-filter';
+import { ListDetails } from './components/browsing/list-details';
+// Posting
+import { CreateList } from './components/posting/create-list';
 // list-published
 
 function App() {
