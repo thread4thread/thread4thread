@@ -4,12 +4,8 @@
 // User clicks plus icon to navigate to create-list.
 
 // ICONS
-import logo from './../../assets/img/logo2.png'
-import addIcon from './../../assets/icon/add-circle.png'
-
-// DATA
-import pfp from './../../assets/img/blank-pfp.png';
-import listImg from './../../assets/img/sweater.png'
+import logo from './navbar.assets/logo2.png'
+import addIcon from './navbar.assets/add.png'
 
 export function TopNav() {
     return (
