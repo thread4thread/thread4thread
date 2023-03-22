@@ -5,27 +5,27 @@
 // User clicks heart icon to navigate to fav-lists
 // User clicks profile icon to navigate to my-profile.
 
+// PACKAGES
+import { NavLink } from 'react-router-dom';
+
 // HELPERS
-import NavIcon from './navbar.helpers/nav-icon'
+import NavIcon from './navbar.helpers/nav-icon';
 
 // ICONS
 // TODO: Dynamically bold icons depending on what page you're on
-import home from './navbar.assets/home.png'
-import mail from './navbar.assets/mail.png'
-import add from './navbar.assets/add.png'
-import heart from './navbar.assets/heart.png'
-import profile from './navbar.assets/user.png'
-let iconArr = [home, mail, add, heart, profile]
+import home from './navbar.assets/home.png';
+import exchanges from './navbar.assets/mail.png';
+import newList from './navbar.assets/add.png';
+import favLists from './navbar.assets/heart.png';
+import myProfile from './navbar.assets/user.png';
+let iconArr = [home, exchanges, newList, favLists, myProfile];
 
 export function BotNav() {
     let iconElemArr = iconArr.map((icon) => {
-        let iName = icon + ""
-
         return (
-            <NavIcon src={icon}
-             iName={iName}
-             classN={"col"}
-             key={iName}/>
+        <NavIcon src={icon}
+            classN={"col"}
+            key={icon+""}/>
         )
     });
 

@@ -10,26 +10,23 @@ import { NavLink } from 'react-router-dom';
 import NavIcon from './navbar.helpers/nav-icon';
 
 // ICONS
-import logo from './navbar.assets/logo2.png';
+import home from './navbar.assets/logo2.png';
 import addIcon from './navbar.assets/add.png';
 
 export function TopNav() {
     return (
-        // <BrowserRouter>
     <nav className="content-wrap topnav navbar navbar-expand-lg">
          <div className="container-fluid nav-container">
-            <NavLink to="/">
-                <NavIcon src={logo} iName={logo+""} classN={"navbar-brand"}/>
-            </NavLink>
+            {/* <NavLink to="/"> */}
+                <NavIcon src={home} classN={"navbar-brand"}/>
+            {/* </NavLink> */}
             <a href="../view-listings/search-filter.html">
                 <form className="d-flex input-group search-bar" role="search">
                     <input type="search" className="form-control search" placeholder="Search" aria-label="Search"/>
                 </form>
             </a>
-            <NavIcon src={addIcon} iName={addIcon+""} classN={"navbar-brand"}/>
-
+            <NavIcon src={addIcon} classN={"navbar-brand"}/>
         </div>
     </nav>
-    // </BrowserRouter>
     )
 }
