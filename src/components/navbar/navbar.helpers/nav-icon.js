@@ -1,7 +1,7 @@
 // NAVIGATION ICON - Returns clickable navigation icon.
 // Inputs:
     // src - Filepath
-    // iName - Icon name
+    // classN - Style
 // Output: Clickable navigation icon.
 
 // PACKAGES

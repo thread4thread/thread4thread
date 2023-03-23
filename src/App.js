@@ -18,7 +18,7 @@ import { ListsTypeX } from './components/browsing/lists-type-X';
 import { SearchFilter } from './components/browsing/search-filter';
 import { ListDetails } from './components/browsing/list-details';
 // Posting
-import { CreateList } from './components/posting/create-list';
+// import { CreateList } from './components/posting/create-list';
 // list-published
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
 
         <Route path="/search-filter" element={<SearchFilter/>}/>
 
-        {/* <ListDetails/> */}
+        <Route path="/list-details" element={<ListDetails/>}/>
       </Routes>
     </main>
 

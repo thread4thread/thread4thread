@@ -9,9 +9,14 @@ import { NavLink } from 'react-router-dom';
 // DATA
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 
+// HELPERS
+import NavList from './browsing.helpers/make-list';
+
 // TODO: Display filters applied
 
 export function ListsAllTypes() {
+    let altProp = "Black tank top, pink+purple skirt";
+
     return (
         <div className="side-wrap box column">
 
@@ -27,12 +32,12 @@ export function ListsAllTypes() {
 
             {/* <!-- Offer listings grid --> */}
             <div className="grid by-3">
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
             </div>
         </div>
 
@@ -46,12 +51,12 @@ export function ListsAllTypes() {
 
             {/* <!-- Request listings grid --> */}
             <div className="grid by-3">
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
             </div>
         </div>
 
@@ -65,12 +70,12 @@ export function ListsAllTypes() {
 
             {/* <!-- Request listings grid --> */}
             <div className="grid by-3">
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} className="grid-item"/>
             </div>
         </div>
         {/* <!-- Place holder--> */}
