@@ -4,6 +4,7 @@
 // Note: This is the default page when user opens app (after registration/login).
 
 // DATA
+import { NavLink } from 'react-router-dom';
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 
 export function ListsAllTypes() {
@@ -17,9 +18,7 @@ export function ListsAllTypes() {
             {/* <!-- Offers heading + "See more" button --> */}
             <div className="box">
                 <h1 className="left-item">Offers</h1>
-                <a href="view-listings/filtered-results.html">
-                    <button type="button" className="btn accent-button"><u>See more</u></button>
-                </a>
+                <SeeMoreButton/>
             </div>
 
             {/* <!-- Offer listings grid --> */}
@@ -38,9 +37,7 @@ export function ListsAllTypes() {
             {/* <!-- top-bot-wrap heading + "See more" button --> */}
             <div className="box">
                 <h1 className="left-item">Trade Offers</h1>
-                <a href="view-listings/filtered-results.html">
-                    <button type="button" className="btn accent-button"><u>See more</u></button>
-                </a>
+                <SeeMoreButton/>
             </div>
 
             {/* <!-- Request listings grid --> */}
@@ -59,9 +56,7 @@ export function ListsAllTypes() {
             {/* <!-- top-bot-wrap heading + "See more" button --> */}
             <div className="box">
                 <h1 className="left-item">Requests</h1>
-                <a href="view-listings/filtered-results.html">
-                    <button type="button" className="btn accent-button"><u>See more</u></button>
-                </a>
+                <SeeMoreButton/>
             </div>
 
             {/* <!-- Request listings grid --> */}
@@ -78,5 +73,13 @@ export function ListsAllTypes() {
         {/* <!-- <div className="place-holder-bottom"></div> --> */}
 
         </div>
+    )
+}
+
+function SeeMoreButton() {
+    return (
+        <NavLink to="lists-type-x">
+            <button type="button" className="btn accent-button"><u>See more</u></button>
+        </NavLink>
     )
 }

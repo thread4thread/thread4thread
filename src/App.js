@@ -32,7 +32,8 @@ function App() {
     <main>
       <Routes>
         <Route path="/" element={<ListsAllTypes/>}/>
-        {/* <Route path="/lists-type-x" element={<ListsTypeX/>}/> */}
+        
+        <Route path="/lists-type-x" element={<ListsTypeX/>}/>
         {/* <SearchFilter/> */}
         {/* <ListDetails/> */}
       </Routes>

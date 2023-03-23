@@ -12,7 +12,7 @@ export function ListDetails() {
     return (
         <>
 
-{/* <!-- Header & Image Section --> */}
+        {/* <!-- Header & Image Section --> */}
         <div>
             {/* <!-- Header --> */}
             <div className="box center-align-hor side-wrap">
