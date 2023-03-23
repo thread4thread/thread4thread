@@ -3,9 +3,13 @@
 // User can click a listing to view it in detail.
 // Note: This is the default page when user opens app (after registration/login).
 
-// DATA
+// PACKAGES
 import { NavLink } from 'react-router-dom';
+
+// DATA
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
+
+// TODO: Display filters applied
 
 export function ListsAllTypes() {
     return (

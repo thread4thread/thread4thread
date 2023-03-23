@@ -7,7 +7,9 @@
 // PACKAGES
 import { NavLink } from 'react-router-dom';
 
-// TODO: Why do we have to add "default" here?
+// TODO: Do all button/icon creation in one file, then import where needed?
+
+// TODO: Figure out why we have to add "default" here
 export default function NavIcon(props) {
     let {src, classN, navPath} = props;
     let iName = src + "";

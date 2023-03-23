@@ -31,10 +31,14 @@ function App() {
     {/* <!-- Main content --> */}
     <main>
       <Routes>
+        {/* TODO: Only 1 path to home */}
+        <Route path="/thread4thread" element={<ListsAllTypes/>}/>
         <Route path="/" element={<ListsAllTypes/>}/>
-        
+
         <Route path="/lists-type-x" element={<ListsTypeX/>}/>
-        {/* <SearchFilter/> */}
+
+        <Route path="/search-filter" element={<SearchFilter/>}/>
+
         {/* <ListDetails/> */}
       </Routes>
     </main>

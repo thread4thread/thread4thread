@@ -3,8 +3,11 @@
 // User can select the category buttons to filter listings by category.
 // User can click the apply button to view listings of all types with the search and filter(s) applied.
 
+// PACKAGES
+import { NavLink } from 'react-router-dom';
+
 // DATA
-import backIcon from './../../assets/icon/keyboard-arrow-return.png'
+import backIcon from './../../assets/icon/keyboard-arrow-return.png';
 
 export function SearchFilter() {
     return (
@@ -12,11 +15,7 @@ export function SearchFilter() {
         {/* Navbar */}
         <div className="content-wrap topnav navbar navbar-expand-lg side-wrap">
             <div className="container-fluid nav-container">
-                <a href="../index.html">
-                    <button type="button" className="fil-search btn arrow-btn">
-                        <img src={backIcon} alt="return"/>
-                    </button>
-                </a>
+                <BackButton/>
 
                 <form className="d-flex input-group fil-search search-bar" role="search">
                     <input type="search"
@@ -163,5 +162,15 @@ export function SearchFilter() {
 
             </div>
         </>
+    )
+}
+
+function BackButton() {
+    return (
+        <NavLink to="/">
+            <button type="button" className="fil-search btn arrow-btn">
+                <img src={backIcon} alt="return"/>
+            </button>
+        </NavLink>
     )
 }

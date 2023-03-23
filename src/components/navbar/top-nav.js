@@ -17,16 +17,24 @@ export function TopNav() {
     return (
     <nav className="content-wrap topnav navbar navbar-expand-lg">
          <div className="container-fluid nav-container">
-            {/* <NavLink to="/"> */}
-                <NavIcon src={home} classN={"navbar-brand"} navPath={""}/>
-            {/* </NavLink> */}
-            <a href="../view-listings/search-filter.html">
-                <form className="d-flex input-group search-bar" role="search">
-                    <input type="search" className="form-control search" placeholder="Search" aria-label="Search"/>
-                </form>
-            </a>
+            {/* Logo (click to go home) */}
+            <NavIcon src={home} classN={"navbar-brand"} navPath={""}/>
+
+            <SearchBar/>
+
+            {/* Plus icon (click to create new listing) */}
             <NavIcon src={addIcon} classN={"navbar-brand"} navPath={"create-listing"}/>
         </div>
     </nav>
+    )
+}
+
+function SearchBar() {
+    return (
+        <NavLink to="search-filter">
+            <form className="d-flex input-group search-bar" role="search">
+                <input type="search" className="form-control search" placeholder="Search" aria-label="Search"/>
+            </form>
+        </NavLink>
     )
 }
