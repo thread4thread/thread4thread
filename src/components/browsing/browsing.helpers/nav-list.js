@@ -14,8 +14,8 @@ export default function NavList(props) {
     const { navTo, src, alt, classN } = props;
 
     return (
-        <NavLink to={navTo}>
-            <img src={src} alt={"Black tank top, pink+purple skirt"} className={"grid-item"} />
+        <NavLink to={navTo} className={"grid-item"}>
+            <img src={src} alt={alt} className={classN} />
         </NavLink>
     )
 }

@@ -5,7 +5,13 @@
 // DATA
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 
+// HELPERS
+import NavList from './browsing.helpers/nav-list';
+
 export function ListsTypeX() {
+    let altProp = "Black tank top, pink+purple skirt";
+    let classNProp = "grid-item";
+
     return (
         <div className="side-wrap box column">
 
@@ -21,17 +27,17 @@ export function ListsTypeX() {
 
             {/* <!-- Offer listings --> */}
             <div className="grid by-2">
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
-                <a href="view-listings/listing-details.html"><img src={pinkSkirtImg} alt="Black tank top, pink+purple skirt" className="grid-item" /></a>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+                <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
             </div>
 
             {/* <!-- End of results --> */}
