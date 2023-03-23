@@ -154,9 +154,9 @@ export function SearchFilter() {
             </div>
 
             {/* <!-- Apply button --> */}
-            <a href="filtered-results.html">
+            <NavLink to="/">
                 <button type="button" className="btn btn-save">Apply</button>
-            </a>
+            </NavLink>
             {/* <!-- Invisible placeholder to add extra space at bottom --> */}
             <button type="button" className="btn invisible">Apply</button>
 

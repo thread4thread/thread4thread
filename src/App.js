@@ -25,7 +25,7 @@ function App() {
   return (
     <>
 
-    {/* Top nav bar */}
+    {/* TODO: Conditionally show top nav bar */}
     <TopNav/>
 
     {/* <!-- Main content --> */}
@@ -43,7 +43,7 @@ function App() {
       </Routes>
     </main>
 
-    {/* Bottom nav bar */}
+    {/* TODO: Conditionally show bot nav bar */}
     <BotNav/>
 
     </>
