@@ -9,6 +9,9 @@ import pfp from './../../assets/img/blank-pfp.png';
 import listImg from './../../assets/img/sweater.png'
 
 export function ListDetails() {
+    let listTitle = "Gingham Sweater Vest";
+    let userHandle = "Taito123";
+
     return (
         <>
 
@@ -16,12 +19,13 @@ export function ListDetails() {
         <div>
             {/* <!-- Header --> */}
             <div className="box center-align-hor side-wrap">
-                <img src={pfp} alt="Blank user profile pic" className="img-mini"/>
+                {/* <img src={pfp} alt="Blank user profile pic" className="img-mini"/>
                 
                 <div className="tight-box column">
                     <strong>Gingham Sweater Vest</strong>
                     <p className="no-space">@Taito123</p>
-                </div>
+                </div> */}
+                <MakeHeader pfpPath={pfp} listTitle={listTitle} userHandle={userHandle}/>
 
                 <img src={moreIcon} alt="Horizontal dot dot dot" className="img-mini right-item"/>
             </div>
@@ -107,13 +111,26 @@ export function ListDetails() {
         </div>
 
         {/* <!-- "Inquire" Button --> */}
-        <a href="../notifications/exchange-complete.html">
-            <button type="button" className="btn btn-save side-wrap list-btn">I'm interested!</button>
-        </a>
+        <button type="button" className="btn btn-save side-wrap list-btn">I'm interested!</button>
         {/* <!-- Invisible placeholder to add extra space at bottom --> */}
         <button type="button" className="btn invisible list-btn">I'm interested!</button>
 
 
+        </>
+    )
+}
+
+function MakeHeader(props) {
+    const { pfpPath, listTitle, userHandle } = props;
+
+    return (
+        <>
+            <img src={pfpPath} alt="Blank user profile pic" className="img-mini"/>
+                    
+            <div className="tight-box column">
+                <strong>{listTitle}</strong>
+                <p className="no-space">@{userHandle}</p>
+            </div>
         </>
     )
 }
