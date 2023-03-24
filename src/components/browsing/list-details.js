@@ -13,28 +13,28 @@ let listingDesc = "This vest is perfect for layering over a shirt or blouse and 
 
 const listingObj = {
     type: {
-        detName: "Type",
+        detailName: "Type",
         value: "Shirt"},
     appr: {
-        detName: "Appearance",
+        detailName: "Appearance",
         value: "Androgynous"},
     color: {
-        detName: "Color",
+        detailName: "Color",
         value: "Black, White"},
     cond: {
-        detName: "Condition",
+        detailName: "Condition",
         value: "Lightly used"}
 }
 
 const listingSizeObj = {
     bust: {
-        detName: "Bust",
+        detailName: "Bust",
         value: 18},
     len: {
-        detName: "Length",
+        detailName: "Length",
         value: 28},
     sleeve: {
-        detName: "Sleeve",
+        detailName: "Sleeve",
         value: 0}
 }
 
@@ -137,33 +137,33 @@ function MakeOverview(props) {
 
 function MakeDetails(props) {
     let { listingObj, outerWrap, innerWrap } = props;
-    let detArr = Object.keys(listingObj);
+    let detailArr = Object.keys(listingObj);
     
-    let detElemArr = detArr.map((det) => {
-        let detName = listingObj[det].detName;
-        let listingDet = listingObj[det].value;
+    let detailElemArr = detailArr.map((detail) => {
+        let detailName = listingObj[detail].detailName;
+        let listingDetail = listingObj[detail].value;
 
         return (
-            <MakeDetail listingDet={listingDet} detName={detName} innerWrap={innerWrap} key={detName}/>
+            <MakeDetail listingDetail={listingDetail} detailName={detailName} innerWrap={innerWrap} key={detailName}/>
         )
     });
 
     return (
         <div className="box column">
             <div className={outerWrap}>
-            { detElemArr }
+            { detailElemArr }
             </div>
         </div>
     )
 }
 
 function MakeDetail(props) {
-    let { listingDet, detName, innerWrap } = props;
+    let { listingDetail, detailName, innerWrap } = props;
 
     return (
         <div className={innerWrap}>
-            <strong>{detName}:</strong>
-            <p className="no-space">{listingDet}</p>
+            <strong>{detailName}:</strong>
+            <p className="no-space">{listingDetail}</p>
         </div>
     )
 }

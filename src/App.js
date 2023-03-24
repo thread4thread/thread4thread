@@ -16,7 +16,7 @@ import { BotNav } from './components/navbar/bot-nav';
 import { ListsAllTypes } from './components/browsing/lists-all-types';
 import { ListsTypeX } from './components/browsing/lists-type-X';
 import { SearchFilter } from './components/browsing/search-filter';
-import { ListDetails } from './components/browsing/list-details';
+import { ListingDetails } from './components/browsing/list-details';
 // Posting
 // import { CreateList } from './components/posting/create-list';
 // list-published
@@ -39,7 +39,7 @@ function App() {
 
         <Route path="/search-filter" element={<SearchFilter/>}/>
 
-        <Route path="/list-details" element={<ListDetails/>}/>
+        <Route path="/list-details" element={<ListingDetails/>}/>
       </Routes>
     </main>
 
