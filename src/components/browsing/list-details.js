@@ -6,12 +6,12 @@ import moreIcon from './../../assets/icon/more.png';
 
 // DATA
 import pfp from './../../assets/img/blank-pfp.png';
-import listImg from './../../assets/img/sweater.png'
-let listTitle = "Gingham Sweater Vest";
+import listingImg from './../../assets/img/sweater.png'
+let listingTitle = "Gingham Sweater Vest";
 let userHandle = "Taito123";
-let listDesc = "This vest is perfect for layering over a shirt or blouse and adds a touch of preppy style to any outfit. The sweater vest is versatile and can be dressed up or down depending on the occasion.";
+let listingDesc = "This vest is perfect for layering over a shirt or blouse and adds a touch of preppy style to any outfit. The sweater vest is versatile and can be dressed up or down depending on the occasion.";
 
-const listObj = {
+const listingObj = {
     type: {
         detName: "Type",
         value: "Shirt"},
@@ -26,7 +26,7 @@ const listObj = {
         value: "Lightly used"}
 }
 
-const listSizeObj = {
+const listingSizeObj = {
     bust: {
         detName: "Bust",
         value: 18},
@@ -38,23 +38,23 @@ const listSizeObj = {
         value: 0}
 }
 
-export function ListDetails() {
+export function ListingDetails() {
     return (
         <>
 
         {/* <!-- Header --> */}
-        <MakeHeader pfpPath={pfp} listTitle={listTitle} userHandle={userHandle}/>
+        <MakeHeader pfpPath={pfp} listingTitle={listingTitle} userHandle={userHandle}/>
 
         {/* <!-- Image --> */}
-        <MakeImage imgPath={listImg}/>
+        <MakeImage imgPath={listingImg}/>
 
         {/* <!-- TODO: Favoriting (will add padding) --> */}
 
         {/* Description */}
-        <MakeDesc listDesc={listDesc}/>
+        <MakeDesc listingDesc={listingDesc}/>
 
         {/* <!-- Overview Section --> */}
-        <MakeOverview listObj={listObj} listSizeObj={listSizeObj}/>
+        <MakeOverview listingObj={listingObj} listingSizeObj={listingSizeObj}/>
 
         {/* <!-- "I'm interested!" Button --> */}
         <MakeButton/>
@@ -63,14 +63,14 @@ export function ListDetails() {
 }
 
 function MakeHeader(props) {
-    const { pfpPath, listTitle, userHandle } = props;
+    const { pfpPath, listingTitle, userHandle } = props;
 
     return (
         <div className="box center-align-hor side-wrap">
             <img src={pfpPath} alt="Blank user profile pic" className="img-mini"/>
                     
             <div className="tight-box column">
-                <strong>{listTitle}</strong>
+                <strong>{listingTitle}</strong>
                 <p className="no-space">@{userHandle}</p>
             </div>
             <img src={moreIcon} alt="Horizontal dot dot dot" className="img-mini right-item"/>
@@ -83,13 +83,13 @@ function MakeImage(props) {
 
     return (
         <div className="gray-bg">
-            <img src={imgPath} alt="listObj" className="center-item-vert img-lg"/>
+            <img src={imgPath} alt="listingObj" className="center-item-vert img-lg"/>
         </div>
     )
 }
 
 function MakeDesc(props) {
-    let { listDesc } = props;
+    let { listingDesc } = props;
 
     return (
         <div className="side-wrap">
@@ -99,7 +99,7 @@ function MakeDesc(props) {
                 <h1>Description</h1>
 
                 {/* <!-- Desc text --> */}
-                <p>{listDesc}</p>
+                <p>{listingDesc}</p>
             </div>
 
         </div>
@@ -107,24 +107,27 @@ function MakeDesc(props) {
 }
 
 function MakeOverview(props) {
-    let { listObj, listSizeObj } = props;
+    let { listingObj, listingSizeObj } = props;
 
     return (
         <div className="gray-bg side-wrap box column top-bot-wrap">
         {/* <!-- Extra top/bot padding --> */}
         <div className="top-bot-wrap">
+            {/* TODO: Make a MakeTextChunk subcomp for Desc, Overview, and Measurements */}
             {/* <!-- Heading --> */}
             <h1>Overview</h1>
 
             {/* <!-- Text --> */}
             <div className="box column">
-                <MakeDetails listObj={listObj} outerWrap="" innerWrap="item-row"/>
+                <MakeDetails listingObj={listingObj} outerWrap="" innerWrap="item-row"/>
                 
                 {/* <!-- Measurements --> */}
                 <div className="item-row column">
+                    {/* Heading */}
                     <h2>Measurements (in)</h2>
 
-                    <MakeDetails listObj={listSizeObj} outerWrap="item-row" innerWrap=""/>
+                    {/* Text */}
+                    <MakeDetails listingObj={listingSizeObj} outerWrap="item-row" innerWrap=""/>
                 </div>
             </div>
         </div>
@@ -133,15 +136,15 @@ function MakeOverview(props) {
 }
 
 function MakeDetails(props) {
-    let { listObj, outerWrap, innerWrap } = props;
-    let detArr = Object.keys(listObj);
+    let { listingObj, outerWrap, innerWrap } = props;
+    let detArr = Object.keys(listingObj);
     
     let detElemArr = detArr.map((det) => {
-        let detName = listObj[det].detName;
-        let listDet = listObj[det].value;
+        let detName = listingObj[det].detName;
+        let listingDet = listingObj[det].value;
 
         return (
-            <MakeDetail listDet={listDet} detName={detName} innerWrap={innerWrap} key={detName}/>
+            <MakeDetail listingDet={listingDet} detName={detName} innerWrap={innerWrap} key={detName}/>
         )
     });
 
@@ -155,12 +158,12 @@ function MakeDetails(props) {
 }
 
 function MakeDetail(props) {
-    let { listDet, detName, innerWrap } = props;
+    let { listingDet, detName, innerWrap } = props;
 
     return (
         <div className={innerWrap}>
             <strong>{detName}:</strong>
-            <p className="no-space">{listDet}</p>
+            <p className="no-space">{listingDet}</p>
         </div>
     )
 }
