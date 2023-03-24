@@ -69,14 +69,23 @@ function SectionHeader(props) {
 }
 
 function ListingGrid(props) {
+    let listingElemArr = [];
+
+    for (let i = 0; i < 6; i++) {
+        let listingElem = <ListingElem key={i}/>;
+
+        listingElemArr.push(listingElem);
+    }
+
     return (
         <div className="grid by-3">
-            <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
-            <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
-            <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
-            <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
-            <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
-            <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+            {listingElemArr}
         </div>
+    )
+}
+
+function ListingElem(props) {
+    return (
+        <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
     )
 }
