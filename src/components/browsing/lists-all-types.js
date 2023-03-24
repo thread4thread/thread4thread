@@ -41,13 +41,35 @@ function ListingTypeSection(props) {
 
     return (
         <div className="box column top-bot-wrap">
-        {/* <!-- Offers heading + "See more" button --> */}
-        <div className="box">
-            <h1 className="left-item">{sectionTitle}</h1>
-            <SeeMoreButton/>
-        </div>
+            {/* <!-- Offers heading + "See more" button --> */}
+            <SectionHeader sectionTitle={sectionTitle}/>
 
-        {/* <!-- Offer listings grid --> */}
+            {/* <!-- Offer listings grid --> */}
+            <ListingGrid/>
+        </div>
+    )
+}
+
+// Listing Type Section Header
+// Left-side: Title (ex: "Offers")
+// Right-side: "See more" button --> see only that listing type
+function SectionHeader(props) {
+    let { sectionTitle } = props;
+    return (
+        <div className="box">
+            {/* Section Title */}
+            <h1 className="left-item">{sectionTitle}</h1>
+
+            {/* See more button */}
+            <NavLink to="lists-type-x">
+                <button type="button" className="btn accent-button"><u>See more</u></button>
+            </NavLink>
+        </div>
+    )
+}
+
+function ListingGrid(props) {
+    return (
         <div className="grid by-3">
             <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
             <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
@@ -56,14 +78,5 @@ function ListingTypeSection(props) {
             <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
             <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
         </div>
-    </div>
-    )
-}
-
-function SeeMoreButton() {
-    return (
-        <NavLink to="lists-type-x">
-            <button type="button" className="btn accent-button"><u>See more</u></button>
-        </NavLink>
     )
 }
