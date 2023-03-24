@@ -13,7 +13,7 @@ let listDesc = "This vest is perfect for layering over a shirt or blouse and add
 
 const listObj = {
     type: {
-        detName: "Item Type",
+        detName: "Type",
         value: "Shirt"},
     appr: {
         detName: "Appearance",
@@ -27,9 +27,15 @@ const listObj = {
 }
 
 const listSizeObj = {
-    bust: 18,
-    len: 28,
-    sleeve: 0
+    bust: {
+        detName: "Bust",
+        value: 18},
+    len: {
+        detName: "Length",
+        value: 28},
+    sleeve: {
+        detName: "Sleeve",
+        value: 0}
 }
 
 export function ListDetails() {
@@ -46,7 +52,7 @@ export function ListDetails() {
         <MakeDesc listDesc={listDesc}/>
 
         {/* <!-- Overview Section --> */}
-        <MakeOverview list={listObj}/>
+        <MakeOverview listObj={listObj} listSizeObj={listSizeObj}/>
 
         {/* <!-- "Inquire" Button --> */}
         <button type="button" className="btn btn-save side-wrap list-btn">I'm interested!</button>
@@ -103,7 +109,7 @@ function MakeDesc(props) {
 }
 
 function MakeOverview(props) {
-    let { list } = props;
+    let { listObj, listSizeObj } = props;
 
     return (
         <div className="gray-bg side-wrap box column top-bot-wrap">
@@ -114,43 +120,14 @@ function MakeOverview(props) {
 
             {/* <!-- Text --> */}
             <div className="box column">
-                <MakeDetails listObj={list}/>
-                {/* <!-- Item Type --> */}
-                {/* <MakeDetail listDet={list.type.value} detName={"Item Type"}/> */}
-
-                {/* <!-- Appearance --> */}
-                {/* <MakeDetail listDet={list.appr.value} detName={"Appearance"}/> */}
-
-                {/* <!-- Color --> */}
-                {/* <MakeDetail listDet={list.color.value} detName={"Color"}/> */}
-                
-                {/* <!-- Condition --> */}
-                {/* <div className="item-row">
-                    <strong>Condition</strong>
-                    <p className="no-space">{list.cond.value}</p>
-                </div> */}
+                <MakeDetails listObj={listObj} outerWrap="" innerWrap="item-row"/>
                 
                 {/* <!-- Measurements --> */}
-                {/* <div className="item-row column">
-                    <h2>Measurements</h2>
+                <div className="item-row column">
+                    <h2>Measurements (in)</h2>
 
-                    <div className="item-row">
-                        <div>
-                            <strong>Bust:</strong>
-                            <p className="no-space">{list.size.bust}in</p>
-                        </div>
-                        
-                        <div>
-                            <strong>Length:</strong>
-                            <p className="no-space">{list.size.len}in</p>
-                        </div>
-
-                        <div>
-                            <strong>Sleeve:</strong>
-                            <p className="no-space">{list.size.sleeve}in</p>
-                        </div>
-                    </div>
-                </div> */}
+                    <MakeDetails listObj={listSizeObj} outerWrap="item-row" innerWrap=""/>
+                </div>
             </div>
         </div>
         </div>
@@ -158,7 +135,7 @@ function MakeOverview(props) {
 }
 
 function MakeDetails(props) {
-    let { listObj } = props;
+    let { listObj, outerWrap, innerWrap } = props;
     let detArr = Object.keys(listObj);
     
     let detElemArr = detArr.map((det) => {
@@ -166,23 +143,25 @@ function MakeDetails(props) {
         let listDet = listObj[det].value;
 
         return (
-            <MakeDetail listDet={listDet} detName={detName} key={detName}/>
+            <MakeDetail listDet={listDet} detName={detName} innerWrap={innerWrap} key={detName}/>
         )
     });
 
     return (
         <div className="box column">
+            <div className={outerWrap}>
             { detElemArr }
+            </div>
         </div>
     )
 }
 
 function MakeDetail(props) {
-    let { listDet, detName } = props;
+    let { listDet, detName, innerWrap } = props;
 
     return (
-        <div className="item-row">
-            <strong>{detName}</strong>
+        <div className={innerWrap}>
+            <strong>{detName}:</strong>
             <p className="no-space">{listDet}</p>
         </div>
     )
