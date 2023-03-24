@@ -10,17 +10,26 @@ import listImg from './../../assets/img/sweater.png'
 let listTitle = "Gingham Sweater Vest";
 let userHandle = "Taito123";
 let listDesc = "This vest is perfect for layering over a shirt or blouse and adds a touch of preppy style to any outfit. The sweater vest is versatile and can be dressed up or down depending on the occasion.";
-const listSize = {
+
+const listObj = {
+    type: {
+        detName: "Item Type",
+        value: "Shirt"},
+    appr: {
+        detName: "Appearance",
+        value: "Androgynous"},
+    color: {
+        detName: "Color",
+        value: "Black, White"},
+    cond: {
+        detName: "Condition",
+        value: "Lightly used"}
+}
+
+const listSizeObj = {
     bust: 18,
     len: 28,
     sleeve: 0
-}
-const listing = {
-    type: "Shirt",
-    appr: "Androgynous",
-    color: "Black, White",
-    cond: "Lightly used",
-    size: listSize
 }
 
 export function ListDetails() {
@@ -37,7 +46,7 @@ export function ListDetails() {
         <MakeDesc listDesc={listDesc}/>
 
         {/* <!-- Overview Section --> */}
-        <MakeOverview list={listing}/>
+        <MakeOverview list={listObj}/>
 
         {/* <!-- "Inquire" Button --> */}
         <button type="button" className="btn btn-save side-wrap list-btn">I'm interested!</button>
@@ -70,7 +79,7 @@ function MakeImage(props) {
 
     return (
         <div className="gray-bg">
-            <img src={imgPath} alt="listing" className="center-item-vert img-lg"/>
+            <img src={imgPath} alt="listObj" className="center-item-vert img-lg"/>
         </div>
     )
 }
@@ -94,7 +103,7 @@ function MakeDesc(props) {
 }
 
 function MakeOverview(props) {
-    const { list } = props;
+    let { list } = props;
 
     return (
         <div className="gray-bg side-wrap box column top-bot-wrap">
@@ -105,32 +114,24 @@ function MakeOverview(props) {
 
             {/* <!-- Text --> */}
             <div className="box column">
+                <MakeDetails listObj={list}/>
                 {/* <!-- Item Type --> */}
-                <div className="item-row">
-                    <strong>Item Type</strong>
-                    <p className="no-space">{list.type}</p>
-                </div>
+                {/* <MakeDetail listDet={list.type.value} detName={"Item Type"}/> */}
 
                 {/* <!-- Appearance --> */}
-                <div className="item-row">
-                    <strong>Appearance</strong>
-                    <p className="no-space">{list.appr}</p>
-                </div>
+                {/* <MakeDetail listDet={list.appr.value} detName={"Appearance"}/> */}
 
                 {/* <!-- Color --> */}
-                <div className="item-row">
-                    <strong>Color</strong>
-                    <p className="no-space">{list.color}</p>
-                </div>
+                {/* <MakeDetail listDet={list.color.value} detName={"Color"}/> */}
                 
                 {/* <!-- Condition --> */}
-                <div className="item-row">
+                {/* <div className="item-row">
                     <strong>Condition</strong>
-                    <p className="no-space">{list.cond}</p>
-                </div>
+                    <p className="no-space">{list.cond.value}</p>
+                </div> */}
                 
                 {/* <!-- Measurements --> */}
-                <div className="item-row column">
+                {/* <div className="item-row column">
                     <h2>Measurements</h2>
 
                     <div className="item-row">
@@ -149,9 +150,40 @@ function MakeOverview(props) {
                             <p className="no-space">{list.size.sleeve}in</p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
+        </div>
+    )
+}
+
+function MakeDetails(props) {
+    let { listObj } = props;
+    let detArr = Object.keys(listObj);
+    
+    let detElemArr = detArr.map((det) => {
+        let detName = listObj[det].detName;
+        let listDet = listObj[det].value;
+
+        return (
+            <MakeDetail listDet={listDet} detName={detName} key={detName}/>
+        )
+    });
+
+    return (
+        <div className="box column">
+            { detElemArr }
+        </div>
+    )
+}
+
+function MakeDetail(props) {
+    let { listDet, detName } = props;
+
+    return (
+        <div className="item-row">
+            <strong>{detName}</strong>
+            <p className="no-space">{listDet}</p>
         </div>
     )
 }
