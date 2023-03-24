@@ -49,17 +49,15 @@ export function ListDetails() {
         <MakeImage imgPath={listImg}/>
 
         {/* <!-- TODO: Favoriting (will add padding) --> */}
+
+        {/* Description */}
         <MakeDesc listDesc={listDesc}/>
 
         {/* <!-- Overview Section --> */}
         <MakeOverview listObj={listObj} listSizeObj={listSizeObj}/>
 
-        {/* <!-- "Inquire" Button --> */}
-        <button type="button" className="btn btn-save side-wrap list-btn">I'm interested!</button>
-        {/* <!-- Invisible placeholder to add extra space at bottom --> */}
-        <button type="button" className="btn invisible list-btn">I'm interested!</button>
-
-
+        {/* <!-- "I'm interested!" Button --> */}
+        <MakeButton/>
         </>
     )
 }
@@ -164,5 +162,15 @@ function MakeDetail(props) {
             <strong>{detName}:</strong>
             <p className="no-space">{listDet}</p>
         </div>
+    )
+}
+
+function MakeButton() {
+    return (
+        <>
+        <button type="button" className="btn btn-save side-wrap list-btn">I'm interested!</button>
+        {/* <!-- Invisible placeholder to add extra space at bottom --> */}
+        <button type="button" className="btn invisible list-btn">I'm interested!</button>
+        </>
     )
 }
