@@ -13,17 +13,7 @@ export function SearchFilter() {
     return (
         <>
         {/* Navbar */}
-        <div className="content-wrap topnav navbar navbar-expand-lg side-wrap">
-            <div className="container-fluid nav-container">
-                <BackButton/>
-
-                <form className="d-flex input-group fil-search search-bar" role="search">
-                    <input type="search"
-                    className="form-control search" 
-                    placeholder="Search" aria-label="Search"/>
-                </form>
-            </div>
-        </div>
+        <SearchFilterNav/>
 
         {/* Main content */}
         <div className="side-wrap box column">
@@ -31,60 +21,10 @@ export function SearchFilter() {
             <h1 className="no-space">Browse by...</h1>
 
             {/* <!-- Clothing Type --> */}
-            <div className="box column top-bot-wrap">
-                {/* <!-- Characteristic name --> */}
-                <h2 className="no-space">Clothing Type</h2>
-
-                {/* <!-- Characteristics --> */}
-                <div className="box">
-                    <button type="button"
-                    className="btn btn-select">Tops</button>
-                    <button type="button"
-                    className="btn btn-unselect">Bottoms</button>
-                    <button type="button"
-                    className="btn btn-unselect">Underwear</button>
-                    <button type="button" 
-                    className="btn btn-unselect">Outerwear</button>
-                    <button type="button" 
-                    className="btn btn-unselect">Shoes</button>
-                    <button type="button" 
-                    className="btn btn-unselect">Gender-Affirming Items</button>
-                </div>
-            </div>
+            <FilterSection CharName="Clothing Type"/>
 
             {/* <!-- Size --> */}
-            <div className="box column top-bot-wrap">
-                <div className="box">
-                    {/* <!-- Characteristic name --> */}
-                    <h2 className="char-name left-item">Size (inches)</h2>
-                    {/* <!-- TODO: Add Size Guide page --> */}
-                    <button type="button"
-                    className="btn accent-button right-item">
-                    <u>Size Guide</u> 
-                    </button>
-                </div>
-
-                {/* <!-- Characteristics --> */}
-                <div className="box">
-                    {/* <!-- Bust --> */}
-                    <div className="size-box column">
-                        <label htmlFor="filter-bust">Bust:</label>
-                        <input type="number" className="form-control size-input" id="filter-bust"/>
-                    </div>
-
-                    {/* <!-- Waist --> */}
-                    <div className="size-box column">
-                        <label htmlFor="filter-waist">Waist:</label>
-                        <input type="number" className="form-control size-input" id="filter-waist"/>
-                    </div>
-
-                    {/* <!-- Hips --> */}
-                    <div className="size-box column">
-                        <label htmlFor="filter-hips">Hips:</label>
-                        <input type="number" className="form-control size-input" id="filter-hips"/>
-                    </div>
-                </div>
-            </div>
+            <SizeFilterSection/>
 
             {/* <!-- Style --> */}
             <div className="box column top-bot-wrap">
@@ -154,23 +94,120 @@ export function SearchFilter() {
             </div>
 
             {/* <!-- Apply button --> */}
-            <NavLink to="/">
-                <button type="button" className="btn btn-save">Apply</button>
-            </NavLink>
-            {/* <!-- Invisible placeholder to add extra space at bottom --> */}
-            <button type="button" className="btn invisible">Apply</button>
+            <ApplyButton/>
 
             </div>
         </>
     )
 }
 
-function BackButton() {
+// SearchFilterNav creates the nav bar for this particular page, including a
+// back arrow to go back to the last page and a search input field.
+function SearchFilterNav() {
     return (
-        <NavLink to="/">
+        <div className="content-wrap topnav navbar navbar-expand-lg side-wrap">
+            <div className="container-fluid nav-container">
+            <NavLink to="/">
             <button type="button" className="fil-search btn arrow-btn">
                 <img src={backIcon} alt="return"/>
             </button>
         </NavLink>
+                <form className="d-flex input-group fil-search search-bar" role="search">
+                    <input type="search"
+                    className="form-control search" 
+                    placeholder="Search" aria-label="Search"/>
+                </form>
+            </div>
+        </div>
+
+
+    )
+}
+
+// TODO: Add input for button names and 'selected' classes
+// FilterSection inputs:
+    // CharName - the characteristic category (ex: Clothing Type)
+function FilterSection(props) {
+    const { CharName } = props;
+
+    return (
+        <div className="box column top-bot-wrap">
+        {/* <!-- Characteristic name --> */}
+        <h2 className="no-space">{CharName}</h2>
+
+        {/* <!-- Characteristics --> */}
+        <div className="box">
+            <FilterButton filterName="Tops" selected="btn-select"/>
+            <FilterButton filterName="Bottoms" selected="btn-unselect"/>
+            <FilterButton filterName="Outerwear" selected="btn-unselect"/>
+            <FilterButton filterName="Shoes" selected="btn-unselect"/>
+            <FilterButton filterName="Accessories" selected="btn-unselect"/>
+            <FilterButton filterName="Gender-Affirming Items" selected="btn-unselect"/>
+        </div>
+    </div>
+    )
+}
+
+// FilterButton inputs:
+    // filterName - the characteristic (ex: Tops)
+    // selected - a class that determines whether or not the characteristic
+        // has been selected (changing its appearance)
+function FilterButton(props) {
+    const { filterName, selected } = props;
+    let classN = "btn " + selected;
+
+    return (
+        <button type="button"
+        className={classN}>{filterName}</button>
+    )
+}
+
+function SizeFilterSection(props) {
+    return (
+        <div className="box column top-bot-wrap">
+        <div className="box">
+            {/* <!-- Characteristic name --> */}
+            <h2 className="char-name left-item">Size (inches)</h2>
+            {/* <!-- TODO: Add Size Guide page --> */}
+            <button type="button"
+            className="btn accent-button right-item">
+            <u>Size Guide</u> 
+            </button>
+        </div>
+
+        {/* <!-- Characteristics --> */}
+        <div className="box">
+            {/* <!-- Bust --> */}
+            <SizeFilterField sizeName="Bust"/>
+
+            {/* <!-- Waist --> */}
+            <SizeFilterField sizeName="Waist"/>
+
+            {/* <!-- Hips --> */}
+            <SizeFilterField sizeName="Hips"/>
+        </div>
+    </div>
+    )
+}
+
+function SizeFilterField(props) {
+    let { sizeName } = props;
+    let fieldId = "filter-" + sizeName;
+
+    return (
+        <div className="size-box column">
+        <label htmlFor={fieldId}>{sizeName}:</label>
+        <input type="number" className="form-control size-input" id={fieldId}/>
+    </div>
+    )
+}
+
+function ApplyButton() {
+    return (
+        <>
+            <NavLink to="/">
+                <button type="button" className="btn btn-save">Apply</button>
+            </NavLink>
+        </>
     )
 }
