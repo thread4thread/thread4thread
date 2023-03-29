@@ -8,7 +8,18 @@ import { NavLink } from 'react-router-dom';
 
 // DATA
 import backIcon from './../../assets/icon/keyboard-arrow-return.png';
+let clothingTypeCharsObj = {
+    charTypeName: "Clothing Type",
+    charsArr: [{ charName: "Tops", selectState: "select" },
+        {charName: "Bottoms", selectState: "unselect"},
+        {charName: "Outerwear", selectState: "unselect"},
+        {charName: "Shoes", selectState: "unselect"},
+        {charName: "Accessories", selectState: "unselect"},
+        {charName: "Gender-Affirming Items", selectState: "unselect"}
+    ]
+}
 
+// TODO: Make data dynamic so that we can easily update 
 export function SearchFilter() {
     return (
         <>
@@ -21,10 +32,10 @@ export function SearchFilter() {
             <h1 className="no-space">Browse by...</h1>
 
             {/* <!-- Clothing Type --> */}
-            <FilterSection CharName="Clothing Type"/>
+            <FilterSection CharName="Clothing Type" charsObj={clothingTypeCharsObj}/>
 
-            {/* <!-- Size --> */}
-            <SizeFilterSection/>
+            {/* <!-- TODO: Size --> */}
+            {/* <SizeFilterSection/> */}
 
             {/* <!-- Style --> */}
             <div className="box column top-bot-wrap">
@@ -130,6 +141,8 @@ function SearchFilterNav() {
 function FilterSection(props) {
     const { CharName } = props;
 
+    
+
     return (
         <div className="box column top-bot-wrap">
         {/* <!-- Characteristic name --> */}
@@ -162,45 +175,46 @@ function FilterButton(props) {
     )
 }
 
-function SizeFilterSection(props) {
-    return (
-        <div className="box column top-bot-wrap">
-        <div className="box">
-            {/* <!-- Characteristic name --> */}
-            <h2 className="char-name left-item">Size (inches)</h2>
-            {/* <!-- TODO: Add Size Guide page --> */}
-            <button type="button"
-            className="btn accent-button right-item">
-            <u>Size Guide</u> 
-            </button>
-        </div>
+// TODO: Size
+// function SizeFilterSection(props) {
+//     return (
+//         <div className="box column top-bot-wrap">
+//         <div className="box">
+//             {/* <!-- Characteristic name --> */}
+//             <h2 className="char-name left-item">Size (inches)</h2>
+//             {/* <!-- TODO: Add Size Guide page --> */}
+//             <button type="button"
+//             className="btn accent-button right-item">
+//             <u>Size Guide</u> 
+//             </button>
+//         </div>
 
-        {/* <!-- Characteristics --> */}
-        <div className="box">
-            {/* <!-- Bust --> */}
-            <SizeFilterField sizeName="Bust"/>
+//         {/* <!-- Characteristics --> */}
+//         <div className="box">
+//             {/* <!-- Bust --> */}
+//             <SizeFilterField sizeName="Bust"/>
 
-            {/* <!-- Waist --> */}
-            <SizeFilterField sizeName="Waist"/>
+//             {/* <!-- Waist --> */}
+//             <SizeFilterField sizeName="Waist"/>
 
-            {/* <!-- Hips --> */}
-            <SizeFilterField sizeName="Hips"/>
-        </div>
-    </div>
-    )
-}
+//             {/* <!-- Hips --> */}
+//             <SizeFilterField sizeName="Hips"/>
+//         </div>
+//     </div>
+//     )
+// }
 
-function SizeFilterField(props) {
-    let { sizeName } = props;
-    let fieldId = "filter-" + sizeName;
+// function SizeFilterField(props) {
+//     let { sizeName } = props;
+//     let fieldId = "filter-" + sizeName;
 
-    return (
-        <div className="size-box column">
-        <label htmlFor={fieldId}>{sizeName}:</label>
-        <input type="number" className="form-control size-input" id={fieldId}/>
-    </div>
-    )
-}
+//     return (
+//         <div className="size-box column">
+//         <label htmlFor={fieldId}>{sizeName}:</label>
+//         <input type="number" className="form-control size-input" id={fieldId}/>
+//     </div>
+//     )
+// }
 
 function ApplyButton() {
     return (

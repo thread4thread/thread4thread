@@ -26,17 +26,17 @@ const listingObj = {
         value: "Lightly used"}
 }
 
-const listingSizeObj = {
-    bust: {
-        detailName: "Bust",
-        value: 18},
-    len: {
-        detailName: "Length",
-        value: 28},
-    sleeve: {
-        detailName: "Sleeve",
-        value: 0}
-}
+// const listingSizeObj = {
+//     bust: {
+//         detailName: "Bust",
+//         value: 18},
+//     len: {
+//         detailName: "Length",
+//         value: 28},
+//     sleeve: {
+//         detailName: "Sleeve",
+//         value: 0}
+// }
 
 export function ListingDetails() {
     return (
@@ -54,7 +54,10 @@ export function ListingDetails() {
         <MakeDesc listingDesc={listingDesc}/>
 
         {/* <!-- Overview Section --> */}
-        <MakeOverview listingObj={listingObj} listingSizeObj={listingSizeObj}/>
+        <MakeOverview listingObj={listingObj} 
+        // TODO: size
+        // listingSizeObj={listingSizeObj}
+        />
 
         {/* <!-- "I'm interested!" Button --> */}
         <MakeButton/>
@@ -107,7 +110,9 @@ function MakeDesc(props) {
 }
 
 function MakeOverview(props) {
-    let { listingObj, listingSizeObj } = props;
+    let { listingObj
+        // listingSizeObj // TODO: size
+    } = props;
 
     return (
         <div className="gray-bg side-wrap box column top-bot-wrap">
@@ -121,14 +126,14 @@ function MakeOverview(props) {
             <div className="box column">
                 <MakeDetails listingObj={listingObj} outerWrap="" innerWrap="item-row"/>
                 
-                {/* <!-- Measurements --> */}
-                <div className="item-row column">
+                {/* <!-- TODO: Measurements --> */}
+                {/* <div className="item-row column"> */}
                     {/* Heading */}
-                    <h2>Measurements (in)</h2>
+                    {/* <h2>Measurements (in)</h2> */}
 
                     {/* Text */}
-                    <MakeDetails listingObj={listingSizeObj} outerWrap="item-row" innerWrap=""/>
-                </div>
+                    {/* <MakeDetails listingObj={listingSizeObj} outerWrap="item-row" innerWrap=""/> */}
+                {/* </div> */}
             </div>
         </div>
         </div>
