@@ -8,6 +8,8 @@ import { NavLink } from 'react-router-dom';
 
 // DATA
 import backIcon from './../../assets/icon/keyboard-arrow-return.png';
+
+// Clothing Type Characteristics
 let clothingTypeCharsObj = {
     charTypeName: "Clothing Type",
     charsArr: [{ charName: "Tops", selectState: "select" },
@@ -19,8 +21,71 @@ let clothingTypeCharsObj = {
     ]
 }
 
+// Style Characteristics
+let styleCharsObj = {
+    charTypeName: "Style",
+    charsArr: [{charName: "Feminine", selectState: "unselect"},
+        {charName: "Androgynous", selectState: "unselect"},
+        {charName: "Masculine", selectState: "unselect"}
+    ]
+}
+
+// Color Characteristics
+let colorsObj = {
+    charTypeName: "Color",
+    charsArr: [{ charName: "Pink", selectState: "unselect" },
+        {charName: "Red", selectState: "unselect"},
+        {charName: "Orange", selectState: "unselect"},
+        {charName: "Yellow", selectState: "unselect"},
+        {charName: "Green", selectState: "unselect"},
+        {charName: "Blue", selectState: "unselect"},
+        {charName: "Purple", selectState: "unselect"},
+        {charName: "Black", selectState: "unselect"},
+        {charName: "White", selectState: "unselect"},
+        {charName: "Brown", selectState: "unselect"},
+        {charName: "Beige", selectState: "unselect"},
+        {charName: "Gray", selectState: "unselect"}
+    ]
+}
+
+// Condition Characteristics
+let conditionsObj = {
+    charTypeName: "Condition",
+    charsArr: [{ charName: "New", selectState: "unselect" },
+        {charName: "Excellent", selectState: "unselect"},
+        {charName: "Good", selectState: "unselect"},
+        {charName: "Fair", selectState: "unselect"}
+    ]
+}
+
+// Brand Characteristics
+let brandsObj = {
+    charTypeName: "Brand",
+    charsArr: [{ charName: "gc2b", selectState: "unselect" },
+        {charName: "TomboyX", selectState: "unselect"},
+        {charName: "H&M", selectState: "unselect"},
+        {charName: "UNIQLO", selectState: "unselect"},
+        {charName: "Old Navy", selectState: "unselect"}
+    ]
+}
+
+// All characteristics objects
+let allCharsObjArr = [
+    clothingTypeCharsObj,
+    styleCharsObj,
+    colorsObj,
+    conditionsObj,
+    brandsObj
+]
+
 // TODO: Make data dynamic so that we can easily update 
 export function SearchFilter() {
+    let filterSectionElemArr = allCharsObjArr.map((charsObj) => {
+        return (
+            <FilterSection charsObj={charsObj}/>
+        )
+    })
+
     return (
         <>
         {/* Navbar */}
@@ -28,81 +93,14 @@ export function SearchFilter() {
 
         {/* Main content */}
         <div className="side-wrap box column">
-            {/* <!-- Browse by... --> */}
+            {/* Header */}
             <h1 className="no-space">Browse by...</h1>
 
-            {/* <!-- Clothing Type --> */}
-            <FilterSection CharName="Clothing Type" charsObj={clothingTypeCharsObj}/>
+            {/* Filter Sections (Clothing Type, Style, etc.) */}
+            { filterSectionElemArr }
 
             {/* <!-- TODO: Size --> */}
             {/* <SizeFilterSection/> */}
-
-            {/* <!-- Style --> */}
-            <div className="box column top-bot-wrap">
-                {/* <!-- Characteristic name --> */}
-                <h2 className="category-heading">Style</h2>
-
-                {/* <!-- Characteristics --> */}
-                <div className="box">
-                    <button type="button"
-                    className="btn btn-unselect">Feminine</button>
-                    <button type="button" 
-                    className="btn btn-unselect">Androgynous</button>
-                    <button type="button" 
-                    className="btn btn-unselect">Masculine</button>
-                </div>
-            </div>
-
-            {/* <!-- Color --> */}
-            <div className="box column top-bot-wrap">
-                {/* <!-- Characteristic name --> */}
-                <h2 className="no-space">Color</h2>
-
-                {/* <!-- Characteristics --> */}
-                <div className="box">
-                    <button type="button" className="btn btn-unselect">Pink</button>
-                    <button type="button" className="btn btn-unselect">Red</button>
-                    <button type="button" className="btn btn-unselect">Orange</button>
-                    <button type="button" className="btn btn-unselect">Yellow</button>
-                    <button type="button" className="btn btn-unselect">Green</button>
-                    <button type="button" className="btn btn-unselect">Blue</button>
-                    <button type="button" className="btn btn-unselect">Purple</button>
-                    <button type="button" className="btn btn-unselect">Black</button>
-                    <button type="button" className="btn btn-unselect">White</button>
-                    <button type="button" className="btn btn-unselect">Brown</button>
-                    <button type="button" className="btn btn-unselect">Beige</button>
-                    <button type="button" className="btn btn-unselect">Gray</button>
-                </div>
-            </div>
-
-            {/* <!-- Condition --> */}
-            <div className="box column top-bot-wrap">
-                {/* <!-- Characteristic name --> */}
-                <h2 className="category-heading">Condition</h2>
-
-                {/* <!-- Characteristics --> */}
-                <div className="box">
-                    <button type="button" className="btn btn-unselect">New</button>
-                    <button type="button" className="btn btn-unselect">Excellent</button>
-                    <button type="button" className="btn btn-unselect">Good</button>
-                    <button type="button" className="btn btn-unselect">Fair</button>
-                </div>
-            </div>
-
-            {/* <!-- Brand --> */}
-            <div className="box column top-bot-wrap">
-                {/* <!-- Characteristic name --> */}
-                <h2 className="category-heading">Brand</h2>
-
-                {/* <!-- Characteristics --> */}
-                <div className="box">
-                    <button type="button" className="btn btn-unselect">gc2b</button>
-                    <button type="button" className="btn btn-unselect">TomboyX</button>
-                    <button type="button" className="btn btn-unselect">H&M</button>
-                    <button type="button" className="btn btn-unselect">UNIQLO</button>
-                    <button type="button" className="btn btn-unselect">Old Navy</button>
-                </div>
-            </div>
 
             {/* <!-- Apply button --> */}
             <ApplyButton/>
@@ -139,23 +137,26 @@ function SearchFilterNav() {
 // FilterSection inputs:
     // CharName - the characteristic category (ex: Clothing Type)
 function FilterSection(props) {
-    const { CharName } = props;
+    const { charsObj } = props;
+    let charName = charsObj.charTypeName;
 
-    
+    let filterButtonElemArr = charsObj.charsArr.map((characteristic) => {
+        let { charName, selectState } = characteristic;
+        let selectClassN = "btn-" + selectState;
+
+        return (
+            <FilterButton filterName={charName} selected={selectClassN} key={charName}/>
+        )
+    })
 
     return (
         <div className="box column top-bot-wrap">
         {/* <!-- Characteristic name --> */}
-        <h2 className="no-space">{CharName}</h2>
+        <h2 className="no-space">{charName}</h2>
 
         {/* <!-- Characteristics --> */}
         <div className="box">
-            <FilterButton filterName="Tops" selected="btn-select"/>
-            <FilterButton filterName="Bottoms" selected="btn-unselect"/>
-            <FilterButton filterName="Outerwear" selected="btn-unselect"/>
-            <FilterButton filterName="Shoes" selected="btn-unselect"/>
-            <FilterButton filterName="Accessories" selected="btn-unselect"/>
-            <FilterButton filterName="Gender-Affirming Items" selected="btn-unselect"/>
+            { filterButtonElemArr }
         </div>
     </div>
     )
