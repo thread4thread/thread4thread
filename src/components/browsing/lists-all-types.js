@@ -29,7 +29,7 @@ export function ListsAllTypes() {
             <ListingTypeSection sectionTitle="Trade Offers"/>
 
             {/* <!-- Requests --> */}
-            <ListingTypeSection sectionTitle="Reguests"/>
+            <ListingTypeSection sectionTitle="Requests"/>
         </div>
     )
 }
