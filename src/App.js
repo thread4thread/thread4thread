@@ -12,6 +12,8 @@ import './index.css';
 // Navbars
 import { TopNav } from './components/navbar/top-nav';
 import { BotNav } from './components/navbar/bot-nav';
+// Account
+import { SignUp } from './components/account/sign-up';
 // Browsing
 import { ListsAllTypes } from './components/browsing/lists-all-types';
 import { ListsTypeX } from './components/browsing/lists-type-X';
@@ -30,6 +32,7 @@ function App() {
 
     {/* <!-- Main content --> */}
     <main>
+      {/* <SignUp/> */}
       <Routes>
         {/* TODO: Only 1 path to home */}
         <Route path="/thread4thread" element={<ListsAllTypes/>}/>
@@ -40,6 +43,8 @@ function App() {
         <Route path="/search-filter" element={<SearchFilter/>}/>
 
         <Route path="/list-details" element={<ListingDetails/>}/>
+
+        <Route path="/sign-up" element={<SignUp/>}/>
       </Routes>
     </main>
 
