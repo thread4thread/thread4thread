@@ -38,13 +38,14 @@ function App() {
         <Route path="/thread4thread" element={<ListsAllTypes/>}/>
         <Route path="/" element={<ListsAllTypes/>}/>
 
+        <Route path="/sign-up" element={<SignUp/>}/>
+
         <Route path="/lists-type-x" element={<ListsTypeX/>}/>
 
         <Route path="/search-filter" element={<SearchFilter/>}/>
 
         <Route path="/list-details" element={<ListingDetails/>}/>
 
-        <Route path="/sign-up" element={<SignUp/>}/>
       </Routes>
     </main>
 
