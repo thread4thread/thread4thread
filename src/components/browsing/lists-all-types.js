@@ -61,7 +61,7 @@ function SectionHeader(props) {
             <h1 className="left-item">{sectionTitle}</h1>
 
             {/* See more button */}
-            <NavLink to="lists-type-x">
+            <NavLink to="../lists-type-x">
                 <button type="button" className="btn accent-button"><u>See more</u></button>
             </NavLink>
         </div>

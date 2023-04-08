@@ -15,6 +15,7 @@ import { BotNav } from './components/navbar/bot-nav';
 // Account
 import { SignUp } from './components/account/sign-up';
 // Browsing
+import { Welcome } from './components/account/welcome';
 import { ListsAllTypes } from './components/browsing/lists-all-types';
 import { ListsTypeX } from './components/browsing/lists-type-X';
 import { SearchFilter } from './components/browsing/search-filter';
@@ -39,6 +40,10 @@ function App() {
         <Route path="/" element={<ListsAllTypes/>}/>
 
         <Route path="/sign-up" element={<SignUp/>}/>
+
+        <Route path='/welcome' element={<Welcome/>}/>
+
+        <Route path='/lists-all-types' element={<ListsAllTypes />} />
 
         <Route path="/lists-type-x" element={<ListsTypeX/>}/>
 
