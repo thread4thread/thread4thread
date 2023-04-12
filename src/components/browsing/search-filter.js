@@ -82,7 +82,7 @@ let allCharsObjArr = [
 export function SearchFilter() {
     let filterSectionElemArr = allCharsObjArr.map((charsObj) => {
         return (
-            <FilterSection charsObj={charsObj}/>
+            <FilterSection charsObj={charsObj} key={charsObj.charTypeName}/>
         )
     })
 
@@ -170,9 +170,14 @@ function FilterButton(props) {
     const { filterName, selected } = props;
     let classN = "btn " + selected;
 
+    const handleClick = (event) => {
+        event.target.classList.add('select');
+    }
+
     return (
         <button type="button"
-        className={classN}>{filterName}</button>
+        className={classN}
+        onClick={handleClick}>{filterName}</button>
     )
 }
 
