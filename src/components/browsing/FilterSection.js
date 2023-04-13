@@ -48,16 +48,15 @@ const filtersArray = ['type', 'style', 'color', 'condition', 'brand'];
 export function FilterSection(props) {
 
   const filterSec = filtersArray.map((category) => {
-    const filterArray = filtersObj[category];
-    const buttonEle = document.querySelectorAll('.' + category + ' button');
-    console.log(buttonEle);
+  const filterArray = filtersObj[category];
+  // const buttonEle = document.querySelectorAll('.' + category + ' button');
 
     const handleClick = (event) => {
       event.preventDefault();
-      buttonEle.forEach(button => {
-        button.classList.remove('active');
-      });
-      event.target.classList.add('active');
+      // buttonEle.forEach(button => {
+      //   button.classList.remove('active');
+      // });
+      event.target.classList.toggle('active');
     }
 
     const buttons = filterArray.map((filter) => {
