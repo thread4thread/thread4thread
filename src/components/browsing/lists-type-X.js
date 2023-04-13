@@ -12,11 +12,14 @@ import combra from './../../assets/img/combra.png';
 import sweater from './../../assets/img/sweater.png';
 import tallDress from './../../assets/img/tall-dress.png';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
+
+import title from './../browsing/lists-all-types';
+
 // HELPERS
 import NavList from './browsing.helpers/nav-list';
 
 //Packages
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 // const listingObj = {
 
@@ -26,13 +29,20 @@ let classNProp = "grid-item";
 
 //array of items
 let listings = [ {pinkSkirtImg}, {pants}, {docs}, {boots}, {blackShirt}, {combra}, {sweater}, {tallDress} ];
-console.log(listings);
+// console.log(listings);
 
-export function ListsTypeX() {
+export function ListsTypeX(props) {
+    let { sectionTitle } = props;
+    // const location = useLocation();
+    // const title = location.state;
+    // console.log(location);
+
+    const title = localStorage.getItem("sectionTitle");
+
     return (
         <div className="side-wrap box column">
             {/* <!-- Offers (Donations) --> */}
-            <ListingTypeSection sectionTitle="Offers"/>
+            <ListingTypeSection sectionTitle={title}/>
         </div>
     )
 }
@@ -60,7 +70,7 @@ function ListingTypeSection(props) {
 function SectionHeader(props) {
     let { sectionTitle } = props;
     return (
-        <div className="box">
+        <div className="box fill-container">
             {/* back button */}
             <NavLink to='../lists-all-types'>
                 <button type="button" className="btn arrow-btn p-0">
@@ -88,7 +98,7 @@ function ListingGrid(props) {
     });
 
     return (
-        <div className="grid by-3">
+        <div className="grid by-2">
             {listingElemArr}
         </div>
     )

@@ -203,6 +203,7 @@ h2 {
 .img-small {
   width: 7em;
   height: 7em;
+  border-radius: 2rem;
 }
 
 .img-mini {
