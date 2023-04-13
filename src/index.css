@@ -215,7 +215,15 @@ h2 {
 /*  */
 .btn {
   border-radius:2em;
-  color: #ccccff;
+  border-color: #ccccff;
+}
+
+.btn-outline-dark {
+  --bs-btn-border-color: #ccccff;
+  --bs-btn-hover-bg: #ccccff;
+  --bs-btn-hover-border-color: #ccccff;
+  --bs-btn-active-bg: #ccccff;
+  --bs-btn-active-border-color: #ccccff;
 }
 
 .btn-light {
