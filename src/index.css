@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Sans-serif', roboto;
   position: relative;
   min-height: 100vh;
 }
@@ -119,6 +119,7 @@ h2 {
 
 .grid-item {
   width: 100%;
+  border-radius: .75rem;
 }
 
 /*  */
@@ -154,6 +155,7 @@ h2 {
 .form-control.search {
   border-radius: 25px;
   background-color: lightgray;
+  text-decoration: none;
 }
 
 .nav-btn {
@@ -198,6 +200,7 @@ h2 {
 
 .img-lg {
   height: 18em;
+  border-radius: 2rem;
 }
 
 .img-small {
@@ -290,6 +293,7 @@ h2 {
 .accent-button {
   background-color: white;
   color: #8991DC;
+  border: none;
 }
 
 .btn-outline-secondary {

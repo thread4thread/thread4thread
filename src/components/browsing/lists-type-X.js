@@ -69,6 +69,7 @@ function ListingTypeSection(props) {
 // Right-side: "See more" button --> see only that listing type
 function SectionHeader(props) {
     let { sectionTitle } = props;
+    let length = Object.values(listings).length;
     return (
         <div className="box fill-container">
             {/* back button */}
@@ -80,6 +81,7 @@ function SectionHeader(props) {
 
             {/* Section Title */}
             <h1 className="left-item">{sectionTitle}</h1>
+            <p>{ length } results</p>
         </div>
     )
 }

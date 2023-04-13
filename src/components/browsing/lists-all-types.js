@@ -28,7 +28,7 @@ export function ListsAllTypes() {
             <ListingTypeSection sectionTitle="Offers"/>
 
             {/* <!-- Trade Offers --> */}
-            <ListingTypeSection sectionTitle="Trade Offers"/>
+            <ListingTypeSection sectionTitle="Trades"/>
 
             {/* <!-- Requests --> */}
             <ListingTypeSection sectionTitle="Requests"/>
