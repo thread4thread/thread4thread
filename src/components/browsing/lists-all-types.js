@@ -11,11 +11,52 @@ import NavList from './browsing.helpers/nav-list';
 
 // DATA
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
-// const listingObj = {
+import sweaterImg from './../../assets/img/sweater.png';
+import bootsImg from './../../assets/img/asos-boots.png';
 
-// }
-let altProp = "Black tank top, pink+purple skirt";
-let classNProp = "grid-item";
+
+
+const listingArr = [
+    {
+        name: "Pink skirt",
+        classN: "grid-item",
+        alt: "Black tank top, pink+purple skirt",
+        image: pinkSkirtImg
+    },
+    {
+        "name": "Gingham Vest",
+        "classN": "grid-item",
+        "alt": "Black and white gingham sweater vest",
+        "image": sweaterImg
+    },
+    {
+        "name": "ASOS boots",
+        "classN": "grid-item",
+        "alt": "Black ASOS heeled boots",
+        "image": bootsImg
+    },
+    {
+        "name": "Compression bra",
+        "classN": "grid-item",
+        "alt": "Tan compression bra",
+        "image": require('./../../assets/img/combra.png') // remove require if not working
+    },
+    {
+        "name": "Docs",
+        "classN": "grid-item",
+        "alt": "Black Doc Martens loafers",
+        "image": require('./../../assets/img/docs.png') // remove require if not working
+    },
+    {
+        "name": "Dress",
+        "classN": "grid-item",
+        "alt": "Floral dress",
+        "image": require('./../../assets/img/tall-dress.png') // remove require if not working
+    },
+]
+
+// let altProp = "Black tank top, pink+purple skirt";
+// let classNProp = "grid-item";
 
 // TODO: Display filters applied
 
@@ -23,19 +64,19 @@ export function ListsAllTypes() {
     return (
         <div className="side-wrap box column">
             {/* <!-- Offers (Donations) --> */}
-            <ListingTypeSection sectionTitle="Offers"/>
+            <ListingTypeSection sectionTitle="Offers" listingArr={listingArr}/>
 
             {/* <!-- Trade Offers --> */}
-            <ListingTypeSection sectionTitle="Trade Offers"/>
+            <ListingTypeSection sectionTitle="Trade Offers" listingArr={listingArr}/>
 
             {/* <!-- Requests --> */}
-            <ListingTypeSection sectionTitle="Requests"/>
+            <ListingTypeSection sectionTitle="Requests" listingArr={listingArr}/>
         </div>
     )
 }
 
 function ListingTypeSection(props) {
-    let { sectionTitle } = props;
+    let { sectionTitle, listingArr } = props;
     // let { listingsObj } = props;
     // let { pinkShirtImg, altProp, classNProp } = listingsObj;
 
@@ -45,7 +86,7 @@ function ListingTypeSection(props) {
             <SectionHeader sectionTitle={sectionTitle}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid/>
+            <ListingGrid listingArr={listingArr}/>
         </div>
     )
 }
@@ -69,11 +110,13 @@ function SectionHeader(props) {
 }
 
 function ListingGrid(props) {
+    let { listingArr } = props;
     let listingElemArr = [];
 
+    // Loop through each item in array
     for (let i = 0; i < 6; i++) {
-        let listingElem = <ListingElem key={i}/>;
-
+    
+        let listingElem = <ListingElem key={i} listing={listingArr[i]}/>;
         listingElemArr.push(listingElem);
     }
 
@@ -85,7 +128,8 @@ function ListingGrid(props) {
 }
 
 function ListingElem(props) {
+    let { listing } = props;
     return (
-        <NavList src={pinkSkirtImg} navTo="list-details" alt={altProp} classN={classNProp}/>
+        <NavList src={listing.image} navTo="list-details" alt={listing.alt} classN={listing.classN}/>
     )
 }
