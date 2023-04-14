@@ -5,6 +5,7 @@
 
 // PACKAGES
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 // HELPERS
 import NavList from './browsing.helpers/nav-list';
@@ -13,6 +14,8 @@ import NavList from './browsing.helpers/nav-list';
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 import sweaterImg from './../../assets/img/sweater.png';
 import bootsImg from './../../assets/img/asos-boots.png';
+import { ListsTypeX } from './lists-type-X';
+// const listingObj = {
 
 
 
@@ -67,7 +70,7 @@ export function ListsAllTypes() {
             <ListingTypeSection sectionTitle="Offers" listingArr={listingArr}/>
 
             {/* <!-- Trade Offers --> */}
-            <ListingTypeSection sectionTitle="Trade Offers" listingArr={listingArr}/>
+            <ListingTypeSection sectionTitle="Trades" listingArr={listingArr}/>
 
             {/* <!-- Requests --> */}
             <ListingTypeSection sectionTitle="Requests" listingArr={listingArr}/>
@@ -96,13 +99,16 @@ function ListingTypeSection(props) {
 // Right-side: "See more" button --> see only that listing type
 function SectionHeader(props) {
     let { sectionTitle } = props;
+    sectionTitle = sectionTitle.toString();
+    // let [title, setTitle] = useState('');
+
     return (
         <div className="box">
             {/* Section Title */}
             <h1 className="left-item">{sectionTitle}</h1>
 
             {/* See more button */}
-            <NavLink to="lists-type-x">
+            <NavLink to="../lists-type-x" onClick={() => localStorage.setItem("sectionTitle", sectionTitle )} >
                 <button type="button" className="btn accent-button"><u>See more</u></button>
             </NavLink>
         </div>
