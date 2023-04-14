@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Sans-serif', roboto;
   position: relative;
   min-height: 100vh;
 }
@@ -119,6 +119,7 @@ h2 {
 
 .grid-item {
   width: 100%;
+  border-radius: .75rem;
 }
 
 /*  */
@@ -154,6 +155,7 @@ h2 {
 .form-control.search {
   border-radius: 25px;
   background-color: lightgray;
+  text-decoration: none;
 }
 
 .nav-btn {
@@ -203,6 +205,7 @@ h2 {
 .img-small {
   width: 7em;
   height: 7em;
+  border-radius: 2rem;
 }
 
 .img-mini {
@@ -215,6 +218,15 @@ h2 {
 /*  */
 .btn {
   border-radius:2em;
+  border-color: #ccccff;
+}
+
+.btn-outline-dark {
+  --bs-btn-border-color: #ccccff;
+  --bs-btn-hover-bg: #ccccff;
+  --bs-btn-hover-border-color: #ccccff;
+  --bs-btn-active-bg: #ccccff;
+  --bs-btn-active-border-color: #ccccff;
 }
 
 .btn-light {
@@ -280,6 +292,7 @@ h2 {
 .accent-button {
   background-color: white;
   color: #8991DC;
+  border: none;
 }
 
 .btn-outline-secondary {
