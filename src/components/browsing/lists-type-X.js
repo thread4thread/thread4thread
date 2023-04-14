@@ -6,7 +6,7 @@
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 import pants from './../../assets/img/pants.jpg';
 import docs from './../../assets/img/docs.png';
-import boots from '/Users/graciegibbons/thread4thread/src/assets/img/asos-boots.png';
+import boots from './../../assets/img/asos-boots.png';
 import blackShirt from './../../assets/img/blackshirt.jpg';
 import combra from './../../assets/img/combra.png';
 import sweater from './../../assets/img/sweater.png';
@@ -28,6 +28,7 @@ let altProp = "Black tank top, pink+purple skirt";
 let classNProp = "grid-item";
 
 //array of items
+// TODO: Add alt text
 let listings = [ {pinkSkirtImg}, {pants}, {docs}, {boots}, {blackShirt}, {combra}, {sweater}, {tallDress} ];
 // console.log(listings);
 
@@ -94,8 +95,10 @@ function ListingGrid(props) {
     //console.log(listType);
     let listingElemArr = listType.map((elem) => {
         // console.log(Object.values(elem).at(0));
+
+        // TODO: Add key
         return (
-            <ListingElem item={Object.values(elem).at(0)}/>
+            <ListingElem item={Object.values(elem).at(0)} key={Object.values(elem).at(0)}/>
         )
     });
 
