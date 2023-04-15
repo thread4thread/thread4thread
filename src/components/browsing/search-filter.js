@@ -4,11 +4,11 @@
 // User can click the apply button to view listings of all types with the search and filter(s) applied.
 
 // PACKAGES
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // DATA
-import backIcon from './../../assets/icon/keyboard-arrow-return.png';
+// import backIcon from './../../assets/icon/keyboard-arrow-return.png';
 import { FilterSection } from './FilterSection';
 
 // TODO: Make data dynamic so that we can easily update
@@ -40,26 +40,26 @@ export function SearchFilter() {
 
 // SearchFilterNav creates the nav bar for this particular page, including a
 // back arrow to go back to the last page and a search input field.
-function SearchFilterNav() {
-    return (
-        <div className="content-wrap topnav navbar navbar-expand-lg side-wrap">
-            <div className="container-fluid nav-container">
-            <NavLink to="/">
-            <button type="button" className="fil-search btn arrow-btn">
-                <img src={backIcon} alt="return"/>
-            </button>
-        </NavLink>
-                <form className="d-flex input-group fil-search search-bar" role="search">
-                    <input type="search"
-                    className="form-control search"
-                    placeholder="Search" aria-label="Search"/>
-                </form>
-            </div>
-        </div>
+// function SearchFilterNav() {
+//     return (
+//         <div className="content-wrap topnav navbar navbar-expand-lg side-wrap">
+//             <div className="container-fluid nav-container">
+//             <NavLink to="/">
+//             <button type="button" className="fil-search btn arrow-btn">
+//                 <img src={backIcon} alt="return"/>
+//             </button>
+//         </NavLink>
+//                 <form className="d-flex input-group fil-search search-bar" role="search">
+//                     <input type="search"
+//                     className="form-control search"
+//                     placeholder="Search" aria-label="Search"/>
+//                 </form>
+//             </div>
+//         </div>
 
 
-    )
-}
+//     )
+// }
 
 // TODO: Size
 // function SizeFilterSection(props) {

@@ -13,13 +13,14 @@ import sweater from './../../assets/img/sweater.png';
 import tallDress from './../../assets/img/tall-dress.png';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
-import title from './../browsing/lists-all-types';
+// import title from './../browsing/lists-all-types';
 
 // HELPERS
 import NavList from './browsing.helpers/nav-list';
 
 //Packages
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+// import { NavLink, useLocation } from 'react-router-dom';
 
 // const listingObj = {
 
@@ -32,8 +33,7 @@ let classNProp = "grid-item";
 let listings = [ {pinkSkirtImg}, {pants}, {docs}, {boots}, {blackShirt}, {combra}, {sweater}, {tallDress} ];
 // console.log(listings);
 
-export function ListsTypeX(props) {
-    let { sectionTitle } = props;
+export function ListsTypeX() {
     // const location = useLocation();
     // const title = location.state;
     // console.log(location);
