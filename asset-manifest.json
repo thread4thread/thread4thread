@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/thread4thread/static/css/main.448da88b.css",
-    "main.js": "/thread4thread/static/js/main.a7f74a68.js",
+    "main.css": "/thread4thread/static/css/main.18d8461e.css",
+    "main.js": "/thread4thread/static/js/main.e7976903.js",
+    "static/media/tall-dress.png": "/thread4thread/static/media/tall-dress.ad940cb2c94ffe7d3b7f.png",
     "static/media/sweater.png": "/thread4thread/static/media/sweater.8e8e39a22223b09755ba.png",
+    "static/media/asos-boots.png": "/thread4thread/static/media/asos-boots.74f0d6da3ec12cb7e480.png",
+    "static/media/combra.png": "/thread4thread/static/media/combra.c18d5f1ae4745e8dfc5c.png",
+    "static/media/blackshirt.jpg": "/thread4thread/static/media/blackshirt.a3731dfdb2590d79fe45.jpg",
     "static/media/logo2.png": "/thread4thread/static/media/logo2.2759f51b86388a32e1fe.png",
+    "static/media/docs.png": "/thread4thread/static/media/docs.484f5ac092d13a69bc03.png",
     "static/media/user.png": "/thread4thread/static/media/user.557587208eb9e232f2ca.png",
     "static/media/pink-skirt.jpg": "/thread4thread/static/media/pink-skirt.3cf17405e9f33d953c29.jpg",
+    "static/media/pants.jpg": "/thread4thread/static/media/pants.3f0e5c496b764dc5fded.jpg",
     "index.html": "/thread4thread/index.html",
-    "main.448da88b.css.map": "/thread4thread/static/css/main.448da88b.css.map",
-    "main.a7f74a68.js.map": "/thread4thread/static/js/main.a7f74a68.js.map"
+    "main.18d8461e.css.map": "/thread4thread/static/css/main.18d8461e.css.map",
+    "main.e7976903.js.map": "/thread4thread/static/js/main.e7976903.js.map"
   },
   "entrypoints": [
-    "static/css/main.448da88b.css",
-    "static/js/main.a7f74a68.js"
+    "static/css/main.18d8461e.css",
+    "static/js/main.e7976903.js"
   ]
 }
