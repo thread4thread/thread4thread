@@ -15,7 +15,7 @@ import mailIcon from './navbar.assets/mail.png';
 import plusIcon from './navbar.assets/add.png';
 import heartIcon from './navbar.assets/heart.png';
 import userIcon from './navbar.assets/user.png';
-import { useResolvedPath } from 'react-router-dom';
+// import { useResolvedPath } from 'react-router-dom';
 const iconArr = [homeIcon, mailIcon, plusIcon, heartIcon, userIcon]
 const navPaths = ['', 'my-exchanges', 'create-listing', 'my-favorite-listings', 'my-profile'];
 // TODO: Figure out how to import data + put icons in a data structure to be more dynamic

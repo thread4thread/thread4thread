@@ -1,8 +1,8 @@
 // PACKAGES
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 // ICONS
-import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png'
+// import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png'
 
 export function Welcome() {
     return (

@@ -5,7 +5,7 @@
 
 // PACKAGES
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 // HELPERS
 import NavList from './browsing.helpers/nav-list';
@@ -14,10 +14,6 @@ import NavList from './browsing.helpers/nav-list';
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 import sweaterImg from './../../assets/img/sweater.png';
 import bootsImg from './../../assets/img/asos-boots.png';
-import { ListsTypeX } from './lists-type-X';
-// const listingObj = {
-
-
 
 const listingArr = [
     {

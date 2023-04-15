@@ -2,7 +2,7 @@
 // User must check "I consent" to be able to sign up.
 
 // PACKAGES
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 // ICONS
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png'
