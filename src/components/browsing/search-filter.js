@@ -106,7 +106,8 @@ function ApplyButton() {
     return (
         <>
             <NavLink to="/">
-                <button type="button" className="btn btn-save">Apply</button>
+            <button type="button" className="btn btn-save side-wrap list-btn">Apply</button>
+            {/* <!-- Invisible placeholder to add extra space at bottom --> */}
             </NavLink>
         </>
     )

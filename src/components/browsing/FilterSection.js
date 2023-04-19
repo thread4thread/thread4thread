@@ -45,6 +45,9 @@ const filtersObj = {
 
 const filtersArray = ['type', 'style', 'color', 'condition', 'brand'];
 
+//Array of desired filters
+const applyFilters = [];
+
 export function FilterSection(props) {
 
   const filterSec = filtersArray.map((category) => {
@@ -57,6 +60,14 @@ export function FilterSection(props) {
       //   button.classList.remove('active');
       // });
       event.target.classList.toggle('active');
+
+      //Keeps track of desired filters
+      if(event.target.classList.contains('active')) {
+        applyFilters.push(event.target.value);
+      } else {
+        let index = applyFilters.indexOf(event.target.value)
+        applyFilters.splice(index, 1);
+      }
     }
 
     const buttons = filterArray.map((filter) => {
