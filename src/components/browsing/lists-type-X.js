@@ -30,8 +30,47 @@ let classNProp = "grid-item";
 
 //array of items
 // TODO: Add alt text
-let listings = [ {pinkSkirtImg}, {pants}, {docs}, {boots}, {blackShirt}, {combra}, {sweater}, {tallDress} ];
+// let listings = [ {pinkSkirtImg}, {pants}, {docs}, {boots}, {blackShirt}, {combra}, {sweater}, {tallDress} ];
 // console.log(listings);
+
+const listings = [
+    {
+        name: "Pink skirt",
+        classN: "grid-item",
+        alt: "Black tank top, pink+purple skirt",
+        image: pinkSkirtImg
+    },
+    {
+        "name": "Gingham Vest",
+        "classN": "grid-item",
+        "alt": "Black and white gingham sweater vest",
+        "image": sweater
+    },
+    {
+        "name": "ASOS boots",
+        "classN": "grid-item",
+        "alt": "Black ASOS heeled boots",
+        "image": boots
+    },
+    {
+        "name": "Compression bra",
+        "classN": "grid-item",
+        "alt": "Tan compression bra",
+        "image": require('./../../assets/img/combra.png') // remove require if not working
+    },
+    {
+        "name": "Docs",
+        "classN": "grid-item",
+        "alt": "Black Doc Martens loafers",
+        "image": require('./../../assets/img/docs.png') // remove require if not working
+    },
+    {
+        "name": "Dress",
+        "classN": "grid-item",
+        "alt": "Floral dress",
+        "image": require('./../../assets/img/tall-dress.png') // remove require if not working
+    },
+]
 
 export function ListsTypeX() {
     // const location = useLocation();
@@ -92,13 +131,13 @@ function ListingGrid(props) {
     // let listingElemArr = [];
     // console.log(props.listings);
     let listType = Object.values(props.listings);
-    //console.log(listType);
+    // console.log(listType);
     let listingElemArr = listType.map((elem) => {
         // console.log(Object.values(elem).at(0));
-
+        // console.log(elem);
         // TODO: Add key
         return (
-            <ListingElem item={Object.values(elem).at(0)} key={Object.values(elem).at(0)}/>
+            <ListingElem listing={elem} key={elem.name}/>
         )
     });
 
@@ -110,9 +149,10 @@ function ListingGrid(props) {
 }
 
 function ListingElem(props) {
-    let item = props;
+    let { listing } = props;
     // console.log(item);
+    console.log(listing);
     return (
-        <NavList src={item.item} navTo='../list-details' alt={altProp} classN={classNProp}/>
+        <NavList src={listing.image} navTo='../list-details' alt={listing.altProp} classN={classNProp}/>
     )
 }

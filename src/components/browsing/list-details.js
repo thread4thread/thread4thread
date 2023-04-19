@@ -1,8 +1,11 @@
 // LISTING DETAILS - Displays details about one listing.
 // User can click "I'm interested!" button to initiate an exchange.
+//Packages
+import { NavLink } from 'react-router-dom';
 
 // ICONS
 import moreIcon from './../../assets/icon/more.png';
+import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
 // DATA
 import pfp from './../../assets/img/blank-pfp.png';
@@ -70,6 +73,11 @@ function MakeHeader(props) {
 
     return (
         <div className="box center-align-hor side-wrap">
+            <NavLink to='../lists-type-x'>
+                <button type="button" className="btn arrow-btn p-0">
+                    <img src={ArrowIcon} alt="return"/>
+                </button>
+            </NavLink>
             <img src={pfpPath} alt="Blank user profile pic" className="img-mini"/>
                     
             <div className="tight-box column">

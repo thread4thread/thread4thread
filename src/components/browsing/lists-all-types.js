@@ -132,6 +132,6 @@ function ListingGrid(props) {
 function ListingElem(props) {
     let { listing } = props;
     return (
-        <NavList src={listing.image} navTo="list-details" alt={listing.alt} classN={listing.classN}/>
+        <NavList src={listing.image} navTo="../list-details" alt={listing.alt} classN={listing.classN}/>
     )
 }
