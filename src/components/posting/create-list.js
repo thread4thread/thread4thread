@@ -68,7 +68,11 @@ export function CreateList() {
 
     //handle image
     function handleImage(event) {
-
+        event.preventDefault();
+        const photo = event.target.files[0].name;
+        let val = {photo: photo};
+        const currentInfo = Object.assign(listingInfo, val);
+        setListingInfo(currentInfo);
     }
 
     //handle description
@@ -108,6 +112,7 @@ export function CreateList() {
         setListingInfo(currentInfo); 
     }
 
+    //stores color data 
     const color = []; 
 
     //handle color Might need to be changed
@@ -234,7 +239,7 @@ export function CreateList() {
                     {/* <!-- TODO: Figure out image input --> */}
                     <div className="section">
                         <label className="form-label strong" htmlFor="customFile">Image</label>
-                        <input type="file" className="form-control" id="customFile" />
+                        <input onChange={handleImage} type="file" className="form-control" id="customFile" />
                     </div>
 
                     {/* <!-- Item Description (text area input) --> */}
