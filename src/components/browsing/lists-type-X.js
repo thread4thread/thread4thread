@@ -50,14 +50,16 @@ export function ListsTypeX() {
 
 function ListingTypeSection(props) {
     let { sectionTitle, listingsObj } = props;
+    let listingKeyArr = Object.keys(listingsObj);
+    let nListings = listingKeyArr.length;
 
     return (
         <div className="box column top-bot-wrap">
             {/* <!-- Offers heading + "See more" button --> */}
-            <SectionHeader sectionTitle={sectionTitle}/>
+            <SectionHeader sectionTitle={sectionTitle} nListings={nListings}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingsObj={listingsObj}/>
+            <ListingGrid listingsObj={listingsObj} listingKeyArr={listingKeyArr}/>
         </div>
     )
 }
@@ -66,9 +68,7 @@ function ListingTypeSection(props) {
 // Left-side: Title (ex: "Offers")
 // Right-side: "See more" button --> see only that listing type
 function SectionHeader(props) {
-    let { sectionTitle } = props;
-    // let length = Object.values(listings).length;
-    let length = 6;
+    let { sectionTitle, nListings } = props;
     return (
         <div className="box fill-container">
             {/* back button */}
@@ -80,16 +80,15 @@ function SectionHeader(props) {
 
             {/* Section Title */}
             <h1 className="left-item">{sectionTitle}</h1>
-            <p>{ length } results</p>
+            <p>{ nListings } results</p>
         </div>
     )
 }
 
 function ListingGrid(props) {
-    let { listingsObj } = props;
-    let listingKeys = Object.keys(listingsObj);
+    let { listingsObj, listingKeyArr } = props;
 
-    let listingElemArr = listingKeys.map((listingKey) => {
+    let listingElemArr = listingKeyArr.map((listingKey) => {
         console.log(listingsObj[listingKey]["filePath"]);
 
         let listingObj = listingsObj[listingKey];
