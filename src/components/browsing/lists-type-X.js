@@ -2,6 +2,17 @@
 // User can click "Filters" to edit search and filters.
 // User can click a listing to view it in detail.
 
+// PACKAGES
+import { useEffect } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+// import { NavLink, useLocation } from 'react-router-dom';
+
+// const listingObj = {
+
+// }
+
 // DATA
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
 import pants from './../../assets/img/pants.jpg';
@@ -18,13 +29,6 @@ import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 // HELPERS
 import NavList from './browsing.helpers/nav-list';
 
-//Packages
-import { NavLink } from 'react-router-dom';
-// import { NavLink, useLocation } from 'react-router-dom';
-
-// const listingObj = {
-
-// }
 let altProp = "Black tank top, pink+purple skirt";
 let classNProp = "grid-item";
 
@@ -77,12 +81,37 @@ export function ListsTypeX() {
     // const title = location.state;
     // console.log(location);
 
+    // Define a state variable that contains an object, where each prop is a listing. Initially empty.
+    const [listingsObj, setListingsObj] = useState();
+
+    // Fetch listing data and set state of listingsObj
+    useEffect(() => {
+        const db = getDatabase();
+        const listingDataRef = ref(db, "listingData");
+
+        //returns a function that will "unregister" (turn off) the listener
+        const unregisterFunction = onValue(listingDataRef, (snapshot) => {
+        const listingDataValue = snapshot.val();
+        //...set state variable, etc...
+        setListingsObj(listingDataValue);
+        })
+
+        //cleanup function for when component is removed
+        function cleanup() {
+        unregisterFunction(); //call the unregister function
+        }
+        return cleanup; //effect hook callback returns the cleanup function
+    }, []) //empty array is the second argument to the `useEffect()` function.
+    //It says to only run this effect on first render
+
+    console.log(listingsObj);
+
     const title = localStorage.getItem("sectionTitle");
 
     return (
         <div className="side-wrap box column">
             {/* <!-- Offers (Donations) --> */}
-            <ListingTypeSection sectionTitle={title}/>
+            <ListingTypeSection sectionTitle={title} listingsObj={listingsObj}/>
         </div>
     )
 }
@@ -151,7 +180,7 @@ function ListingElem(props) {
     let { listing } = props;
     // console.log(item);
     return (
-        <NavLink navTo='../list-details'>
+        <NavLink to='../list-details'>
             <img src={listing.image} alt={listing.altProp} className="grid-item"/>
         </NavLink>
     )
