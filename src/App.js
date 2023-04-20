@@ -20,6 +20,7 @@ import { ListsAllTypes } from './components/browsing/lists-all-types';
 import { ListsTypeX } from './components/browsing/lists-type-X';
 import { SearchFilter } from './components/browsing/search-filter';
 import { ListingDetails } from './components/browsing/list-details';
+import { CreateList } from './components/posting/create-list';
 // Posting
 // import { CreateList } from './components/posting/create-list';
 // list-published
@@ -50,6 +51,8 @@ function App() {
         <Route path="/search-filter" element={<SearchFilter/>}/>
 
         <Route path="/list-details" element={<ListingDetails/>}/>
+
+        <Route path='/create-list' element={<CreateList/>}/>
 
       </Routes>
     </main>
