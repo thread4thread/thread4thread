@@ -16,7 +16,7 @@ import NavListing from './browsing.helpers/nav-listing';
 
 export function ListsTypeX() {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
-    const [listingsObj, setListingsObj] = useState({});
+    const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
 
     // Fetch listing data and set state of listingsObj
     useEffect(() => {
@@ -90,9 +90,12 @@ function ListingGrid(props) {
 
     let listingElemArr = listingKeyArr.map((listingKey) => {
         let listingObj = listingsObj[listingKey];
+
         let filePath = listingObj.filePath;
+        let alt = listingObj.alt;
+
         return (
-            <NavListing navTo="../list-details" src={filePath} key={listingKey}/>
+            <NavListing navTo="../list-details" src={filePath} alt={alt} key={listingKey}/>
         )
     });
 
