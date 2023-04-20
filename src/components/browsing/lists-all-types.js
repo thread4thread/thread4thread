@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 // import { useState } from 'react';
 
 // HELPERS
-import NavList from './browsing.helpers/nav-list';
+import NavListing from './browsing.helpers/nav-listing';
 
 // DATA
 import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
@@ -132,6 +132,6 @@ function ListingGrid(props) {
 function ListingElem(props) {
     let { listing } = props;
     return (
-        <NavList src={listing.image} navTo="../list-details" alt={listing.alt} classN={listing.classN}/>
+        <NavListing src={listing.image} navTo="../list-details" alt={listing.alt} classN={listing.classN}/>
     )
 }

@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
 // HELPERS
-import NavList from './browsing.helpers/nav-list';
+import NavListing from './browsing.helpers/nav-listing';
 
 export function ListsTypeX() {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
