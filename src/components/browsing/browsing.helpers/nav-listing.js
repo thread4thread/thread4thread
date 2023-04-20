@@ -11,11 +11,11 @@ import { NavLink } from "react-router-dom";
 
 // TODO: Consolidate with nav-icon, which performs a similar task with similar inputs
 export default function NavListing(props) {
-    const { navTo, src, alt, classN } = props;
+    const { navTo, src, alt } = props;
 
     return (
-        <NavLink to={navTo} className={"grid-item"}>
-            <img src={src} alt={alt} className={classN} />
+        <NavLink to={navTo}>
+            <img src={src} alt={alt} className={"grid-item"} />
         </NavLink>
     )
 }

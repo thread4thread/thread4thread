@@ -89,11 +89,10 @@ function ListingGrid(props) {
     let { listingsObj, listingKeyArr } = props;
 
     let listingElemArr = listingKeyArr.map((listingKey) => {
-        console.log(listingsObj[listingKey]["filePath"]);
-
         let listingObj = listingsObj[listingKey];
+        let filePath = listingObj.filePath;
         return (
-            <ListingElem listing={listingObj} key={listingKey}/>
+            <NavListing navTo="../list-details" src={filePath} key={listingKey}/>
         )
     });
 
@@ -101,14 +100,5 @@ function ListingGrid(props) {
         <div className="grid by-2">
             {listingElemArr}
         </div>
-    )
-}
-
-function ListingElem(props) {
-    let { listing } = props;
-    return (
-        <NavLink to='../list-details'>
-            <img src={listing.filePath} alt={listing.altProp} className="grid-item"/>
-        </NavLink>
     )
 }
