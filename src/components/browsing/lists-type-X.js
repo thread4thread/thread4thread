@@ -135,7 +135,6 @@ function ListingGrid(props) {
     let listingElemArr = listType.map((elem) => {
         // console.log(Object.values(elem).at(0));
         // console.log(elem);
-        // TODO: Add key
         return (
             <ListingElem listing={elem} key={elem.name}/>
         )
@@ -151,8 +150,9 @@ function ListingGrid(props) {
 function ListingElem(props) {
     let { listing } = props;
     // console.log(item);
-    console.log(listing);
     return (
-        <NavList src={listing.image} navTo='../list-details' alt={listing.altProp} classN={classNProp}/>
+        <NavLink navTo='../list-details'>
+            <img src={listing.image} alt={listing.altProp} className="grid-item"/>
+        </NavLink>
     )
 }
