@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
 // HELPERS
-import NavListing from './browsing.helpers/nav-listing';
+import { ListingGrid } from './browsing.helpers/listing-grid';
 
 export function ListsTypeX() {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
@@ -81,27 +81,6 @@ function SectionHeader(props) {
             {/* Section Title */}
             <h1 className="left-item">{sectionTitle}</h1>
             <p>{ nListings } results</p>
-        </div>
-    )
-}
-
-function ListingGrid(props) {
-    let { listingsObj, listingKeyArr } = props;
-
-    let listingElemArr = listingKeyArr.map((listingKey) => {
-        let listingObj = listingsObj[listingKey];
-
-        let filePath = listingObj.filePath;
-        let alt = listingObj.alt;
-
-        return (
-            <NavListing navTo="../list-details" src={filePath} alt={alt} key={listingKey}/>
-        )
-    });
-
-    return (
-        <div className="grid by-2">
-            {listingElemArr}
         </div>
     )
 }
