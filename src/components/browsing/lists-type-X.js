@@ -59,7 +59,7 @@ function ListingTypeSection(props) {
             <SectionHeader sectionTitle={sectionTitle} nListings={nListings}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingsObj={listingsObj} listingKeyArr={listingKeyArr}/>
+            <ListingGrid listingsObj={listingsObj} nCols={2}/>
         </div>
     )
 }
