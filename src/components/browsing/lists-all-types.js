@@ -141,8 +141,12 @@ function ListingGrid(props) {
 
     // Loop through each item in array
     for (let i = 0; i < 6; i++) {
-    
-        let listingElem = <ListingElem key={i} listing={listingArr[i]}/>;
+        let listingObj = listingArr[i];
+
+        let filePath = listingObj.image;
+        let alt = listingObj.alt;
+
+        let listingElem = <NavListing navTo="../list-details" src={filePath} alt={alt} key={i}/>;
         listingElemArr.push(listingElem);
     }
 
@@ -150,12 +154,5 @@ function ListingGrid(props) {
         <div className="grid by-3">
             {listingElemArr}
         </div>
-    )
-}
-
-function ListingElem(props) {
-    let { listing } = props;
-    return (
-        <NavListing src={listing.image} navTo="../list-details" alt={listing.alt} classN={listing.classN}/>
     )
 }
