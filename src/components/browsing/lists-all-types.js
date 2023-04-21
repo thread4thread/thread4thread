@@ -5,7 +5,8 @@
 
 // PACKAGES
 import { NavLink } from 'react-router-dom';
-// import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 // HELPERS
 import NavListing from './browsing.helpers/nav-listing';
@@ -60,6 +61,29 @@ const listingArr = [
 // TODO: Display filters applied
 
 export function ListsAllTypes() {
+    // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
+    const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
+
+    // Fetch listing data and set state of listingsObj
+    useEffect(() => {
+        const db = getDatabase();
+        const listingDataRef = ref(db, "listingData"); // TODO: change to listingData
+
+        //returns a function that will "unregister" (turn off) the listener
+        const unregisterFunction = onValue(listingDataRef, (snapshot) => {
+        const listingDataValue = snapshot.val();
+        //...set state variable, etc...
+        setListingsObj(listingDataValue);
+        })
+
+        //cleanup function for when component is removed
+        function cleanup() {
+        unregisterFunction(); //call the unregister function
+        }
+        return cleanup; //effect hook callback returns the cleanup function
+    }, []) //empty array is the second argument to the `useEffect()` function.
+    //It says to only run this effect on first render
+
     return (
         <div className="side-wrap box column">
             {/* <!-- Offers (Donations) --> */}
@@ -117,8 +141,12 @@ function ListingGrid(props) {
 
     // Loop through each item in array
     for (let i = 0; i < 6; i++) {
-    
-        let listingElem = <ListingElem key={i} listing={listingArr[i]}/>;
+        let listingObj = listingArr[i];
+
+        let filePath = listingObj.image;
+        let alt = listingObj.alt;
+
+        let listingElem = <NavListing navTo="../list-details" src={filePath} alt={alt} key={i}/>;
         listingElemArr.push(listingElem);
     }
 
@@ -126,12 +154,5 @@ function ListingGrid(props) {
         <div className="grid by-3">
             {listingElemArr}
         </div>
-    )
-}
-
-function ListingElem(props) {
-    let { listing } = props;
-    return (
-        <NavListing src={listing.image} navTo="../list-details" alt={listing.alt} classN={listing.classN}/>
     )
 }
