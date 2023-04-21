@@ -12,6 +12,11 @@ export function ListingGrid(props) {
     let { listingsObj, nCols, max } = props;
     let listingKeyArr = Object.keys(listingsObj);
 
+    // Apply a limit to number of listings displayed if optional max parameter included
+    if (max != null) {
+        listingKeyArr = listingKeyArr.slice(0, max);
+    };
+
     let listingElemArr = listingKeyArr.map((listingKey) => {
         let listingObj = listingsObj[listingKey];
 
