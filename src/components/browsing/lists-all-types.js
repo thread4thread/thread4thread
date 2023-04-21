@@ -9,54 +9,7 @@ import { useState, useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
 // HELPERS
-import NavListing from './browsing.helpers/nav-listing';
-
-// DATA
-import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
-import sweaterImg from './../../assets/img/sweater.png';
-import bootsImg from './../../assets/img/asos-boots.png';
-
-const listingArr = [
-    {
-        name: "Pink skirt",
-        classN: "grid-item",
-        alt: "Black tank top, pink+purple skirt",
-        image: pinkSkirtImg
-    },
-    {
-        "name": "Gingham Vest",
-        "classN": "grid-item",
-        "alt": "Black and white gingham sweater vest",
-        "image": sweaterImg
-    },
-    {
-        "name": "ASOS boots",
-        "classN": "grid-item",
-        "alt": "Black ASOS heeled boots",
-        "image": bootsImg
-    },
-    {
-        "name": "Compression bra",
-        "classN": "grid-item",
-        "alt": "Tan compression bra",
-        "image": require('./../../assets/img/combra.png') // remove require if not working
-    },
-    {
-        "name": "Docs",
-        "classN": "grid-item",
-        "alt": "Black Doc Martens loafers",
-        "image": require('./../../assets/img/docs.png') // remove require if not working
-    },
-    {
-        "name": "Dress",
-        "classN": "grid-item",
-        "alt": "Floral dress",
-        "image": require('./../../assets/img/tall-dress.png') // remove require if not working
-    },
-]
-
-// let altProp = "Black tank top, pink+purple skirt";
-// let classNProp = "grid-item";
+import { ListingGrid } from './browsing.helpers/listing-grid';
 
 // TODO: Display filters applied
 
@@ -87,21 +40,20 @@ export function ListsAllTypes() {
     return (
         <div className="side-wrap box column">
             {/* <!-- Offers (Donations) --> */}
-            <ListingTypeSection sectionTitle="Offers" listingArr={listingArr}/>
+            <ListingTypeSection sectionTitle="Offers" listingsObj={listingsObj}/>
 
             {/* <!-- Trade Offers --> */}
-            <ListingTypeSection sectionTitle="Trades" listingArr={listingArr}/>
+            <ListingTypeSection sectionTitle="Trades" listingsObj={listingsObj}/>
 
             {/* <!-- Requests --> */}
-            <ListingTypeSection sectionTitle="Requests" listingArr={listingArr}/>
+            <ListingTypeSection sectionTitle="Requests" listingsObj={listingsObj}/>
         </div>
     )
 }
 
 function ListingTypeSection(props) {
-    let { sectionTitle, listingArr } = props;
-    // let { listingsObj } = props;
-    // let { pinkShirtImg, altProp, classNProp } = listingsObj;
+    let { sectionTitle, listingsObj } = props;
+
 
     return (
         <div className="box column top-bot-wrap">
@@ -109,7 +61,7 @@ function ListingTypeSection(props) {
             <SectionHeader sectionTitle={sectionTitle}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingArr={listingArr}/>
+            <ListingGrid listingsObj={listingsObj} nCols={3} max={6}/>
         </div>
     )
 }
@@ -120,7 +72,6 @@ function ListingTypeSection(props) {
 function SectionHeader(props) {
     let { sectionTitle } = props;
     sectionTitle = sectionTitle.toString();
-    // let [title, setTitle] = useState('');
 
     return (
         <div className="box">
@@ -131,28 +82,6 @@ function SectionHeader(props) {
             <NavLink to="../lists-type-x" onClick={() => localStorage.setItem("sectionTitle", sectionTitle )} >
                 <button type="button" className="btn accent-button"><u>See more</u></button>
             </NavLink>
-        </div>
-    )
-}
-
-function ListingGrid(props) {
-    let { listingArr } = props;
-    let listingElemArr = [];
-
-    // Loop through each item in array
-    for (let i = 0; i < 6; i++) {
-        let listingObj = listingArr[i];
-
-        let filePath = listingObj.image;
-        let alt = listingObj.alt;
-
-        let listingElem = <NavListing navTo="../list-details" src={filePath} alt={alt} key={i}/>;
-        listingElemArr.push(listingElem);
-    }
-
-    return (
-        <div className="grid by-3">
-            {listingElemArr}
         </div>
     )
 }
