@@ -21,7 +21,7 @@ export function ListsTypeX() {
     // Fetch listing data and set state of listingsObj
     useEffect(() => {
         const db = getDatabase();
-        const listingDataRef = ref(db, "test"); // TODO: change to listingData
+        const listingDataRef = ref(db, "listingData"); // TODO: change to listingData
 
         //returns a function that will "unregister" (turn off) the listener
         const unregisterFunction = onValue(listingDataRef, (snapshot) => {
