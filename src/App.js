@@ -21,6 +21,8 @@ import { ListsTypeX } from './components/browsing/lists-type-X';
 import { SearchFilter } from './components/browsing/search-filter';
 import { ListingDetails } from './components/browsing/list-details';
 import { CreateList } from './components/posting/create-list';
+import { LogIn } from './components/account/login';
+
 // Posting
 // import { CreateList } from './components/posting/create-list';
 // list-published
@@ -53,6 +55,8 @@ function App() {
         <Route path="/list-details" element={<ListingDetails/>}/>
 
         <Route path='/create-list' element={<CreateList/>}/>
+
+        <Route path='/login' element={<LogIn/>}/>
 
       </Routes>
     </main>
