@@ -9,17 +9,26 @@
 // **Required fields must be filled out to publish.
 
 import React, { useState, useEffect } from 'react';
-import { getDatabase, ref, onValue, push as firebasePush} from 'firebase/database'
-import { Redirect } from 'react-router-dom';
+import { getDatabase, ref, onValue, push as firebasePush} from 'firebase/database';
+import { NavLink } from 'react-router-dom';
+import { storage } from './../account/f-config';
+import {ref as storageRef, uploadBytes, listAll, getDownloadURL} from 'firebase/storage';
 
 export function CreateList() {
 
-    const [listingInfo, setListingInfo] = useState({})
-    const [listingData, setListingData] = useState([])
-    const [inDB, setInDB] = useState(undefined)
+    const [listingInfo, setListingInfo] = useState({});
+    const [listingData, setListingData] = useState([]);
+    const [imageUpload, setImageUpload] = useState(null);
+    const [imageLink, setImageLink] = useState(null);
 
+    // const [imageAsUrl, setImageAsUrl] = useState('')
+
+    // const [inDB, setInDB] = useState(undefined)
+
+    // const storage = getStorage();
     const db = getDatabase();
 
+    //set up connection to db
     useEffect(()=> {
         const listRef = ref(db, "listingData");
         const offFunction = onValue(listRef, (snapshot) => {
@@ -57,7 +66,7 @@ export function CreateList() {
         setListingInfo(currentInfo);
     }
 
-    //Handle Item type
+    //Handle item type
     function handleItemType(event) {
         event.preventDefault();
         const type = event.target.value;
@@ -69,10 +78,25 @@ export function CreateList() {
     //handle image
     function handleImage(event) {
         event.preventDefault();
-        const photo = event.target.files[0].name;
-        let val = {photo: photo};
+        const file = event.target.files[0];
+        setImageUpload(file);
+        console.log(file);
+        let val = {filePath: file};
         const currentInfo = Object.assign(listingInfo, val);
         setListingInfo(currentInfo);
+
+        // const file = event.target.files[0];
+        // const uploadTask = storageRef.child(`images/${file.name}`).put(file);
+        // uploadTask.then((snapshot) => {
+        //     console.log('Image uploaded successfully');
+        //     snapshot.ref.getDownloadURL().then((url) => {
+        //     console.log('Image URL:', url);
+        //     // Save the image URL to your database or use it to display the image in your React app
+        //     });
+        // }).catch((error) => {
+        //     console.error('Error uploading image:', error);
+        // });
+
     }
 
     //handle description
@@ -94,12 +118,10 @@ export function CreateList() {
         event.preventDefault();
 
         const appearance = []; 
-        // buttonEle.forEach(button => {
-        //   button.classList.remove('active');
-        // });
+
         event.target.classList.toggle('active');
   
-        //Keeps track of desired filters
+        //store desired appearance 
         if(event.target.classList.contains('active')) {
           appearance.push(event.target.value);
         } else {
@@ -119,12 +141,9 @@ export function CreateList() {
     function handleColor(event) {
         event.preventDefault();
 
-        // buttonEle.forEach(button => {
-        //   button.classList.remove('active');
-        // });
         event.target.classList.toggle('active');
   
-        //Keeps track of desired filters
+        //store desired appearance
         if(event.target.classList.contains('active')) {
           color.push(event.target.value);
         } else {
@@ -160,27 +179,27 @@ export function CreateList() {
     }
 
     //submit 
+    // const imageLinkRef = storageRef(storage, `${imageUpload.name}`);
+
     function submitCallback(event) {
+        if(imageUpload == null) {
+            return;
+        }
+        const imageRef = storageRef(storage,`${imageUpload.name}`);
+        uploadBytes(imageRef, imageUpload).then(() => {
+            alert("image uploaded");
+        })
+
         const listingRef = ref(db, "listingData");
         firebasePush(listingRef, listingInfo);
+
     }
 
-    //Modify for handle unique form attributes (eg. appearance, color)
-    // const handleColor = (event) => {
-    //     event.preventDefault();
-    //     // buttonEle.forEach(button => {
-    //     //   button.classList.remove('active');
-    //     // });
-    //     event.target.classList.toggle('active');
-  
-    //     //Keeps track of desired filters
-    //     if(event.target.classList.contains('active')) {
-    //       applyFilters.push(event.target.value);
-    //     } else {
-    //       let index = applyFilters.indexOf(event.target.value)
-    //       applyFilters.splice(index, 1);
-    //     }
-    //   }
+    // useEffect(() => {
+    //     listAll(imageLinkRef).then((response) => {
+    //         console.log()
+    //     })
+    // }, []);
 
     return (
         <form role='form' method='GET'>
@@ -211,9 +230,9 @@ export function CreateList() {
                         {/* <!-- Input --> */}
                         <select onBlur={handleExchangeType} id="exch-type" className="form-select" aria-label="Exchange type choices">
                             <option defaultValue>Click to select</option>
-                            <option value="1">Donation</option>
-                            <option value="2">Request</option>
-                            <option value="3">Trade</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Request">Request</option>
+                            <option value="Trade">Trade</option>
                         </select>
                     </div>
 
@@ -225,13 +244,13 @@ export function CreateList() {
                         {/* <!-- Input --> */}
                         <select onBlur={handleItemType} id="exch-type" className="form-select" aria-label="Exchange types">
                             <option defaultValue>Click to select</option>
-                            <option value="1">Top</option>
-                            <option value="2">Bottom</option>
-                            <option value="3">Underwear</option>
-                            <option value="1">Outerwear</option>
-                            <option value="2">Shoes</option>
-                            <option value="3">Gender-Affirming Item</option>
-                            <option value="3">Other</option>
+                            <option value="Top">Top</option>
+                            <option value="Bottom">Bottom</option>
+                            <option value="Underwear">Underwear</option>
+                            <option value="Outerwear">Outerwear</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Gender-Affirming Item">Gender-Affirming Item</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>            
 
@@ -321,9 +340,9 @@ export function CreateList() {
 
                 {/* <!-- Post button --> */}
                 <>
-                <a href="listing-published.html">
+                <NavLink to="../lists-all-types">
                     <button onClick={submitCallback} type="button" className="btn btn-save list-btn">Publish</button>
-                </a>
+                </NavLink>
                 {/* <!-- Invisible placeholder to add extra space at bottom --> */}
                 <button type="button" className="btn invisible list-btn">PLACEHOLDER</button>
                 </>

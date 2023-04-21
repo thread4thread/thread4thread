@@ -1,49 +1,54 @@
 import React from 'react';
 
 const filtersObj = {
-  type: [
-    { category: "type", charName: "Tops", selectState: "select" },
-    { category: "type", charName: "Bottoms", selectState: "unselect" },
-    { category: "type", charName: "Outerwear", selectState: "unselect" },
-    { category: "type", charName: "Shoes", selectState: "unselect" },
-    { category: "type", charName: "Accessories", selectState: "unselect" },
-    { category: "type", charName: "Gender-Affirming Items", selectState: "unselect" }
+  exchangeType: [
+    { category: "Exchange Type", charName: "Offer", selectState: "select" },
+    { category: "Exchange Type", charName: "Trade", selectState: "unselect" },
+    { category: "Exchange Type", charName: "Request", selectState: "unselect" },
+  ],
+  itemType: [
+    { category: "Item Type", charName: "Tops", selectState: "select" },
+    { category: "Item Type", charName: "Bottoms", selectState: "unselect" },
+    { category: "Item Type", charName: "Outerwear", selectState: "unselect" },
+    { category: "Item Type", charName: "Shoes", selectState: "unselect" },
+    { category: "Item Type", charName: "Accessories", selectState: "unselect" },
+    { category: "Item Type", charName: "Gender-Affirming Items", selectState: "unselect" }
   ],
   style: [
-    { category: "style", charName: "Feminine", selectState: "unselect" },
-    { category: "style", charName: "Androgynous", selectState: "unselect" },
-    { category: "style", charName: "Masculine", selectState: "unselect" }
+    { category: "Style", charName: "Feminine", selectState: "unselect" },
+    { category: "Style", charName: "Androgynous", selectState: "unselect" },
+    { category: "Style", charName: "Masculine", selectState: "unselect" }
   ],
   color: [
-    { category: "color", charName: "Pink", selectState: "unselect" },
-    { category: "color", charName: "Red", selectState: "unselect" },
-    { category: "color", charName: "Orange", selectState: "unselect" },
-    { category: "color", charName: "Yellow", selectState: "unselect" },
-    { category: "color", charName: "Green", selectState: "unselect" },
-    { category: "color", charName: "Blue", selectState: "unselect" },
-    { category: "color", charName: "Purple", selectState: "unselect" },
-    { category: "color", charName: "Black", selectState: "unselect" },
-    { category: "color", charName: "White", selectState: "unselect" },
-    { category: "color", charName: "Brown", selectState: "unselect" },
-    { category: "color", charName: "Beige", selectState: "unselect" },
-    { category: "color", charName: "Gray", selectState: "unselect" }
+    { category: "Color", charName: "Pink", selectState: "unselect" },
+    { category: "Color", charName: "Red", selectState: "unselect" },
+    { category: "Color", charName: "Orange", selectState: "unselect" },
+    { category: "Color", charName: "Yellow", selectState: "unselect" },
+    { category: "Color", charName: "Green", selectState: "unselect" },
+    { category: "Color", charName: "Blue", selectState: "unselect" },
+    { category: "Color", charName: "Purple", selectState: "unselect" },
+    { category: "Color", charName: "Black", selectState: "unselect" },
+    { category: "Color", charName: "White", selectState: "unselect" },
+    { category: "Color", charName: "Brown", selectState: "unselect" },
+    { category: "Color", charName: "Beige", selectState: "unselect" },
+    { category: "Color", charName: "Gray", selectState: "unselect" }
   ],
   condition: [
-    { category: "condition", charName: "New", selectState: "unselect" },
-    { category: "condition", charName: "Excellent", selectState: "unselect" },
-    { category: "condition", charName: "Good", selectState: "unselect" },
-    { category: "condition", charName: "Fair", selectState: "unselect" }
+    { category: "Condition", charName: "New", selectState: "unselect" },
+    { category: "Condition", charName: "Excellent", selectState: "unselect" },
+    { category: "Condition", charName: "Good", selectState: "unselect" },
+    { category: "Condition", charName: "Fair", selectState: "unselect" }
   ],
   brand: [
-    { category: "brand", charName: "gc2b", selectState: "unselect" },
-    { category: "brand", charName: "TomboyX", selectState: "unselect" },
-    { category: "brand", charName: "H&M", selectState: "unselect" },
-    { category: "brand", charName: "UNIQLO", selectState: "unselect" },
-    { category: "brand", charName: "Old Navy", selectState: "unselect" }
+    { category: "Brand", charName: "gc2b", selectState: "unselect" },
+    { category: "Brand", charName: "TomboyX", selectState: "unselect" },
+    { category: "Brand", charName: "H&M", selectState: "unselect" },
+    { category: "Brand", charName: "UNIQLO", selectState: "unselect" },
+    { category: "Brand", charName: "Old Navy", selectState: "unselect" }
   ]
 };
 
-const filtersArray = ['type', 'style', 'color', 'condition', 'brand'];
+const filtersArray = ['exchangeType', 'itemType', 'style', 'color', 'condition', 'brand'];
 
 //Array of desired filters
 const applyFilters = [];
@@ -51,8 +56,15 @@ const applyFilters = [];
 export function FilterSection(props) {
 
   const filterSec = filtersArray.map((category) => {
-  const filterArray = filtersObj[category];
-  // const buttonEle = document.querySelectorAll('.' + category + ' button');
+    const filterArray = filtersObj[category];
+
+    //make section name in UI categoru rather than key
+    filterArray.map((cat) => {
+      category = cat.category;
+    });
+
+   // console.log(Object.values(filterArray).category);
+    // const buttonEle = document.querySelectorAll('.' + category + ' button');
 
     const handleClick = (event) => {
       event.preventDefault();

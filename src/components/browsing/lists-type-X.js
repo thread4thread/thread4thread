@@ -2,104 +2,64 @@
 // User can click "Filters" to edit search and filters.
 // User can click a listing to view it in detail.
 
+// PACKAGES
+import { useEffect } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 // DATA
-import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
-import pants from './../../assets/img/pants.jpg';
-import docs from './../../assets/img/docs.png';
-import boots from './../../assets/img/asos-boots.png';
-import blackShirt from './../../assets/img/blackshirt.jpg';
-import combra from './../../assets/img/combra.png';
-import sweater from './../../assets/img/sweater.png';
-import tallDress from './../../assets/img/tall-dress.png';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
-// import title from './../browsing/lists-all-types';
-
 // HELPERS
-import NavList from './browsing.helpers/nav-list';
-
-//Packages
-import { NavLink } from 'react-router-dom';
-// import { NavLink, useLocation } from 'react-router-dom';
-
-// const listingObj = {
-
-// }
-let altProp = "Black tank top, pink+purple skirt";
-let classNProp = "grid-item";
-
-//array of items
-// TODO: Add alt text
-// let listings = [ {pinkSkirtImg}, {pants}, {docs}, {boots}, {blackShirt}, {combra}, {sweater}, {tallDress} ];
-// console.log(listings);
-
-const listings = [
-    {
-        name: "Pink skirt",
-        classN: "grid-item",
-        alt: "Black tank top, pink+purple skirt",
-        image: pinkSkirtImg
-    },
-    {
-        "name": "Gingham Vest",
-        "classN": "grid-item",
-        "alt": "Black and white gingham sweater vest",
-        "image": sweater
-    },
-    {
-        "name": "ASOS boots",
-        "classN": "grid-item",
-        "alt": "Black ASOS heeled boots",
-        "image": boots
-    },
-    {
-        "name": "Compression bra",
-        "classN": "grid-item",
-        "alt": "Tan compression bra",
-        "image": require('./../../assets/img/combra.png') // remove require if not working
-    },
-    {
-        "name": "Docs",
-        "classN": "grid-item",
-        "alt": "Black Doc Martens loafers",
-        "image": require('./../../assets/img/docs.png') // remove require if not working
-    },
-    {
-        "name": "Dress",
-        "classN": "grid-item",
-        "alt": "Floral dress",
-        "image": require('./../../assets/img/tall-dress.png') // remove require if not working
-    },
-]
+import NavListing from './browsing.helpers/nav-listing';
 
 export function ListsTypeX() {
-    // const location = useLocation();
-    // const title = location.state;
-    // console.log(location);
+    // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
+    const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
+
+    // Fetch listing data and set state of listingsObj
+    useEffect(() => {
+        const db = getDatabase();
+        const listingDataRef = ref(db, "test"); // TODO: change to listingData
+
+        //returns a function that will "unregister" (turn off) the listener
+        const unregisterFunction = onValue(listingDataRef, (snapshot) => {
+        const listingDataValue = snapshot.val();
+        //...set state variable, etc...
+        setListingsObj(listingDataValue);
+        })
+
+        //cleanup function for when component is removed
+        function cleanup() {
+        unregisterFunction(); //call the unregister function
+        }
+        return cleanup; //effect hook callback returns the cleanup function
+    }, []) //empty array is the second argument to the `useEffect()` function.
+    //It says to only run this effect on first render
 
     const title = localStorage.getItem("sectionTitle");
 
     return (
         <div className="side-wrap box column">
             {/* <!-- Offers (Donations) --> */}
-            <ListingTypeSection sectionTitle={title}/>
+            <ListingTypeSection sectionTitle={title} listingsObj={listingsObj}/>
         </div>
     )
 }
 
 function ListingTypeSection(props) {
-    let { sectionTitle } = props;
-    // let { listingsObj } = props;
-    // let { pinkShirtImg, altProp, classNProp } = listingsObj;
+    let { sectionTitle, listingsObj } = props;
+    let listingKeyArr = Object.keys(listingsObj);
+    let nListings = listingKeyArr.length;
 
     return (
         <div className="box column top-bot-wrap">
             {/* <!-- Offers heading + "See more" button --> */}
-            <SectionHeader sectionTitle={sectionTitle}/>
+            <SectionHeader sectionTitle={sectionTitle} nListings={nListings}/>
 
             {/* <!-- Offer listings grid --> */}
-            {/* <ListingGrid listType={listings}/> */}
-            <ListingGrid listings={listings}/>
+            <ListingGrid listingsObj={listingsObj} listingKeyArr={listingKeyArr}/>
         </div>
     )
 }
@@ -108,8 +68,7 @@ function ListingTypeSection(props) {
 // Left-side: Title (ex: "Offers")
 // Right-side: "See more" button --> see only that listing type
 function SectionHeader(props) {
-    let { sectionTitle } = props;
-    let length = Object.values(listings).length;
+    let { sectionTitle, nListings } = props;
     return (
         <div className="box fill-container">
             {/* back button */}
@@ -121,23 +80,22 @@ function SectionHeader(props) {
 
             {/* Section Title */}
             <h1 className="left-item">{sectionTitle}</h1>
-            <p>{ length } results</p>
+            <p>{ nListings } results</p>
         </div>
     )
 }
 
 function ListingGrid(props) {
-   // let listType = props;
-    // let listingElemArr = [];
-    // console.log(props.listings);
-    let listType = Object.values(props.listings);
-    // console.log(listType);
-    let listingElemArr = listType.map((elem) => {
-        // console.log(Object.values(elem).at(0));
-        // console.log(elem);
-        // TODO: Add key
+    let { listingsObj, listingKeyArr } = props;
+
+    let listingElemArr = listingKeyArr.map((listingKey) => {
+        let listingObj = listingsObj[listingKey];
+
+        let filePath = listingObj.filePath;
+        let alt = listingObj.alt;
+
         return (
-            <ListingElem listing={elem} key={elem.name}/>
+            <NavListing navTo="../list-details" src={filePath} alt={alt} key={listingKey}/>
         )
     });
 
@@ -145,14 +103,5 @@ function ListingGrid(props) {
         <div className="grid by-2">
             {listingElemArr}
         </div>
-    )
-}
-
-function ListingElem(props) {
-    let { listing } = props;
-    // console.log(item);
-    console.log(listing);
-    return (
-        <NavList src={listing.image} navTo='../list-details' alt={listing.altProp} classN={classNProp}/>
     )
 }

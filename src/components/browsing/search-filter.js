@@ -22,7 +22,7 @@ export function SearchFilter() {
         {/* Main content */}
         <div className="side-wrap box column">
             {/* Header */}
-            <h1 className="no-space">Browse by...</h1>
+            {/* <h1 className="no-space">Browse by...</h1> */}
 
             {/* Filter Sections (Clothing Type, Style, etc.) */}
             <FilterSection />
@@ -108,6 +108,7 @@ function ApplyButton() {
             <NavLink to="/">
             <button type="button" className="btn btn-save side-wrap list-btn">Apply</button>
             {/* <!-- Invisible placeholder to add extra space at bottom --> */}
+            <button type="button" className="btn invisible list-btn">Apply</button>
             </NavLink>
         </>
     )
