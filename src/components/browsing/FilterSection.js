@@ -68,6 +68,7 @@ export function FilterSection(props) {
 
     const handleClick = (event) => {
       event.preventDefault();
+      event.target.blur();
       // buttonEle.forEach(button => {
       //   button.classList.remove('active');
       // });
@@ -85,7 +86,7 @@ export function FilterSection(props) {
     const buttons = filterArray.map((filter) => {
       return (
         <button
-          onClick={handleClick} key={filter.charName} type="button" className="btn btn-outline-dark" id={filter.category}>{filter.charName}</button>
+          onClick={handleClick} key={filter.charName} type="button" className="btn btn-toggler" id={filter.category}>{filter.charName}</button>
       )
     })
 

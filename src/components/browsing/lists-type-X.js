@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
 // HELPERS
-import NavListing from './browsing.helpers/nav-listing';
+import { ListingGrid } from './browsing.helpers/listing-grid';
 
 export function ListsTypeX() {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
@@ -21,7 +21,7 @@ export function ListsTypeX() {
     // Fetch listing data and set state of listingsObj
     useEffect(() => {
         const db = getDatabase();
-        const listingDataRef = ref(db, "test"); // TODO: change to listingData
+        const listingDataRef = ref(db, "listingData"); // TODO: change to listingData
 
         //returns a function that will "unregister" (turn off) the listener
         const unregisterFunction = onValue(listingDataRef, (snapshot) => {
@@ -59,7 +59,7 @@ function ListingTypeSection(props) {
             <SectionHeader sectionTitle={sectionTitle} nListings={nListings}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingsObj={listingsObj} listingKeyArr={listingKeyArr}/>
+            <ListingGrid listingsObj={listingsObj} nCols={2}/>
         </div>
     )
 }
@@ -81,27 +81,6 @@ function SectionHeader(props) {
             {/* Section Title */}
             <h1 className="left-item">{sectionTitle}</h1>
             <p>{ nListings } results</p>
-        </div>
-    )
-}
-
-function ListingGrid(props) {
-    let { listingsObj, listingKeyArr } = props;
-
-    let listingElemArr = listingKeyArr.map((listingKey) => {
-        let listingObj = listingsObj[listingKey];
-
-        let filePath = listingObj.filePath;
-        let alt = listingObj.alt;
-
-        return (
-            <NavListing navTo="../list-details" src={filePath} alt={alt} key={listingKey}/>
-        )
-    });
-
-    return (
-        <div className="grid by-2">
-            {listingElemArr}
         </div>
     )
 }

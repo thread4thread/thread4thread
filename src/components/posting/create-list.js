@@ -19,13 +19,8 @@ export function CreateList() {
     const [listingInfo, setListingInfo] = useState({});
     const [listingData, setListingData] = useState([]);
     const [imageUpload, setImageUpload] = useState(null);
-    const [imageLink, setImageLink] = useState(null);
 
-    // const [imageAsUrl, setImageAsUrl] = useState('')
-
-    // const [inDB, setInDB] = useState(undefined)
-
-    // const storage = getStorage();
+    //reference thread4thread database
     const db = getDatabase();
 
     //set up connection to db
@@ -80,23 +75,6 @@ export function CreateList() {
         event.preventDefault();
         const file = event.target.files[0];
         setImageUpload(file);
-        console.log(file);
-        let val = {filePath: file};
-        const currentInfo = Object.assign(listingInfo, val);
-        setListingInfo(currentInfo);
-
-        // const file = event.target.files[0];
-        // const uploadTask = storageRef.child(`images/${file.name}`).put(file);
-        // uploadTask.then((snapshot) => {
-        //     console.log('Image uploaded successfully');
-        //     snapshot.ref.getDownloadURL().then((url) => {
-        //     console.log('Image URL:', url);
-        //     // Save the image URL to your database or use it to display the image in your React app
-        //     });
-        // }).catch((error) => {
-        //     console.error('Error uploading image:', error);
-        // });
-
     }
 
     //handle description
@@ -116,6 +94,7 @@ export function CreateList() {
     //handle appearance Might need to be changed
     function handleAppearance(event) {
         event.preventDefault();
+        event.target.blur();
 
         const appearance = []; 
 
@@ -140,6 +119,7 @@ export function CreateList() {
     //handle color Might need to be changed
     function handleColor(event) {
         event.preventDefault();
+        event.target.blur();
 
         event.target.classList.toggle('active');
   
@@ -179,27 +159,29 @@ export function CreateList() {
     }
 
     //submit 
-    // const imageLinkRef = storageRef(storage, `${imageUpload.name}`);
-
     function submitCallback(event) {
+
+        //make sure image was added
         if(imageUpload == null) {
             return;
         }
+        //create reference to image in storage
         const imageRef = storageRef(storage,`${imageUpload.name}`);
         uploadBytes(imageRef, imageUpload).then(() => {
-            alert("image uploaded");
+
+            //call reference to image and download firebase url to add to database
+            getDownloadURL(imageRef).then((url) => {
+
+                let val = {filePath: url};
+                const currentInfo = Object.assign(listingInfo, val);
+                setListingInfo(currentInfo);
+            
+                //compile all listing details and push to database
+                const listingRef = ref(db, "listingData");
+                firebasePush(listingRef, listingInfo);
+                });
         })
-
-        const listingRef = ref(db, "listingData");
-        firebasePush(listingRef, listingInfo);
-
     }
-
-    // useEffect(() => {
-    //     listAll(imageLinkRef).then((response) => {
-    //         console.log()
-    //     })
-    // }, []);
 
     return (
         <form role='form' method='GET'>
@@ -281,9 +263,9 @@ export function CreateList() {
 
                         {/* <!-- Input --> */}
                         <div id="app-choices" className="box">
-                            <button onClick={handleAppearance} type="button" value="Feminine" className="btn btn-outline-dark">Feminine</button>
-                            <button onClick={handleAppearance} type="button" value="Androgynous" className="btn btn-outline-dark">Androgynous</button>
-                            <button onClick={handleAppearance} type="button" value="Masculine" className="btn btn-outline-dark">Masculine</button>
+                            <button onClick={handleAppearance} type="button" value="Feminine" className="btn btn-toggler">Feminine</button>
+                            <button onClick={handleAppearance} type="button" value="Androgynous" className="btn btn-toggler">Androgynous</button>
+                            <button onClick={handleAppearance} type="button" value="Masculine" className="btn btn-toggler">Masculine</button>
                         </div>
                     </div>
 
@@ -294,18 +276,18 @@ export function CreateList() {
 
                         {/* <!-- Input --> */}
                         <div id="color-choices" className="box">
-                            <button onClick={handleColor} type="button" value="Pink" className="btn btn-outline-dark">Pink</button>
-                            <button onClick={handleColor} type="button" value="Red" className="btn btn-outline-dark">Red</button>
-                            <button onClick={handleColor} type="button" value="Orange" className="btn btn-outline-dark">Orange</button>
-                            <button onClick={handleColor} type="button" value="Yellow" className="btn btn-outline-dark">Yellow</button>
-                            <button onClick={handleColor} type="button" value="Green"className="btn btn-outline-dark">Green</button>
-                            <button onClick={handleColor} type="button" value="Blue" className="btn btn-outline-dark">Blue</button>
-                            <button onClick={handleColor} type="button" value="Purple" className="btn btn-outline-dark">Purple</button>
-                            <button onClick={handleColor} type="button" value="Black" className="btn btn-outline-dark">Black</button>
-                            <button onClick={handleColor} type="button" value="White" className="btn btn-outline-dark">White</button>
-                            <button onClick={handleColor} type="button" value="Brown" className="btn btn-outline-dark">Brown</button>
-                            <button onClick={handleColor} type="button" value="Beige" className="btn btn-outline-dark">Beige</button>
-                            <button onClick={handleColor} type="button" value="Gray" className="btn btn-outline-dark">Gray</button>
+                            <button onClick={handleColor} type="button" value="Pink" className="btn btn-toggler">Pink</button>
+                            <button onClick={handleColor} type="button" value="Red" className="btn btn-toggler">Red</button>
+                            <button onClick={handleColor} type="button" value="Orange" className="btn btn-toggler">Orange</button>
+                            <button onClick={handleColor} type="button" value="Yellow" className="btn btn-toggler">Yellow</button>
+                            <button onClick={handleColor} type="button" value="Green"className="btn btn-toggler">Green</button>
+                            <button onClick={handleColor} type="button" value="Blue" className="btn btn-toggler">Blue</button>
+                            <button onClick={handleColor} type="button" value="Purple" className="btn btn-toggler">Purple</button>
+                            <button onClick={handleColor} type="button" value="Black" className="btn btn-toggler">Black</button>
+                            <button onClick={handleColor} type="button" value="White" className="btn btn-toggler">White</button>
+                            <button onClick={handleColor} type="button" value="Brown" className="btn btn-toggler">Brown</button>
+                            <button onClick={handleColor} type="button" value="Beige" className="btn btn-toggler">Beige</button>
+                            <button onClick={handleColor} type="button" value="Gray" className="btn btn-toggler">Gray</button>
                         </div>
                     </div>
 
