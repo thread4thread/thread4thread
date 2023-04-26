@@ -460,3 +460,41 @@ button.arrow-btn {
     text-decoration: none;
     color: black;
 }
+
+
+.logos-welcome {
+  position: absolute;
+  width: 203px;
+  height: 109.07px;
+  left: 95px;
+  top: 150px;
+}
+
+.welcome-h{
+  position: absolute;
+  left: 65px;
+  top: 325px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.purp-button-welcome {
+  background-color: #8991DC;
+  color: white;
+  width: 40%;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  top: -60px;
+  right: -35px;
+}
+
+.welcome {
+  margin-top: 50px;
+}

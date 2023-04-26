@@ -22,6 +22,7 @@ import { SearchFilter } from './components/browsing/search-filter';
 import { ListingDetails } from './components/browsing/list-details';
 import { CreateList } from './components/posting/create-list';
 import { LogIn } from './components/account/login';
+import { Profile } from './components/account/my-profile';
 
 // Posting
 // import { CreateList } from './components/posting/create-list';
@@ -57,6 +58,8 @@ function App() {
         <Route path='/create-list' element={<CreateList/>}/>
 
         <Route path='/login' element={<LogIn/>}/>
+
+        <Route path='/my-profile' element={<Profile/>}/>
 
       </Routes>
     </main>

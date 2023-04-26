@@ -9,6 +9,7 @@ import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {auth} from './f-config';
+import { Link } from 'react-router-dom';
 
 //import { getAuth, EmailAuthProvider } from "firebase/auth";
 //import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -41,10 +42,12 @@ export function SignUp() {
 
     return (
     <div className="content-wrap">
+        <Link to="/welcome">
         <button type="button" className="btn arrow-btn">
             <img src={ArrowIcon} alt="return"/>
             {/* <!-- <span className="arrow">&#8592;</span> --> */}
         </button>
+        </Link>
         <div className="sign-up">
             <h1>Sign up</h1>
             <div>
