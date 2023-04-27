@@ -22,6 +22,7 @@ import { SearchFilter } from './components/browsing/search-filter';
 import { ListingDetails } from './components/browsing/list-details';
 import { CreateList } from './components/posting/create-list';
 import { LogIn } from './components/account/login';
+import { UserProfile } from './components/profile/user-profile';
 
 // Posting
 // import { CreateList } from './components/posting/create-list';
@@ -55,6 +56,8 @@ function App() {
         <Route path="/list-details" element={<ListingDetails/>}/>
 
         <Route path='/create-list' element={<CreateList/>}/>
+
+        <Route path='/my-profile' element={<UserProfile/>} />
 
         <Route path='/login' element={<LogIn/>}/>
 
