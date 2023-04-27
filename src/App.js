@@ -24,6 +24,7 @@ import { CreateList } from './components/posting/create-list';
 import { LogIn } from './components/account/login';
 import { Profile } from './components/account/my-profile';
 import {LogOutModal} from './components/account/logout';
+import { UserProfile } from './components/profile/user-profile';
 
 // Posting
 // import { CreateList } from './components/posting/create-list';
@@ -57,6 +58,8 @@ function App() {
         <Route path="/list-details" element={<ListingDetails/>}/>
 
         <Route path='/create-list' element={<CreateList/>}/>
+
+        <Route path='/my-profile' element={<UserProfile/>} />
 
         <Route path='/login' element={<LogIn/>}/>
 
