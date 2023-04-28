@@ -487,6 +487,7 @@ button.arrow-btn {
   width: 40%;
   border-radius: 8px;
   padding: 10px;
+  margin: 10px;
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -496,5 +497,6 @@ button.arrow-btn {
 }
 
 .welcome {
-  margin-top: 50px;
+  justify-content: center;
+  margin-top: 500px;
 }
