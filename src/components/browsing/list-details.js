@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 
 
 // ICONS
-import moreIcon from './../../assets/icon/more.png';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
 // DATA
@@ -52,21 +51,26 @@ export function ListingDetails() {
         <>
 
         {/* <!-- Header --> */}
-        <MakeHeader pfpPath={pfp} listingTitle={list.title} userHandle={userHandle}/>
+        <MakeHeader pfpPath={pfp} listingTitle={list.title} userHandle={userHandle} listType={list.exchangeType}/>
 
         {/* <!-- Image --> */}
         <MakeImage imgPath={list.filePath}/>
 
         {/* <!-- TODO: Favoriting (will add padding) --> */}
 
-        {/* Description */}
-        <MakeDesc listingDesc={list.desc}/>
+        {/* <MakeIconBar listingDesc={list} /> */}
 
-        {/* <!-- Overview Section --> */}
-        <MakeOverview listingObj={list} 
-        // TODO: size
-        // listingSizeObj={listingSizeObj}
-        />
+        {/* Description */}
+        <div className='container-expand'>
+            <MakeDesc listingDesc={list.desc}/>
+
+            {/* <!-- Overview Section --> */}
+            <MakeOverview listingObj={list} 
+            // TODO: size
+            // listingSizeObj={listingSizeObj}
+            />
+        </div>
+        
 
         {/* <!-- "I'm interested!" Button --> */}
         <MakeButton/>
@@ -75,7 +79,7 @@ export function ListingDetails() {
 }
 
 function MakeHeader(props) {
-    const { pfpPath, listingTitle, userHandle } = props;
+    const { pfpPath, listingTitle, userHandle, listType } = props;
 
     return (
         <div className="box center-align-hor side-wrap">
@@ -90,7 +94,10 @@ function MakeHeader(props) {
                 <strong>{listingTitle}</strong>
                 <p className="no-space">@{userHandle}</p>
             </div>
-            <img src={moreIcon} alt="Horizontal dot dot dot" className="img-mini right-item"/>
+            <div className='title top-right'>
+                {listType}
+            </div>
+            {/* <img src={moreIcon} alt="Horizontal dot dot dot" className="img-mini right-item"/> */}
         </div>
     )
 }
@@ -99,17 +106,27 @@ function MakeImage(props) {
     let { imgPath } = props;
 
     return (
-        <div className="gray-bg">
-            <img src={imgPath} alt="listingObj" className="center-item-vert img-lg"/>
+        <div className="img-detail img-container gray-bg">
+            <img src={imgPath} alt="listingObj" className="center-item-vert img-lg"  width="100%" height="100%"/>
         </div>
     )
 }
+
+// function MakeIconBar(props) {
+//     let { listingDesc } = props;
+//     return (
+//         <div className="box center-align-hor icon-box">
+//             hello
+//          </div>
+//     )
+    
+// }
 
 function MakeDesc(props) {
     let { listingDesc } = props;
 
     return (
-        <div className="side-wrap top-bot-wrap">
+        <div className="description flex-fill side-wrap top-bot-wrap">
             {/* <!-- Description --> */}
             <div className="box column">
                 {/* <!-- Heading --> */}
@@ -192,6 +209,7 @@ function MakeButton() {
         <>
         <button type="button" className="btn btn-save side-wrap list-btn">I'm interested!</button>
         {/* <!-- Invisible placeholder to add extra space at bottom --> */}
+        <button type="button" className="btn invisible list-btn">I'm interested!</button>
         <button type="button" className="btn invisible list-btn">I'm interested!</button>
         </>
     )
