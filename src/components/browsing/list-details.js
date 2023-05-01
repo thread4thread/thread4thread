@@ -48,7 +48,7 @@ export function ListingDetails() {
     });
 
     return (
-        <>
+        <div className='create-list'>
 
         {/* <!-- Header --> */}
         <MakeHeader pfpPath={pfp} listingTitle={list.title} userHandle={userHandle} listType={list.exchangeType}/>
@@ -58,10 +58,8 @@ export function ListingDetails() {
 
         {/* <!-- TODO: Favoriting (will add padding) --> */}
 
-        {/* <MakeIconBar listingDesc={list} /> */}
-
         {/* Description */}
-        <div className='container-expand'>
+        <div>
             <MakeDesc listingDesc={list.desc}/>
 
             {/* <!-- Overview Section --> */}
@@ -74,7 +72,7 @@ export function ListingDetails() {
 
         {/* <!-- "I'm interested!" Button --> */}
         <MakeButton/>
-        </>
+        </div>
     )
 }
 
@@ -82,7 +80,7 @@ function MakeHeader(props) {
     const { pfpPath, listingTitle, userHandle, listType } = props;
 
     return (
-        <div className="box center-align-hor side-wrap">
+        <div className="header box center-align-hor side-wrap">
             <NavLink to='../lists-type-x'>
                 <button type="button" className="btn arrow-btn p-0">
                     <img src={ArrowIcon} alt="return"/>
@@ -111,16 +109,6 @@ function MakeImage(props) {
         </div>
     )
 }
-
-// function MakeIconBar(props) {
-//     let { listingDesc } = props;
-//     return (
-//         <div className="box center-align-hor icon-box">
-//             hello
-//          </div>
-//     )
-    
-// }
 
 function MakeDesc(props) {
     let { listingDesc } = props;
