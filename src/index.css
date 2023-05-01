@@ -175,7 +175,11 @@ h2 {
 }
 
 .bottom-nav img {
-  height: 2.25rem;
+  height: 2rem;
+}
+
+.bottom-nav-icon.active img {
+  height: 1.5rem;
 }
 
 .container-fluid.nav-container {
@@ -299,8 +303,17 @@ h2 {
 
 .accent-button {
   background-color: white;
-  color: #8991DC;
+  color: #3b4ef7;
   border: none;
+}
+
+.accent-button-form {
+  background-color: white;
+  color: #3b4ef7;
+  border: none;
+  position: absolute;
+  right: 8px;
+  top: -8px;
 }
 
 .btn-outline-secondary {
@@ -504,8 +517,8 @@ button.arrow-btn {
 }
 
 .description {
-  background-color: #dcdcfb;
   border-radius: 1rem;
+  background-color: #dcdcfb;
   margin: 10px;
 }
 
