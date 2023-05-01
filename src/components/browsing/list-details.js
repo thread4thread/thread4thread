@@ -81,7 +81,7 @@ function MakeHeader(props) {
 
     return (
         <div className="header box center-align-hor side-wrap">
-            <NavLink to='../lists-type-x'>
+            <NavLink to='../'>
                 <button type="button" className="btn arrow-btn p-0">
                     <img src={ArrowIcon} alt="return"/>
                 </button>
