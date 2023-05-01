@@ -43,6 +43,7 @@ main {
 
 h1 {
   font-size: 24px;
+  font-weight: 700;
 }
 
 h2 {
@@ -472,7 +473,8 @@ button.arrow-btn {
 
 .welcome-h{
   position: absolute;
-  left: 65px;
+  align-self: center;
+  /* left: 65px; */
   top: 325px;
   font-style: normal;
   font-weight: 600;
@@ -497,6 +499,26 @@ button.arrow-btn {
 }
 
 .welcome {
-  justify-content: center;
   margin-top: 500px;
+}
+
+.overview {
+  background-color: #dcdcfb;
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: small;
+}
+
+.title.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background-color: black;
+  border-radius: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
