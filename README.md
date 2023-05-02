@@ -53,22 +53,22 @@ Grace Gibbons: gracie.gibbons.stc@gmail.com
 ---
 ## Team
 **Marala Berdyeva**
-Frontend / PM
+Fullstack / PM
 
 **Rena Bo**
-Frontend / Backend / UI/UX
+Fullstack / UI/UX
 
 **Sabrina Burka**
-Frontend / UX/UI / Backend
+Fullstack / Graphic Design
 
 **Grace Gibbons**
-UI/UX / Frontend / Backend
+UI/UX / Fullstack
 
 **Selina Hu**
 UI/UX / PM / Business / Graphic design
 
 **Jasper Maynard-Zhang (Project Lead)**
-PM / Backend / Frontend
+PM / Fullstack
 
 **Nila Ragu**
 UI/UX
