@@ -1,3 +1,7 @@
+// USER METRICS - Includes user's profile picture, scores, rating, and an edit profile button.
+// Inputs:
+  // pfp - An image for the user's profile
+
 // TODO: Break into subcomponents
 
 // PACKAGES
