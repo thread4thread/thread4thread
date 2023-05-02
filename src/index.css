@@ -43,6 +43,7 @@ main {
 
 h1 {
   font-size: 24px;
+  font-weight: 700;
 }
 
 h2 {
@@ -115,15 +116,18 @@ h2 {
 
 .by-3 {
   grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, 139px);
 }
 
 .by-2 {
   grid-template-columns: repeat(2, auto);
+  --bs-div-display: none;
 }
 
 .grid-item {
   width: 100%;
   border-radius: .75rem;
+  height: 100%;
 }
 
 /*  */
@@ -140,12 +144,12 @@ h2 {
 
 .topnav.navbar {
   justify-content: center;
+  background-color: white;
 }
 
 .place-holder-bottom {
   height: 52px;
   width: 390px;
-  background-color: white;
 }
 
 .navbar-brand img {
@@ -174,7 +178,11 @@ h2 {
 }
 
 .bottom-nav img {
-  height: 2.25rem;
+  height: 2rem;
+}
+
+.bottom-nav-icon.active img {
+  height: 1.5rem;
 }
 
 .container-fluid.nav-container {
@@ -267,6 +275,7 @@ h2 {
   bottom: 8%;
   left: 25%;
   right: 25%;
+  margin-top: 10px;
 }
 
 .invisible {
@@ -297,8 +306,17 @@ h2 {
 
 .accent-button {
   background-color: white;
-  color: #8991DC;
+  color: #3b4ef7;
   border: none;
+}
+
+.accent-button-form {
+  background-color: white;
+  color: #3b4ef7;
+  border: none;
+  position: absolute;
+  right: 8px;
+  top: -8px;
 }
 
 .btn-outline-secondary {
@@ -365,16 +383,17 @@ h2 {
 
 
 .login {
+  justify-content: center;
   width: 100%;
   height: 80%;
   text-align: center;
   padding: 15px;
   margin: 20% auto 0;
 }
-.login h1 {
+/* .login h1 {
   margin-bottom: 10px;
   text-align: left;
-}
+} */
 
 button.arrow-btn {
   background-color: white; /* Green */
@@ -461,42 +480,114 @@ button.arrow-btn {
     color: black;
 }
 
-
 .logos-welcome {
-  position: absolute;
+  align-self: center;
+  justify-self: center;
   width: 203px;
   height: 109.07px;
-  left: 95px;
-  top: 150px;
 }
 
 .welcome-h{
-  position: absolute;
-  left: 65px;
-  top: 325px;
-  font-style: normal;
+  vertical-align: center;
+  margin-top: 300px;
+  justify-content: center;
+  /* font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 20px;
-  color: #000000;
+  color: #000000; */
 }
 
 .purp-button-welcome {
   background-color: #8991DC;
   color: white;
-  width: 40%;
+  /* width: 40%; */
+  width: 150px;
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
   border: none;
-  cursor: pointer;
-  display: inline-block;
+  /* cursor: pointer; */
+  /* display: inline-block; */
   position: relative;
-  top: -60px;
-  right: -35px;
+  bottom: -50px;
+  /* top: -60px;
+  right: -35px; */
 }
 
 .welcome {
+  /* margin-top: 500px; */
   justify-content: center;
-  margin-top: 500px;
+  height: 100%;
+}
+
+.welcome-btn {
+  /* margin-top: 500px; */
+  justify-content: center;
+  /* height: 100%; */
+}
+
+.header {
+  background-color: white;
+}
+
+.create-list {
+  background-color: white;
+}
+
+.description {
+  /* border-radius: 1rem;
+  background-color: #8991DC; */
+  margin: 10px;
+}
+
+.overview {
+  background-color: #dcdcfb;
+  border-radius: 1rem;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  margin: 10px;
+}
+
+.img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: small;
+  height: 100%;
+}
+
+.img-detail img{
+  height: 500px;
+  width: 100%;
+}
+
+.title {
+  color: white;
+  height: 20px;
+  /* overflow: hidden; */
+}
+
+.title.bottom-left {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background-color: black;
+  border-radius: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.title.top-right {
+  position: absolute;
+  height: 25px;
+  top: 16px;
+  right: 8px;
+  background-color: black;
+  border-radius: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

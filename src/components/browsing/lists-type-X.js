@@ -72,7 +72,7 @@ function SectionHeader(props) {
     return (
         <div className="box fill-container">
             {/* back button */}
-            <NavLink to='../lists-all-types'>
+            <NavLink to='../'>
                 <button type="button" className="btn arrow-btn p-0">
                     <img src={ArrowIcon} alt="return"/>
                 </button>
