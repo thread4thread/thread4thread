@@ -1,10 +1,18 @@
+// TODO: Break into subcomponents
+
+// PACKAGES
 import React from 'react';
 
+// ICONS
+import editIcon from '../../assets/icon/edit.png';
+import starIcon from '../../assets/icon/star.png';
+
 export function UserMetrics(props) {
+  let { pfp } = props;
 
   return (
-    <div className="box text-center">
-      <img src="../../assets/img/blank-pfp.png" className="w-25 h-25 no-space" />
+    <div className="box text-center side-wrap">
+      <img src={pfp} className="w-25 h-25 no-space" />
 
       <div className="tight-box column">
         <div className="box text-center">
@@ -26,18 +34,18 @@ export function UserMetrics(props) {
           <div className="box ms-1 ps-1">
             <div className="edit-icon">
               <a href="../profile/edit-profile.html">
-                <img src="../img/edit.png" height="20px" alt="Edit profile" />
+                <img src={editIcon} height="20px" alt="Edit profile" />
               </a>
             </div>
           </div>
         </div>
 
         <div className="box text-center">
-          <img src="../img/star.png" height="20px" />
-          <img src="../img/star.png" height="20px" />
-          <img src="../img/star.png" height="20px" />
-          <img src="../img/star.png" height="20px" />
-          <img src="../img/star.png" height="20px" />
+          <img src={starIcon} alt="star" height="20px" />
+          <img src={starIcon} alt="star" height="20px" />
+          <img src={starIcon} alt="star" height="20px" />
+          <img src={starIcon} alt="star" height="20px" />
+          <img src={starIcon} alt="star" height="20px" />
         </div>
       </div>
     </div>
