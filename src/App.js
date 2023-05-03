@@ -8,6 +8,9 @@ import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
+import { getAuth } from "firebase/auth"
+import { useAuthState } from "react-firebase-hooks/auth";
+
 // COMPONENTS
 // Navbars
 import { TopNav } from './components/navbar/top-nav';
@@ -26,11 +29,38 @@ import { Profile } from './components/account/my-profile';
 // import {LogOutModal} from './components/account/logout';
 import { UserProfile } from './components/profile/user-profile';
 
+
+
+
 // Posting
 // import { CreateList } from './components/posting/create-list';
 // list-published
 
-function App() {
+function App(props) {
+  const [user, loading] = useAuthState(getAuth());
+  const currentUser = user;
+
+
+
+    
+    /*const [user, setUser] = useState({});
+    onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+    })*/
+
+
+    /*onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+      });*/
+
+
+    //make sure the user stays logged in when using the website
+    //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
+
+  //const [user, loading] = useAuthState(getAuth());
+  
+
   return (
     <>
 
@@ -61,9 +91,9 @@ function App() {
 
         <Route path='/my-profile' element={<UserProfile/>} />
 
-        <Route path='/login' element={<LogIn/>}/>
+        <Route path='/login' element={<LogIn user={currentUser}/>}/>
 
-        <Route path='/my-profile' element={<Profile/>}/>
+        <Route path='/my-profile' element={<Profile user={currentUser}/>} />
 
         {/* <Route path='/logout' element={<LogOutModal/>}/> */}
 

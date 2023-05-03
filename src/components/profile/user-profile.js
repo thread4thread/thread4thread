@@ -18,6 +18,8 @@ import pfp from '../../assets/img/blank-pfp.png';
 
 export function UserProfile(props) {
 
+  console.log(props.user);
+
   return (
     <div className="box column side-wrap">
       <UserMetrics pfp={pfp}/>

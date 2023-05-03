@@ -2,14 +2,12 @@ import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 import { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser } from 'firebase/auth';
 import {auth} from './f-config';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import {getAuth} from 'firebase/auth';
 
 
+export function LogIn(props) {
 
-
-
-
-export function LogIn() {
 
     
     /*const [user, setUser] = useState({});
@@ -19,12 +17,17 @@ export function LogIn() {
 
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
+    const auth = getAuth();
 
+    onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+      });
 
-    //make sure the user stays logged in when using the website
-    //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-
+    // Redirect to profile page when logged in
+  if (props.user) {
+    return <Route to="/my-profile" />
+  } else {
     const login = async () => {
         try {
             const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
@@ -55,8 +58,16 @@ return (
             </div>
         </div>
     </div>
-)
+)}
+    
 }
+
+
+
+    //make sure the user stays logged in when using the website
+    //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
+
 
 /*
 this will be used to retrieve their email address and display it in the profile page
