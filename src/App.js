@@ -23,7 +23,6 @@ import { ListingDetails } from './components/browsing/list-details';
 import { CreateList } from './components/posting/create-list';
 import { LogIn } from './components/account/login';
 import { Profile } from './components/account/my-profile';
-import {LogOutModal} from './components/account/logout';
 
 // Posting
 // import { CreateList } from './components/posting/create-list';
@@ -61,8 +60,6 @@ function App() {
         <Route path='/login' element={<LogIn/>}/>
 
         <Route path='/my-profile' element={<Profile/>}/>
-
-        <Route path='/logout' element={<LogOutModal/>}/>
 
 
       </Routes>
