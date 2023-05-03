@@ -181,8 +181,18 @@ h2 {
   height: 2rem;
 }
 
-.bottom-nav-icon.active img {
+/* .bottom-nav-icon.active img {
   height: 1.5rem;
+ 
+} */
+
+.bottom-nav-icon-add img {
+  height: 1.5rem;
+  background-image: url("./assets/icon/account-active.png");
+  /* src: ; */
+  /* color: white;
+  background-color: black;
+  border-radius: .5rem; */
 }
 
 .container-fluid.nav-container {
@@ -560,6 +570,13 @@ button.arrow-btn {
 .img-detail img{
   height: 500px;
   width: 100%;
+}
+
+label {
+  font-size: larger;
+  margin: 5px;
+  font-weight:500;
+
 }
 
 .title {
