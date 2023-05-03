@@ -15,7 +15,7 @@ export function UserMetrics(props) {
   let { pfp } = props;
 
   return (
-    <div className="box text-center side-wrap">
+    <div className="box text-center">
       <img src={pfp} className="w-25 h-25 no-space" />
 
       <div className="tight-box column">

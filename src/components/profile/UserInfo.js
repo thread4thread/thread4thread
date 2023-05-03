@@ -14,7 +14,7 @@ export function UserInfo(props) {
   const { name, pronouns, user, bio } = props;
 
   return (
-    <div className="tight-box column side-wrap">
+    <div className="tight-box column">
       <div className="box text-center">
         <p className="fs-4 fw-bold align-middle mb-0">{name}</p>
         <p className="fs-4 fw-light align-middle text-secondary mb-0">{pronouns}</p>

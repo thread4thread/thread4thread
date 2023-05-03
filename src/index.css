@@ -591,3 +591,12 @@ button.arrow-btn {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+/*  */
+/* SEPARATORS */
+/*  */
+.horizontal-line {
+  background-color: white;
+  height: 5px;
+  width: 49%
+}
