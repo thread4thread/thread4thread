@@ -511,8 +511,10 @@ button.arrow-btn {
 .purp-button-welcome {
   background-color: #8991DC;
   color: white;
+  font-size: large;
+  font-family: roboto;
   /* width: 40%; */
-  width: 150px;
+  width: 200px;
   border-radius: 8px;
   padding: 10px;
   margin: 10px;

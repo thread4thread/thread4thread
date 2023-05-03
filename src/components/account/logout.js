@@ -17,12 +17,15 @@ import {
     MDBBtn,
   } from 'mdb-react-ui-kit';
   
-  export function HamburgerMenu() {
+  export function HamburgerMenu(props) {
 
     const logout = async () => {
         await signOut(auth);
       };
 
+    //   const showLogOutModal = () => {
+    //     props.setShowLogOut(true);
+    // }
 
     const [showNavExternal3, setShowNavExternal3] = useState(false);
   
