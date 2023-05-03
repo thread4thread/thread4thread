@@ -25,7 +25,7 @@ export function BotNav() {
     let iconElemArr = iconArr.map((icon) => {
         let navPath = navPaths[i]
         i+=1;
-        console.log(iconArr);
+        // console.log(iconArr);
 
         return (
         <NavIcon src={icon}
