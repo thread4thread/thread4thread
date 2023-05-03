@@ -10,14 +10,13 @@ import NavIcon from './navbar.helpers/nav-icon';
 
 // ICONS
 // TODO: Dynamically bold icons depending on what page you're on
-import homeIcon from './navbar.assets/home.png';
-import mailIcon from './navbar.assets/mail.png';
-import plusIcon from './navbar.assets/add.png';
-import heartIcon from './navbar.assets/heart.png';
-import userIcon from './navbar.assets/user.png';
+import homeIcon from '../../assets/icon/home.png';
+import mailIcon from '../../assets/icon/mail.png';
+import plusIcon from '../../assets/icon/add.png';
+import userIcon from '../../assets/icon/account.png';
 // import { useResolvedPath } from 'react-router-dom';
-const iconArr = [homeIcon, mailIcon, plusIcon, heartIcon, userIcon]
-const navPaths = ['', 'my-exchanges', 'create-list', 'my-favorite-listings', 'my-profile'];
+const iconArr = [homeIcon, mailIcon, plusIcon, userIcon]
+const navPaths = ['', 'my-exchanges', 'create-list', 'my-profile'];
 // TODO: Figure out how to import data + put icons in a data structure to be more dynamic
 
 export function BotNav() {
@@ -26,10 +25,11 @@ export function BotNav() {
     let iconElemArr = iconArr.map((icon) => {
         let navPath = navPaths[i]
         i+=1;
+        // console.log(iconArr);
 
         return (
         <NavIcon src={icon}
-            classN={"col"}
+            classN={"col bottom-nav-icon"}
             navPath={navPath}
             key={icon+""}/>
         )

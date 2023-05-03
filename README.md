@@ -1,22 +1,74 @@
 # Project **thread4thread**
+## Handoff Documentation
+### What we’ve accomplished so far:
+**Research:**
+- Surveys
+- Interviews
+- User testing
+
+**Development:**
+- Log-in/Account Creation
+- Simple browsing (simple search)
+- Create listing
+
+### Future steps:
+**Research:**
+- Interview people who are involved in the queer clothing exchange and queer fashion sphere
+
+**Design:**
+- Exchange process
+- Continue refining and polishing design
+
+**Development:**
+- Create and connect a new database to the React app
+- Numeric size measurements (instead of gendered size measurements)
+- Exchange process
+- Favorites page
+- User-to-user messaging
+- Connect with Seattle’s LGBTQ Center to use their giving closet as an asynchronous clothing pick-up/dropoff zone
+
+### Project Vocabulary:
+- Listing: A post that can be one of 3 types (offer, request, trade)
+- Offer: A user donating a used item
+- Request: A user requesting a needed item
+- Trade: A user offering up an item in exchange for a trade
+- Style: gendered appearance (masculine, feminine, androgynous)
+
+### Important links:
+- [Final product](https://thread4thread.github.io/thread4thread/): A React application hosted on GitHub pages.
+- [Slide Deck](https://docs.google.com/presentation/d/1Mg6tXwuJExrXsQnuytLaUTq1AL8WC_uA/edit#slide=id.p14): A quick overview of the problem context, research insights and further steps to be taken to fully develop the product. Includes a demo video of the capabilities of the product as it exists currently.
+- [Miro board](https://miro.com/app/board/uXjVP0fpozE=/?share_link_id=191971883219): A centralized collection of all of this project’s brainstorming, research, and design. See the development of this project from January to June 2023.
+- [Figma](https://www.figma.com/file/er0CSysP2mUaBxhPEPgr1D/thread4thread-v3-(Capstone)?node-id=0%3A1&t=9bfMunLKF56Fzovo-1): Contains iterations of our UX/UI design.
+- [Google Drive](https://drive.google.com/drive/folders/18Qu5YAOgrnDedvwfbYZAygnFyS-7xF2p?usp=sharing): Contains all non-coding project files. Requires requesting access to view.
+- [GitHub Repository](https://github.com/thread4thread/thread4thread): Contains all code.
+- [React App Documentation](https://docs.google.com/document/d/1RWlVEk0Rr7T1jMdzeaID9kSMMpU1QceZGmCHtTepDJs/edit?usp=sharing): Overall documentation about our code. Also see README files within each repository folder, as well as code comments directly in code files, for more detailed info.
+
+### Contact Information:
+Jasper Maynard-Zhang (team lead): maynjas19@gmail.com
+
+Sabrina Burka: sabrinamdburka@gmail.com
+
+Grace Gibbons: gracie.gibbons.stc@gmail.com 
+
+---
 ## Team
 **Marala Berdyeva**
-Frontend / PM
+Fullstack / PM
 
 **Rena Bo**
-Frontend / Backend / UI/UX
+Fullstack / UI/UX
 
 **Sabrina Burka**
-Frontend / UX/UI / Backend
+Fullstack / Graphic Design
 
 **Grace Gibbons**
-UI/UX / Frontend / Backend
+UI/UX / Fullstack
 
 **Selina Hu**
 UI/UX / PM / Business / Graphic design
 
 **Jasper Maynard-Zhang (Project Lead)**
-PM / Backend / Frontend
+PM / Fullstack
 
 **Nila Ragu**
 UI/UX

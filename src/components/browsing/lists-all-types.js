@@ -69,6 +69,8 @@ function ListingTypeSection(props) {
 // Listing Type Section Header
 // Left-side: Title (ex: "Offers")
 // Right-side: "See more" button --> see only that listing type
+
+
 function SectionHeader(props) {
     let { sectionTitle } = props;
     sectionTitle = sectionTitle.toString();

@@ -194,7 +194,12 @@ export function CreateList() {
                     {/* <!-- Listing Title (text input) --> */}
                     <div className="section">
                         {/* <!-- Label --> */}
-                        <label htmlFor="list-name-label" className="no-space strong">Title *</label>
+                        <div>
+                            <label htmlFor="list-name-label" className="no-space strong">Title *</label>
+                            <NavLink to="../lists-all-types" >
+                                <button type="button" className="btn accent-button-form"><u>Cancel</u></button>
+                            </NavLink>
+                        </div>
 
                         {/* <!-- Input --> */}
                         <div className="input-group no-space">
