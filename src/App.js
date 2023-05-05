@@ -49,38 +49,6 @@ import { useState } from 'react';
 
 export default function App(props) {
 
-<<<<<<< HEAD
-    {/* TODO: Conditionally show top nav bar */}
-    <TopNav/>
-
-    {/* <!-- Main content --> */}
-    <main>
-      {/* <SignUp/> */}
-      <Routes>
-        {/* TODO: Only 1 path to home */}
-        <Route path="/thread4thread" element={<ListsAllTypes/>}/>
-        <Route path="/" element={<ListsAllTypes/>}/>
-
-        <Route path="/sign-up" element={<SignUp/>}/>
-
-        <Route path='/welcome' element={<Welcome/>}/>
-
-        <Route path='/lists-all-types' element={<ListsAllTypes />} />
-
-        <Route path="/lists-type-x" element={<ListsTypeX/>}/>
-
-        <Route path="/search-filter" element={<SearchFilter/>}/>
-
-        <Route path="/list-details" element={<ListingDetails/>}/>
-
-        <Route path='/create-list' element={<CreateList/>}/>
-
-        <Route path='/my-profile' element={<UserProfile/>} />
-
-        <Route path='/login' element={<LogIn/>}/>
-
-        {/* <Route path='/logout' element={<LogOutModal/>}/> */}
-=======
       // Start up user authentication
       const [user, loading] = useAuthState(configGetAuth);
       const currentUser = user;
@@ -115,7 +83,6 @@ export default function App(props) {
   
       // Dealing with log out modal
       const [showLogOut, setShowLogOut] = useState(false);
->>>>>>> a4cecf555eecdbb89553c21a7633d28e5490c435
 
 
 
