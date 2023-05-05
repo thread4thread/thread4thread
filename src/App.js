@@ -24,12 +24,9 @@ import { SearchFilter } from './components/browsing/search-filter';
 import { ListingDetails } from './components/browsing/list-details';
 import { CreateList } from './components/posting/create-list';
 import { LogIn } from './components/account/login';
-<<<<<<< HEAD
-=======
 import { Profile } from './components/account/my-profile';
 
 
->>>>>>> a4cecf555eecdbb89553c21a7633d28e5490c435
 // import {LogOutModal} from './components/account/logout';
 import { UserProfile } from './components/profile/user-profile';
 
