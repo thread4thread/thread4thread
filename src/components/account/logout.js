@@ -1,35 +1,66 @@
-/*
+
 // code for logout 
 import React from "react";
-import { Modal } from "react-bootstrap";
+
 import { signOut, getAuth } from "firebase/auth";
 
+import { useState } from "react";
+import { auth } from "./f-config";
 
-export default function LogOutModal(props) {
-    const closeOut = () => {
-        props.setShowLogOut(false);
-    }
-    // Logs user out
-    const handleLogOut = () => {
-        signOut(getAuth());
-        closeOut();
-    }
 
+import {
+    MDBContainer,
+    MDBCollapse,
+    MDBNavbar,
+    MDBNavbarToggler,
+    MDBIcon,
+    MDBBtn,
+  } from 'mdb-react-ui-kit';
+  
+  export function HamburgerMenu(props) {
+
+    const logout = async () => {
+        await signOut(auth);
+      };
+
+    //   const showLogOutModal = () => {
+    //     props.setShowLogOut(true);
+    // }
+
+    const [showNavExternal3, setShowNavExternal3] = useState(false);
+  
     return (
-        <Modal show={props.show} id="signOutModal" >
-            < Modal.Header >
-                <Modal.Title>Log out?</Modal.Title>
-            </Modal.Header >
-            <form onSubmit={handleLogOut}>
-                <Modal.Body>
-                    This will log you out of thread4thread.
-                </Modal.Body>
-                <Modal.Footer>
-                    <button type="submit" className="btn btn-default">Log Out</button>
-                    <button type="button" className="btn btn-default" onClick={closeOut}>Stay logged in</button>
-                </Modal.Footer>
-            </form>
-        </Modal >
-    )
-}
-*/ 
+      <>
+        <MDBNavbar>
+          <MDBContainer fluid>
+            <MDBNavbarToggler
+              className='ms-auto'
+              type='button'
+              data-target='#navbarToggleExternalContent'
+              aria-controls='navbarToggleExternalContent'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+              onClick={() => setShowNavExternal3(!showNavExternal3)}
+            >
+              <MDBIcon icon='bars' fas />
+            </MDBNavbarToggler>
+          </MDBContainer>
+        </MDBNavbar>
+  
+        <MDBCollapse show={showNavExternal3}>
+          <div className='bg-light shadow-3 p-4'>
+            <MDBBtn block className='border-bottom m-0' color='link' onClick={logout}>
+              Log Out 
+            </MDBBtn>
+          </div>
+        </MDBCollapse>
+      </>
+    );
+  }
+
+
+
+
+
+
+

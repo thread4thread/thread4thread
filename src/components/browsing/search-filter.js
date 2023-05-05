@@ -31,7 +31,7 @@ export function SearchFilter() {
             {/* <SizeFilterSection/> */}
 
             {/* <!-- Apply button --> */}
-            <ApplyButton/>
+            {/* <ApplyButton/> */}
 
             </div>
         </>

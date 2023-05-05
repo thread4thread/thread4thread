@@ -2,37 +2,91 @@ import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 import { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser } from 'firebase/auth';
 import {auth} from './f-config';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, Navigate, Route } from 'react-router-dom';
+import {getAuth, GoogleAuthProvider, EmailAuthProvider} from 'firebase/auth';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 
+const firebaseUIConfig = {
+    // allow email sign in
+    signInOptions: [
+        { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },
+    ],
+    signInFlow: 'redirect', //don't redirect to authenticate
+    credentialHelper: 'none', //don't show the email account chooser
+    callbacks: {
+      signInSuccessWithAuthResult: () => {
+        return false; //don't redirect after authentication
+      }
+    }
+  }
 
-
-
-
-export function LogIn() {
-
+export function LogIn(props) {
     
-    /*const [user, setUser] = useState({});
-    onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
-    })*/ 
+//     /*const [user, setUser] = useState({});
+//     onAuthStateChanged(auth, (currentUser) => {
+//         setUser(currentUser);
+//     })*/ 
 
-    const [loginEmail, setLoginEmail] = useState("");
-    const [loginPassword, setLoginPassword] = useState("");
-    const [user, setUser] = useState(null);
+//     const [loginEmail, setLoginEmail] = useState("");
+//     const [loginPassword, setLoginPassword] = useState("");
+//     const [user, setUser] = useState({});
+//     const auth = getAuth();
+
+//     onAuthStateChanged(auth, (currentUser) => {
+//         setUser(currentUser);
+//       });
+
+//     // Redirect to profile page when logged in
+//   if (props.user) {
+//     return <Route to="/my-profile" />
+//   } else {
+//     const login = async () => {
+//         try {
+//             const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+//             console.log(user)
+//             } catch (error) {
+//                 console.log(error.message)
+//             }
+//         };
 
 
-    //make sure the user stays logged in when using the website
-    //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
-    const login = async () => {
-        try {
-            const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-            console.log(user)
-            } catch (error) {
-                console.log(error.message)
-            }
-        };
+// const auth = getAuth();
+
+  // Redirect to profile page when logged in
+  if (props.user) {
+    return <Navigate to="/my-profile" />
+  }
+
+//   let loadingOrLoggedIn = false;
+//   if(props.user || props.loading) {
+//     loadingOrLoggedIn = true;
+//   }
+
+  //console.log(props);
+
+//   return (
+//     <h1 className="font-size-600">HELLO</h1>
+//   )
+
+//   return (
+//     <div>
+//       {!loadingOrLoggedIn &&
+//         <div className='container login-container text-center'>
+//           <div className='login-text'>
+//             <h1>Login to continue</h1>
+//             <p>With an account you can upload your own items and request other user's items.</p>
+//           </div>
+//             <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+//         </div>
+//       }
+//     </div>
+//   );
+
+
+
+
 return (
 <div className="content-wrap">
     <Link to="/welcome">
@@ -44,19 +98,27 @@ return (
         <h1>Login</h1>
         <div id="root"></div>
             <div>
-                <input type="email" className="input-box" placeholder="Email" required onChange={(event)=>{setLoginEmail(event.target.value)}}/><br></br>
+                {/* <input type="email" className="input-box" placeholder="Email" required onChange={(event)=>{setLoginEmail(event.target.value)}}/><br></br>
                 <input type="password" className="input-box" placeholder="Password" required onChange={(event)=>{setLoginPassword(event.target.value)}}/><br></br>
                 <a href="#">Forgot password?</a><br></br>
                 <Link to="/thread4thread">
                 <button type="button" className="purp-button" onClick={login
                 }>login</button>
-                </Link>
-                <br></br>
+                </Link> */}
+                {/* <br></br> */}
+                <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
             </div>
         </div>
     </div>
 )
 }
+
+
+
+    //make sure the user stays logged in when using the website
+    //firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
+
 
 /*
 this will be used to retrieve their email address and display it in the profile page

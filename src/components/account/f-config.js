@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
 import { getStorage } from "firebase/storage";
+import firebaseui from 'firebaseui'
+
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyClbpXxH3iFOGQmpOlwXOw5DI9Eowc93I8",
@@ -13,7 +16,28 @@ const firebaseConfig = {
     measurementId: "G-T4XLTL80EL"
   };
 
+  // const uiConfig = ({
+  //   signInSuccessUrl: '/',
+  //   signInOptions: [
+  //     window.firebase.auth.GoogleAuthProvider.PROVIDER_ID
+  //   ],
+  //   tosUrl: '/terms-of-service' // This doesn't exist yet
+  // })
+  
+  // // This must run before any other firebase functions
+  // window.firebase.initializeApp(config)
+  
+  // // This sets up firebaseui
+  // const ui = new firebaseui.auth.AuthUI(window.firebase.auth())
+  
+  // // This adds firebaseui to the page
+  // // It does everything else on its own
+  // export const startFirebaseUI = function (elementId) {
+  //   ui.start(elementId, uiConfig)
+  // }
+  
   const app = initializeApp(firebaseConfig);
   export const storage = getStorage(app);
   export const auth = getAuth(app);
+
 

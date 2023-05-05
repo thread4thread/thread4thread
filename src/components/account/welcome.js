@@ -16,11 +16,11 @@ export function Welcome() {
             </div>
             <div className='box welcome-btn'>
                 <Link to="/login">
-                    <button type="button" className="purp-button-welcome">Login</button>
+                    <button type="button" className="purp-button-welcome">Continue to thread4thread</button>
                 </Link>
-                <Link to="/sign-up">
+                {/* <Link to="/sign-up">
                     <button type="button" className="purp-button-welcome">Sign up</button>
-                </Link>
+                </Link> */}
             </div>
         </div>
     )
