@@ -5,6 +5,8 @@ import {auth} from './f-config';
 import { Link, NavLink, Navigate, Route } from 'react-router-dom';
 import {getAuth, GoogleAuthProvider, EmailAuthProvider} from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { UserProfile } from '../profile/user-profile';
+import { ListsAllTypes } from '../browsing/lists-all-types';
 
 
 const firebaseUIConfig = {
@@ -22,69 +24,15 @@ const firebaseUIConfig = {
   }
 
 export function LogIn(props) {
-    
-//     /*const [user, setUser] = useState({});
-//     onAuthStateChanged(auth, (currentUser) => {
-//         setUser(currentUser);
-//     })*/ 
-
-//     const [loginEmail, setLoginEmail] = useState("");
-//     const [loginPassword, setLoginPassword] = useState("");
-//     const [user, setUser] = useState({});
-//     const auth = getAuth();
-
-//     onAuthStateChanged(auth, (currentUser) => {
-//         setUser(currentUser);
-//       });
-
-//     // Redirect to profile page when logged in
-//   if (props.user) {
-//     return <Route to="/my-profile" />
-//   } else {
-//     const login = async () => {
-//         try {
-//             const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-//             console.log(user)
-//             } catch (error) {
-//                 console.log(error.message)
-//             }
-//         };
-
-
 
 // const auth = getAuth();
+    console.log(props.user);
 
   // Redirect to profile page when logged in
+  // change to redirect!!!!!!!
   if (props.user) {
-    return <Navigate to="/my-profile" />
+    return <ListsAllTypes />
   }
-
-//   let loadingOrLoggedIn = false;
-//   if(props.user || props.loading) {
-//     loadingOrLoggedIn = true;
-//   }
-
-  //console.log(props);
-
-//   return (
-//     <h1 className="font-size-600">HELLO</h1>
-//   )
-
-//   return (
-//     <div>
-//       {!loadingOrLoggedIn &&
-//         <div className='container login-container text-center'>
-//           <div className='login-text'>
-//             <h1>Login to continue</h1>
-//             <p>With an account you can upload your own items and request other user's items.</p>
-//           </div>
-//             <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
-//         </div>
-//       }
-//     </div>
-//   );
-
-
 
 
 return (

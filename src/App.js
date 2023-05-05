@@ -2,7 +2,7 @@
 
 // PACKAGES
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Router, Outlet } from 'react-router-dom';
 
 // CSS
 import 'bootstrap/dist/css/bootstrap.css';
@@ -37,6 +37,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {auth as configGetAuth} from './components/account/f-config';
 import { getAuth } from 'firebase/auth';
 import { useState } from 'react';
+import { Switch } from '@mui/material';
+import { HamburgerMenu } from './components/account/logout';
 
 
 
@@ -52,7 +54,7 @@ export default function App(props) {
       // Start up user authentication
       const [user, loading] = useAuthState(configGetAuth);
       const currentUser = user;
-      //console.log(currentUser);
+      console.log(currentUser);
       // Access database
       //const db = getDatabase();
       // useState to keep track of clothes
@@ -84,53 +86,102 @@ export default function App(props) {
       // Dealing with log out modal
       const [showLogOut, setShowLogOut] = useState(false);
 
+      function RequireAuth(props) {
+        //setUserIsLoggedIn(currentUser != null);
+        if (currentUser == null) { //if no user, send to sign in
+          // console.log("No user signed in");
+          return <Welcome />;
+        }
+        else { //otherwise, show the child route content
+          // console.log(currentUser, " is signed in");
+          return <Outlet />
+        }
+      }
+    
+
 
 
     return (
-      <>
 
-      {/* TODO: Conditionally show top nav bar */}
-      <TopNav/>
-  
-      {/* <!-- Main content --> */}
-      <main>
-        {/* <SignUp/> */}
+      <>
         <Routes>
-          {/* TODO: Only 1 path to home */}
-          <Route path="/thread4thread" element={<ListsAllTypes/>}/>
-          <Route path="/" element={<ListsAllTypes/>}/>
-  
-          <Route path="/sign-up" element={<SignUp/>}/>
-  
           <Route path='/welcome' element={<Welcome/>}/>
-  
-          <Route path='/lists-all-types' element={<ListsAllTypes />} />
-  
-          <Route path="/lists-type-x" element={<ListsTypeX/>}/>
-  
-          <Route path="/search-filter" element={<SearchFilter/>}/>
-  
-          <Route path="/list-details" element={<ListingDetails/>}/>
-  
-          <Route path='/create-list' element={<CreateList/>}/>
-  
-          <Route path='/my-profile' element={<UserProfile/>} />
-  
           <Route path='/login' element={<LogIn user={currentUser}/>}/>
-  
-          <Route path='/my-profile' element={<Profile user={currentUser}/>} />
-  
-          {/* <Route path='/logout' element={<LogOutModal/>}/> */}
-  
-  
         </Routes>
-      </main>
-  
-      {/* TODO: Conditionally show bot nav bar */}
-      <BotNav/>
-  
+
+        <>
+          <TopNav/>
+          <main>
+            <Routes element={<RequireAuth/>}>
+              <Route path="/thread4thread" element={<ListsAllTypes/>}/>
+              <Route path="/" element={<ListsAllTypes/>}/>  
+              <Route path='/lists-all-types' element={<ListsAllTypes />} />
+              <Route path="/lists-type-x" element={<ListsTypeX/>}/>
+              <Route path="/search-filter" element={<SearchFilter/>}/>
+              <Route path="/list-details" element={<ListingDetails/>}/>
+              <Route path='/create-list' element={<CreateList/>}/>
+              <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
+              <Route path='/logout' element={<HamburgerMenu/>}/>
+            </Routes> 
+          </main>
+
+          <BotNav/>
+        </>
+        
       </>
     )
+
+
+
+
+
+
+    // return (
+    //   <>
+
+    //   {/* TODO: Conditionally show top nav bar */}
+    //   <TopNav/>
+  
+    //   {/* <!-- Main content --> */}
+    //   <main>
+    //     {/* <SignUp/> */}
+    //     <Routes>
+    //       {/* TODO: Only 1 path to home */}
+    //       <Route path="/thread4thread" element={<ListsAllTypes/>}/>
+    //       <Route path="/" element={<ListsAllTypes/>}/>
+  
+    //       <Route path="/sign-up" element={<SignUp/>}/>
+  
+    //       <Route path='/welcome' element={<Welcome/>}/>
+  
+    //       <Route path='/lists-all-types' element={<ListsAllTypes />} />
+  
+    //       <Route path="/lists-type-x" element={<ListsTypeX/>}/>
+  
+    //       <Route path="/search-filter" element={<SearchFilter/>}/>
+  
+    //       <Route path="/list-details" element={<ListingDetails/>}/>
+  
+    //       <Route path='/create-list' element={<CreateList/>}/>
+  
+    //       <Route path='/login' element={<LogIn user={currentUser}/>}/>
+
+    //       <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
+  
+  
+    //       {/* <Route path='/my-profile' element={<Profile user={currentUser}/>} /> */}
+  
+    //       {/* <Route path='/logout' element={<LogOutModal/>}/> */}
+  
+  
+    //     </Routes>
+    //   </main>
+  
+    //   {/* TODO: Conditionally show bot nav bar */}
+    //   <BotNav/>
+  
+    //   </>
+    // )
     }
 
 

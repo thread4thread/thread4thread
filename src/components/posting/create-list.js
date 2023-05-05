@@ -15,7 +15,6 @@ import { storage } from './../account/f-config';
 import {ref as storageRef, uploadBytes, listAll, getDownloadURL} from 'firebase/storage';
 
 export function CreateList() {
-
     const [listingInfo, setListingInfo] = useState({});
     const [listingData, setListingData] = useState([]);
     const [imageUpload, setImageUpload] = useState(null);
@@ -182,6 +181,8 @@ export function CreateList() {
                 });
         })
     }
+
+
 
     return (
         <form role='form' method='GET'>

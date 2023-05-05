@@ -1,9 +1,9 @@
 
 
-export function Profile() {
+export function Profile(props) {
 
 
-    
+    // console.log("props: " + props);
 
 
     return (

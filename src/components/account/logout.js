@@ -16,6 +16,9 @@ import {
     MDBIcon,
     MDBBtn,
   } from 'mdb-react-ui-kit';
+import { NavLink } from "react-router-dom";
+import { Welcome } from "./welcome";
+import { ListsAllTypes } from "../browsing/lists-all-types";
   
   export function HamburgerMenu(props) {
 
