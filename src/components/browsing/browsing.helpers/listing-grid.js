@@ -17,12 +17,14 @@ export function ListingGrid(props) {
         listingKeyArr = listingKeyArr.slice(0, max);
     };
 
+    console.log(listingsObj);
+
     let listingElemArr = listingKeyArr.map((listingKey) => {
         let listingObj = listingsObj[listingKey];
         let filePath = listingObj.filePath;
         let alt = listingObj.title;
         let title = listingObj.title;
-
+        //console.log("nav listing");
         return (
             <NavListing navTo="../list-details" src={filePath} alt={alt} item={listingKey.toString()} title={title} key={listingKey}/>
         )

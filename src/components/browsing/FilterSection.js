@@ -108,7 +108,8 @@ export function FilterSection(props) {
   //   </form>
   // )
 
-
+  //make exchange type so you can only choose one, set to local storage item, 
+  //pass through to submit so it navs to right page
   const exchangeType = []; 
 
   function handleExchangeType(event) {
@@ -116,6 +117,7 @@ export function FilterSection(props) {
       event.target.blur();
 
       event.target.classList.toggle('active');
+      localStorage.setItem("searchType", exchangeType);
 
       //store desired exchange type
       if(event.target.classList.contains('active')) {
@@ -244,6 +246,22 @@ export function FilterSection(props) {
             {/* <!-- TODO: use aria-describedby to connect labels to inputs --> */}
                 {/* <!-- Exchange Type (select input) --> */}
                 <div className="section">
+
+                {/* <ul className="donate-now">
+                  <li>
+                    <input type="radio" id="Offer" name="exchagne type" />
+                    <label htmlFor="exch-type">Offer</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="Request" name="exchagne type" />
+                    <label htmlFor="exch-type">Request</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="Trade" name="exchagne type" checked="checked" />
+                    <label htmlFor="exch-type">Trade</label>
+                  </li>
+                </ul> */}
+
                     {/* <!-- Label --> */}
                     <label htmlFor="exch-type" className=" strong">Exchange Type</label>
 
@@ -337,13 +355,13 @@ export function FilterSection(props) {
                 </div>
             </div>
                 {/* <!-- Post button --> */}
-            <div>
+            {/* <div>
               <NavLink to="../lists-all-types">
                   <button onClick={submitCallback} type="button" className="btn btn-save list-btn">Apply</button>
               </NavLink>
-              {/* <!-- Invisible placeholder to add extra space at bottom --> */}
+              <!-- Invisible placeholder to add extra space at bottom -->
               <button type="button" className="btn invisible list-btn">PLACEHOLDER</button>
-            </div>
+            </div> */}
         </div>
     </form>
   )

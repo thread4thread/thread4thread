@@ -5,6 +5,8 @@
 // PACKAGES
 import { useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
+import { useList } from 'react-firebase-hooks/database'
+import { db } from '../account/f-config';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -17,10 +19,12 @@ import { ListingGrid } from './browsing.helpers/listing-grid';
 export function ListsTypeX() {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
     const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
+    const [snapshots, loading, error] = useList(ref(db, "listingData"));
+    console.log(snapshots);
 
     // Fetch listing data and set state of listingsObj
     useEffect(() => {
-        const db = getDatabase();
+        // const db = getDatabase();
         const listingDataRef = ref(db, "listingData"); // TODO: change to listingData
 
         //returns a function that will "unregister" (turn off) the listener

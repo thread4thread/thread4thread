@@ -119,7 +119,7 @@ export default function App(props) {
               <Route path="/lists-type-x" element={<ListsTypeX/>}/>
               <Route path="/search-filter" element={<SearchFilter/>}/>
               <Route path="/list-details" element={<ListingDetails/>}/>
-              <Route path='/create-list' element={<CreateList/>}/>
+              <Route path='/create-list' element={<CreateList user={currentUser}/>}/>
               <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
               <Route path='/logout' element={<HamburgerMenu/>}/>
             </Routes> 

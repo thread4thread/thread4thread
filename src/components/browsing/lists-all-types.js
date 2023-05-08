@@ -26,6 +26,8 @@ export function ListsAllTypes() {
         const unregisterFunction = onValue(listingDataRef, (snapshot) => {
         const listingDataValue = snapshot.val();
         //...set state variable, etc...
+
+        console.log(listingDataValue);
         setListingsObj(listingDataValue);
         })
 
@@ -36,6 +38,7 @@ export function ListsAllTypes() {
         return cleanup; //effect hook callback returns the cleanup function
     }, []) //empty array is the second argument to the `useEffect()` function.
     //It says to only run this effect on first render
+
 
     return (
         <div className="side-wrap box column">

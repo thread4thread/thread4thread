@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 // TODO: Consolidate with nav-icon, which performs a similar task with similar inputs
 export default function NavListing(props) {
     const { navTo, src, alt, item, title } = props;
-
+    console.log("element renders");
     return (
         <NavLink to={navTo} onClick={() => localStorage.setItem("listing", item)}>
             <div className="img-container">

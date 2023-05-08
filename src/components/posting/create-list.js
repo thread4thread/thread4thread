@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 import { storage } from './../account/f-config';
 import {ref as storageRef, uploadBytes, listAll, getDownloadURL} from 'firebase/storage';
 
-export function CreateList() {
+export function CreateList(props) {
     const [listingInfo, setListingInfo] = useState({});
     const [listingData, setListingData] = useState([]);
     const [imageUpload, setImageUpload] = useState(null);
@@ -174,6 +174,11 @@ export function CreateList() {
                 let val = {filePath: url};
                 const currentInfo = Object.assign(listingInfo, val);
                 setListingInfo(currentInfo);
+
+                let uid = {uid : props.uid};
+                const currentUID = Object.assign(listingInfo, uid);
+                setListingInfo(currentUID);
+                // console.log(uid);
             
                 //compile all listing details and push to database
                 const listingRef = ref(db, "listingData");

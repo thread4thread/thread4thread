@@ -21,15 +21,24 @@ const navPaths = ['', 'my-exchanges', 'create-list', 'my-profile'];
 
 export function BotNav() {
     let i = 0;
+    let iconName = '';
 
     let iconElemArr = iconArr.map((icon) => {
         let navPath = navPaths[i]
+        if(i == 0) {
+            iconName = 'home';
+            console.log(iconName);
+        } else {
+            let newiName = icon.indexOf('.');
+            iconName = icon.slice(28, newiName);
+            console.log(iconName);
+        }
+
         i+=1;
-        // console.log(iconArr);
 
         return (
         <NavIcon src={icon}
-            classN={"col bottom-nav-icon"}
+            classN={"col bottom-nav-icon " + iconName}
             navPath={navPath}
             key={icon+""}/>
         )
