@@ -27,7 +27,6 @@ export function ListsAllTypes() {
         const listingDataValue = snapshot.val();
         //...set state variable, etc...
 
-        console.log(listingDataValue);
         setListingsObj(listingDataValue);
         })
 
@@ -57,6 +56,19 @@ export function ListsAllTypes() {
 function ListingTypeSection(props) {
     let { sectionTitle, listingsObj } = props;
 
+    let items = [];
+    let sectionTitleRef = sectionTitle.toUpperCase();
+
+    listingsObj = Object.entries(listingsObj);
+
+    listingsObj.map((list) => {
+        
+        list = list[1];
+        let type = list.exchangeType.toUpperCase() + "S";
+        if(type === sectionTitleRef) {
+            items.push(list);     
+        }
+    })
 
     return (
         <div className="box column top-bot-wrap">
@@ -64,7 +76,7 @@ function ListingTypeSection(props) {
             <SectionHeader sectionTitle={sectionTitle}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingsObj={listingsObj} nCols={3} max={6}/>
+            <ListingGrid listingsObj={items} nCols={3} max={6}/>
         </div>
     )
 }

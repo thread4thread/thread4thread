@@ -20,7 +20,6 @@ export function ListsTypeX() {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
     const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
     const [snapshots, loading, error] = useList(ref(db, "listingData"));
-    console.log(snapshots);
 
     // Fetch listing data and set state of listingsObj
     useEffect(() => {
@@ -57,13 +56,28 @@ function ListingTypeSection(props) {
     let listingKeyArr = Object.keys(listingsObj);
     let nListings = listingKeyArr.length;
 
+    let items = [];
+    let sectionTitleRef = sectionTitle.toUpperCase();
+
+    listingsObj = Object.entries(listingsObj);
+
+    listingsObj.map((list) => {
+        
+        list = list[1];
+        let type = list.exchangeType.toUpperCase() + "S";
+        if(type === sectionTitleRef) {
+            items.push(list);     
+        }
+    })
+
+
     return (
         <div className="box column top-bot-wrap">
             {/* <!-- Offers heading + "See more" button --> */}
             <SectionHeader sectionTitle={sectionTitle} nListings={nListings}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingsObj={listingsObj} nCols={2}/>
+            <ListingGrid listingsObj={items} nCols={2}/>
         </div>
     )
 }

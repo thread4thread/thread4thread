@@ -17,7 +17,7 @@ export function ListingGrid(props) {
         listingKeyArr = listingKeyArr.slice(0, max);
     };
 
-    console.log(listingsObj);
+    // console.log(listingsObj);
 
     let listingElemArr = listingKeyArr.map((listingKey) => {
         let listingObj = listingsObj[listingKey];
