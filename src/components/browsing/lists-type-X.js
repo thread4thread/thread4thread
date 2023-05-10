@@ -2,65 +2,82 @@
 // User can click "Filters" to edit search and filters.
 // User can click a listing to view it in detail.
 
+// PACKAGES
+import { useEffect } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { useList } from 'react-firebase-hooks/database'
+import { db } from '../account/f-config';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 // DATA
-import pinkSkirtImg from './../../assets/img/pink-skirt.jpg';
-import pants from './../../assets/img/pants.jpg';
-import docs from './../../assets/img/docs.png';
-import boots from './../../assets/img/asos-boots.png';
-import blackShirt from './../../assets/img/blackshirt.jpg';
-import combra from './../../assets/img/combra.png';
-import sweater from './../../assets/img/sweater.png';
-import tallDress from './../../assets/img/tall-dress.png';
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
-// import title from './../browsing/lists-all-types';
-
 // HELPERS
-import NavList from './browsing.helpers/nav-list';
-
-//Packages
-import { NavLink } from 'react-router-dom';
-// import { NavLink, useLocation } from 'react-router-dom';
-
-// const listingObj = {
-
-// }
-let altProp = "Black tank top, pink+purple skirt";
-let classNProp = "grid-item";
-
-//array of items
-// TODO: Add alt text
-let listings = [ {pinkSkirtImg}, {pants}, {docs}, {boots}, {blackShirt}, {combra}, {sweater}, {tallDress} ];
-// console.log(listings);
+import { ListingGrid } from './browsing.helpers/listing-grid';
 
 export function ListsTypeX() {
-    // const location = useLocation();
-    // const title = location.state;
-    // console.log(location);
+    // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
+    const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
+    const [snapshots, loading, error] = useList(ref(db, "listingData"));
+
+    // Fetch listing data and set state of listingsObj
+    useEffect(() => {
+        // const db = getDatabase();
+        const listingDataRef = ref(db, "listingData"); // TODO: change to listingData
+
+        //returns a function that will "unregister" (turn off) the listener
+        const unregisterFunction = onValue(listingDataRef, (snapshot) => {
+        const listingDataValue = snapshot.val();
+        //...set state variable, etc...
+        setListingsObj(listingDataValue);
+        })
+
+        //cleanup function for when component is removed
+        function cleanup() {
+        unregisterFunction(); //call the unregister function
+        }
+        return cleanup; //effect hook callback returns the cleanup function
+    }, []) //empty array is the second argument to the `useEffect()` function.
+    //It says to only run this effect on first render
 
     const title = localStorage.getItem("sectionTitle");
 
     return (
         <div className="side-wrap box column">
             {/* <!-- Offers (Donations) --> */}
-            <ListingTypeSection sectionTitle={title}/>
+            <ListingTypeSection sectionTitle={title} listingsObj={listingsObj}/>
         </div>
     )
 }
 
 function ListingTypeSection(props) {
-    let { sectionTitle } = props;
-    // let { listingsObj } = props;
-    // let { pinkShirtImg, altProp, classNProp } = listingsObj;
+    let { sectionTitle, listingsObj } = props;
+    let listingKeyArr = Object.keys(listingsObj);
+    let nListings = listingKeyArr.length;
+
+    let items = [];
+    let sectionTitleRef = sectionTitle.toUpperCase();
+
+    listingsObj = Object.entries(listingsObj);
+
+    listingsObj.map((list) => {
+        
+        list = list[1];
+        let type = list.exchangeType.toUpperCase() + "S";
+        if(type === sectionTitleRef) {
+            items.push(list);     
+        }
+    })
+
 
     return (
         <div className="box column top-bot-wrap">
             {/* <!-- Offers heading + "See more" button --> */}
-            <SectionHeader sectionTitle={sectionTitle}/>
+            <SectionHeader sectionTitle={sectionTitle} nListings={nListings}/>
 
             {/* <!-- Offer listings grid --> */}
-            {/* <ListingGrid listType={listings}/> */}
-            <ListingGrid listings={listings}/>
+            <ListingGrid listingsObj={items} nCols={2}/>
         </div>
     )
 }
@@ -69,12 +86,11 @@ function ListingTypeSection(props) {
 // Left-side: Title (ex: "Offers")
 // Right-side: "See more" button --> see only that listing type
 function SectionHeader(props) {
-    let { sectionTitle } = props;
-    let length = Object.values(listings).length;
+    let { sectionTitle, nListings } = props;
     return (
         <div className="box fill-container">
             {/* back button */}
-            <NavLink to='../lists-all-types'>
+            <NavLink to='../'>
                 <button type="button" className="btn arrow-btn p-0">
                     <img src={ArrowIcon} alt="return"/>
                 </button>
@@ -82,37 +98,7 @@ function SectionHeader(props) {
 
             {/* Section Title */}
             <h1 className="left-item">{sectionTitle}</h1>
-            <p>{ length } results</p>
+            <p>{ nListings } results</p>
         </div>
-    )
-}
-
-function ListingGrid(props) {
-   // let listType = props;
-    // let listingElemArr = [];
-    // console.log(props.listings);
-    let listType = Object.values(props.listings);
-    //console.log(listType);
-    let listingElemArr = listType.map((elem) => {
-        // console.log(Object.values(elem).at(0));
-
-        // TODO: Add key
-        return (
-            <ListingElem item={Object.values(elem).at(0)} key={Object.values(elem).at(0)}/>
-        )
-    });
-
-    return (
-        <div className="grid by-2">
-            {listingElemArr}
-        </div>
-    )
-}
-
-function ListingElem(props) {
-    let item = props;
-    // console.log(item);
-    return (
-        <NavList src={item.item} navTo='../list-details' alt={altProp} classN={classNProp}/>
     )
 }

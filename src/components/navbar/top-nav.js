@@ -5,7 +5,7 @@
 
 // PACKAGES
 import { NavLink } from 'react-router-dom';
-
+import React, { useState } from "react";
 // HELPERS
 import NavIcon from './navbar.helpers/nav-icon';
 
@@ -13,7 +13,12 @@ import NavIcon from './navbar.helpers/nav-icon';
 import home from './navbar.assets/logo2.png';
 import addIcon from './navbar.assets/add.png';
 
+import { HamburgerMenu } from '../account/logout';
+
+
+
 export function TopNav() {
+
     return (
     <nav className="content-wrap topnav navbar navbar-expand-lg">
          <div className="container-fluid nav-container">
@@ -21,9 +26,11 @@ export function TopNav() {
             <NavIcon src={home} classN={"navbar-brand"} navPath={""}/>
 
             <SearchBar/>
+            <HamburgerMenu/>
+     
 
             {/* Plus icon (click to create new listing) */}
-            <NavIcon src={addIcon} classN={"navbar-brand"} navPath={"create-listing"}/>
+           {/* <NavIcon src={addIcon} classN={"navbar-brand"} navPath={"create-listing"}/> */}
         </div>
     </nav>
     )
@@ -37,4 +44,5 @@ function SearchBar() {
             </form>
         </NavLink>
     )
-}
+    }
+  
