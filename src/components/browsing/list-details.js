@@ -18,6 +18,7 @@ let displayDetails = ['type', 'appearance', 'color', 'condition'];
 
 export function ListingDetails() {
     const listing = localStorage.getItem('listing');
+    console.log(listing);
     const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
 
     // Fetch listing data and set state of listingsObj
@@ -39,11 +40,19 @@ export function ListingDetails() {
         return cleanup; //effect hook callback returns the cleanup function
     }, []) //empty array is the second argument to the `useEffect()` function.
     //It says to only run this effect on first render
+    // console.log(listingsObj);
+
+    // console.log(listingsObj);
+
+    let listingsObjArray = Object.entries(listingsObj);
 
     let list = {};
-    Object.keys(listingsObj).map((key) => {
-        if (key === listing) {
-            list = listingsObj[key];
+    listingsObjArray.map((key) => {
+        //console.log(key[1]);
+        let item = key[1];
+        if (item.itemID === listing) {
+            list = item;
+            console.log(list);
         }
     });
 
@@ -112,6 +121,8 @@ function MakeImage(props) {
 
 function MakeDesc(props) {
     let { listingDesc } = props;
+
+    console.log(listingDesc);
 
     return (
         <div className="description flex-fill side-wrap top-bot-wrap">

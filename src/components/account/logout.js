@@ -6,7 +6,11 @@ import { signOut, getAuth } from "firebase/auth";
 
 import { useState } from "react";
 import { auth } from "./f-config";
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
+=======
+import logoutBTN from '../../assets/icon/logout.png';
+>>>>>>> 55ab8aaaff2e89b51f492ad34569fb74a2d7ce1c
 
 
 import {
@@ -17,14 +21,18 @@ import {
     MDBIcon,
     MDBBtn,
   } from 'mdb-react-ui-kit';
+
 import { NavLink } from "react-router-dom";
 import { Welcome } from "./welcome";
 import { ListsAllTypes } from "../browsing/lists-all-types";
   
   export function HamburgerMenu(props) {
 
+    // MDBIcon = logout;
+
     const logout = async () => {
         await signOut(auth);
+        return <Welcome/>
       };
 
     //   const showLogOutModal = () => {
@@ -46,15 +54,25 @@ import { ListsAllTypes } from "../browsing/lists-all-types";
               aria-label='Toggle navigation'
               onClick={() => setShowNavExternal3(!showNavExternal3)}
             >
-              <MDBIcon icon='bars' fas />
+              {/* <MDBIcon fas icon='bars' /> */}
+              <div className="col bottom-nav-icon">
+                <div className="row top-nav">
+                  <img src={logoutBTN} alt='logout'/>
+                </div>
+              </div>
             </MDBNavbarToggler>
           </MDBContainer>
         </MDBNavbar>
   
         <MDBCollapse show={showNavExternal3}>
+<<<<<<< HEAD
           <div className='bg-light shadow-3 p-4'>
             <Link to="/welcome">
             <MDBBtn block className='border-bottom m-0' color='link' onClick={logout}>
+=======
+          <div className='p-2'>
+            <MDBBtn className='m-0' color='#8991DC' onClick={logout}>
+>>>>>>> 55ab8aaaff2e89b51f492ad34569fb74a2d7ce1c
               Log Out 
             </MDBBtn>
             </Link>

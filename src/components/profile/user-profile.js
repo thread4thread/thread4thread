@@ -27,10 +27,12 @@ import pfp from '../../assets/img/blank-pfp.png';
   )} */
 
 export function UserProfile(props) {
+  // console.log(props);
   let user = props.user;
-  console.log(user.displayName);
+  // console.log(user.displayName);
   let cutOffMail = user.email.indexOf("@");
   let username = user.email.slice(0, cutOffMail);
+<<<<<<< HEAD
   console.log(username);
   /*const [editMode, setEditMode] = useState(false);
 
@@ -39,6 +41,9 @@ export function UserProfile(props) {
   }*/
   
 
+=======
+  // console.log(username);
+>>>>>>> 55ab8aaaff2e89b51f492ad34569fb74a2d7ce1c
 
   return (
     <div className="box column side-wrap">
@@ -48,7 +53,7 @@ export function UserProfile(props) {
       <UserMetrics pfp={pfp}/>
       <UserInfo name={user.displayName} pronouns="pronouns" user={username}
         bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-      <ListingReview />
+      <ListingReview user={user} />
     </div>
   )
 }

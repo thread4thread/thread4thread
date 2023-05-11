@@ -39,7 +39,11 @@ import { getAuth } from 'firebase/auth';
 import { useState, useEffect } from 'react';
 import { Switch } from '@mui/material';
 import { HamburgerMenu } from './components/account/logout';
+<<<<<<< HEAD
 import EditProfile from './components/profile/EditProfile';
+=======
+import { FilteredResults } from './components/browsing/filtered-results';
+>>>>>>> 55ab8aaaff2e89b51f492ad34569fb74a2d7ce1c
 
 
 
@@ -116,6 +120,7 @@ export default function App(props) {
         <>
           <TopNav/>
           <main>
+<<<<<<< HEAD
             <Routes element={<RequireAuth/>}>
               <Route path="/thread4thread" element={<ListsAllTypes/>}/>
               <Route path="/" element={<ListsAllTypes/>}/>  
@@ -127,6 +132,21 @@ export default function App(props) {
               <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
               <Route path='/logout' element={<HamburgerMenu/>}/>
               <Route path='/edit-profile' element={<EditProfile/>}/>
+=======
+            <Routes>
+              <Route element={<RequireAuth/>}>
+                <Route path="/thread4thread" element={<ListsAllTypes/>}/>
+                <Route path="/" element={<ListsAllTypes/>}/>  
+                <Route path='/lists-all-types' element={<ListsAllTypes />} />
+                <Route path="/lists-type-x" element={<ListsTypeX/>}/>
+                <Route path="/search-filter" element={<SearchFilter/>}/>
+                <Route path="/list-details" element={<ListingDetails/>}/>
+                <Route path='/create-list' element={<CreateList user={currentUser}/>}/>
+                <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
+                <Route path='/logout' element={<HamburgerMenu/>}/>
+                <Route path='/results' element={<FilteredResults/>}/>
+              </Route>
+>>>>>>> 55ab8aaaff2e89b51f492ad34569fb74a2d7ce1c
             </Routes> 
           </main>
 
@@ -135,6 +155,13 @@ export default function App(props) {
         
       </>
     )
+
+    // const LoginContainer = () => (
+    //   <div className="container">
+    //     <Route exact path="/" render={() => <Redirect to="/welcome" />} />
+    //     <Route path="/login" component={Login} />
+    //   </div>
+    // )
 
 
 
