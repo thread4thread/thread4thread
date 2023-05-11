@@ -19,7 +19,6 @@ import { ListingGrid } from './browsing.helpers/listing-grid';
 export function ListsTypeX() {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.
     const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
-    const [snapshots, loading, error] = useList(ref(db, "listingData"));
 
     // Fetch listing data and set state of listingsObj
     useEffect(() => {
@@ -53,8 +52,6 @@ export function ListsTypeX() {
 
 function ListingTypeSection(props) {
     let { sectionTitle, listingsObj } = props;
-    let listingKeyArr = Object.keys(listingsObj);
-    let nListings = listingKeyArr.length;
 
     let items = [];
     let sectionTitleRef = sectionTitle.toUpperCase();
@@ -70,6 +67,7 @@ function ListingTypeSection(props) {
         }
     })
 
+    let nListings = items.length;
 
     return (
         <div className="box column top-bot-wrap">

@@ -15,7 +15,7 @@ const filtersObj = {
     { category: "Item Type", charName: "Accessories", selectState: "unselect" },
     { category: "Item Type", charName: "Gender-Affirming Items", selectState: "unselect" }
   ],
-  style: [
+  appearance: [
     { category: "Style", charName: "Feminine", selectState: "unselect" },
     { category: "Style", charName: "Androgynous", selectState: "unselect" },
     { category: "Style", charName: "Masculine", selectState: "unselect" }
@@ -55,58 +55,111 @@ const filtersArray = ['exchangeType', 'itemType', 'style', 'color', 'condition',
 const applyFilters = [];
 
 export function FilterSection(props) {
-  const [filters, setFilters] = useState({});
-  // const filterSec = filtersArray.map((category) => {
-  //   const filterArray = filtersObj[category];
-    
+  const [filters, setFilters] = useState({
+    itemName: null,
+    exchangeType: null,
+    type: null,
+    appearance: null,
+    color: null,
+    condition: null, 
+    brand: null 
+  });
+  
+  // const [searchTerm, setSearchTerm] = useState(undefined);
 
-  //   //make section name in UI categoru rather than key
-  //   filterArray.map((cat) => {
-  //     category = cat.category;
-  //   });
 
-  //  // console.log(Object.values(filterArray).category);
-  //   // const buttonEle = document.querySelectorAll('.' + category + ' button');
-
-  //   const handleClick = (event) => {
-  //     event.target.blur();
-  //     event.target.classList.toggle('active');
-
-  //     //Keeps track of desired filters
-  //     if(event.target.classList.contains('active')) {
-  //       applyFilters.push(event.target.value);
-  //     } else {
-  //       let index = applyFilters.indexOf(event.target.value)
-  //       applyFilters.splice(index, 1);
-  //     }
-
-  //     console.log(applyFilters);
-
+  //   const handleSearch = (event) => {
+  //       let searchTermStr = (event.target.value).toLowerCase();
+  //       setsearchTerm(searchTermStr);
+  //       let matchingNameObj = allNameObjArr.find(dbNameObj => dbNameObj.name === searchTermStr);
+  //       setsearchTermObj(matchingNameObj);
+        
   //   }
 
-  //   const buttons = filterArray.map((filter) => {
-  //     console.log(filter.charName);
-  //     return (
-  //       <button
-  //         onClick={handleClick} key={filter.charName} type="button" className="btn btn-toggler" id={filter.category} value={filter.charName}>{filter.charName}</button>
-  //     )
+  //   // Filter based off of name and selected/inputed filters
+  //   const defaultFilter = {
+  //       itemName: null,
+  //       itemType: {
+  //         'tops': null,
+  //         'bottoms': null,
+  //         'outerwear': null,
+  //         'shoes': null,
+  //         'accessories': null,
+  //         'gender-affirming item': null
+  //     },
+  //       color: {
+  //         'red': null,
+  //         'orange': null,
+  //         'yellow': null,
+  //         'green': null,
+  //         'blue': null,
+  //         'purple': null,
+  //         'pink': null,
+  //         'black': null,
+  //         'white': null,
+  //         'brown': null
+  //     },
+  //       brand: null,
+  //       exchangeType: {
+  //         'Offer': null,
+  //         'Request': null,
+  //         'Trade': null
+  //     },
+  //       appearance: {
+  //           'neutral': null,
+  //           'feminine': null,
+  //           'masculine': null
+  //       }, 
+  //       condition: {
+  //         'new': null,
+  //         'excellent': null,
+  //         'good': null,
+  //         'fair': null
+  //       }
+  //   }
+  //   const [filterObj, setFilterObj] = useState({
+  //     itemName: null,
+  //     itemType: {
+  //       'tops': null,
+  //       'bottoms': null,
+  //       'outerwear': null,
+  //       'shoes': null,
+  //       'accessories': null,
+  //       'gender-affirming item': null
+  //   },
+  //     color: {
+  //       'red': null,
+  //       'orange': null,
+  //       'yellow': null,
+  //       'green': null,
+  //       'blue': null,
+  //       'purple': null,
+  //       'pink': null,
+  //       'black': null,
+  //       'white': null,
+  //       'brown': null
+  //   },
+  //     brand: null,
+  //     exchangeType: {
+  //       'Offer': null,
+  //       'Request': null,
+  //       'Trade': null
+  //   },
+  //     appearance: {
+  //         'neutral': null,
+  //         'feminine': null,
+  //         'masculine': null
+  //     }, 
+  //     condition: {
+  //       'new': null,
+  //       'excellent': null,
+  //       'good': null,
+  //       'fair': null
+  //     }
   //   })
 
-  //   return (
-  //     <div className="box column top-bot-wrap" key={category}>
-  //       <label className="">{category}</label>
-  //       <div className={"box " + category}>
-  //         {buttons}
-  //       </div>
-  //     </div>
-  //   )
-  // })
-
-  // return (
-  //   <form>
-  //     {filterSec}
-  //   </form>
-  // )
+  //   // Display results
+  //   const [resultNameObjArr, setResultNameObjArr] = useState();
 
   //make exchange type so you can only choose one, set to local storage item, 
   //pass through to submit so it navs to right page
@@ -147,7 +200,7 @@ export function FilterSection(props) {
         let index = itemType.indexOf(event.target.value)
         itemType.splice(index, 1);
       }
-      const val = {itemType: itemType};
+      const val = {type: itemType};
       const currentInfo = Object.assign(filters, val);
       setFilters(currentInfo); 
   }
@@ -233,7 +286,7 @@ export function FilterSection(props) {
   }
 
   function submitCallback(event)  {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(filters);
   }
 
@@ -283,6 +336,7 @@ export function FilterSection(props) {
                         <button onClick={handleItemType} type="button" value="Tops" className="btn btn-toggler">Tops</button>
                         <button onClick={handleItemType} type="button" value="Bottoms" className="btn btn-toggler">Bottoms</button>
                         <button onClick={handleItemType} type="button" value="Outerwear" className="btn btn-toggler">Outerwear</button>
+                        <button onClick={handleItemType} type="button" value="Underwear" className="btn btn-toggler">Underwear</button>
                         <button onClick={handleItemType} type="button" value="Shoes" className="btn btn-toggler">Shoes</button>
                         <button onClick={handleItemType} type="button" value="Accessories" className="btn btn-toggler">Accessories</button>
                         <button onClick={handleItemType} type="button" value="Gender-Affirming Items" className="btn btn-toggler">Gender-Affirming Items</button>
@@ -355,13 +409,13 @@ export function FilterSection(props) {
                 </div>
             </div>
                 {/* <!-- Post button --> */}
-            {/* <div>
-              <NavLink to="../lists-all-types">
+            <div>
+              <NavLink to="../results" state={{filters: filters}}>
                   <button onClick={submitCallback} type="button" className="btn btn-save list-btn">Apply</button>
               </NavLink>
-              <!-- Invisible placeholder to add extra space at bottom -->
+              {/* <!-- Invisible placeholder to add extra space at bottom --> */}
               <button type="button" className="btn invisible list-btn">PLACEHOLDER</button>
-            </div> */}
+            </div>
         </div>
     </form>
   )

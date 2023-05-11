@@ -39,6 +39,7 @@ import { getAuth } from 'firebase/auth';
 import { useState } from 'react';
 import { Switch } from '@mui/material';
 import { HamburgerMenu } from './components/account/logout';
+import { FilteredResults } from './components/browsing/filtered-results';
 
 
 
@@ -122,6 +123,7 @@ export default function App(props) {
               <Route path='/create-list' element={<CreateList user={currentUser}/>}/>
               <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
               <Route path='/logout' element={<HamburgerMenu/>}/>
+              <Route path='/results' element={<FilteredResults/>}/>
             </Routes> 
           </main>
 
