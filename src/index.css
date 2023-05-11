@@ -120,7 +120,9 @@ h2 {
 }
 
 .by-2 {
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 167px);
+  grid-template-rows: repeat(2, 167px);
+
   --bs-div-display: none;
 }
 
@@ -622,7 +624,7 @@ label {
   width: 49%
 }
 
-.donate-now {
+/* .donate-now {
   list-style-type: none;
   margin: 25px 0 0 0;
   padding: 0;
@@ -666,4 +668,4 @@ label {
   border: 1px solid #CCC;
   cursor: pointer;
   z-index: 90;
-}
+} */
