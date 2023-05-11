@@ -6,7 +6,8 @@
 // TODO: Add alt text
 
 // PACKAGES
-import React from 'react';
+import React, {useState} from 'react';
+import EditProfile from './EditProfile';
 
 // SUBCOMPONENTS
 import { UserMetrics } from './UserMetrics';
@@ -16,15 +17,34 @@ import { ListingReview } from './ListingReview';
 // DATA
 import pfp from '../../assets/img/blank-pfp.png';
 
+
+
+  /*function Modes() { 
+    editMode ? (
+    <div>
+      <EditProfile changeToFalse={changeToFalse} />
+      </div>
+  )} */
+
 export function UserProfile(props) {
   let user = props.user;
   console.log(user.displayName);
   let cutOffMail = user.email.indexOf("@");
   let username = user.email.slice(0, cutOffMail);
   console.log(username);
+  /*const [editMode, setEditMode] = useState(false);
+
+  const changeToFalse = () => {
+    setEditMode(false);
+  }*/
+  
+
 
   return (
     <div className="box column side-wrap">
+      <div className='outerBox m10'>
+
+      </div>
       <UserMetrics pfp={pfp}/>
       <UserInfo name={user.displayName} pronouns="pronouns" user={username}
         bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />

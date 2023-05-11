@@ -6,6 +6,7 @@ import { signOut, getAuth } from "firebase/auth";
 
 import { useState } from "react";
 import { auth } from "./f-config";
+import { Link } from 'react-router-dom';
 
 
 import {
@@ -52,16 +53,16 @@ import { ListsAllTypes } from "../browsing/lists-all-types";
   
         <MDBCollapse show={showNavExternal3}>
           <div className='bg-light shadow-3 p-4'>
+            <Link to="/welcome">
             <MDBBtn block className='border-bottom m-0' color='link' onClick={logout}>
               Log Out 
             </MDBBtn>
+            </Link>
           </div>
         </MDBCollapse>
       </>
     );
   }
-
-
 
 
 

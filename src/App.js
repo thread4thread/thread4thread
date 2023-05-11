@@ -24,7 +24,7 @@ import { SearchFilter } from './components/browsing/search-filter';
 import { ListingDetails } from './components/browsing/list-details';
 import { CreateList } from './components/posting/create-list';
 import { LogIn } from './components/account/login';
-import { Profile } from './components/account/my-profile';
+//import { Profile } from './components/account/my-profile';
 
 
 // import {LogOutModal} from './components/account/logout';
@@ -36,9 +36,10 @@ import firebase from 'firebase/compat/app';
 import { useAuthState } from "react-firebase-hooks/auth";
 import {auth as configGetAuth} from './components/account/f-config';
 import { getAuth } from 'firebase/auth';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Switch } from '@mui/material';
 import { HamburgerMenu } from './components/account/logout';
+import EditProfile from './components/profile/EditProfile';
 
 
 
@@ -50,6 +51,9 @@ import { HamburgerMenu } from './components/account/logout';
 // list-published
 
 export default function App(props) {
+
+
+
 
       // Start up user authentication
       const [user, loading] = useAuthState(configGetAuth);
@@ -122,6 +126,7 @@ export default function App(props) {
               <Route path='/create-list' element={<CreateList user={currentUser}/>}/>
               <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
               <Route path='/logout' element={<HamburgerMenu/>}/>
+              <Route path='/edit-profile' element={<EditProfile/>}/>
             </Routes> 
           </main>
 

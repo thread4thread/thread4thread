@@ -1,12 +1,17 @@
 import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser, browserSessionPersistence } from 'firebase/auth';
 import {auth} from './f-config';
 import { Link, NavLink, Navigate, Route } from 'react-router-dom';
-import {getAuth, GoogleAuthProvider, EmailAuthProvider} from 'firebase/auth';
+import {getAuth, GoogleAuthProvider, EmailAuthProvider, setPersistence} from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { UserProfile } from '../profile/user-profile';
 import { ListsAllTypes } from '../browsing/lists-all-types';
+import React, { useEffect } from 'react';
+import firebase from 'firebase/compat/app';
+
+
+
 
 
 const firebaseUIConfig = {
@@ -23,7 +28,11 @@ const firebaseUIConfig = {
     }
   }
 
+
 export function LogIn(props) {
+
+  
+  
 
 // const auth = getAuth();
     console.log(props.user);
@@ -33,6 +42,8 @@ export function LogIn(props) {
   if (props.user) {
     return <ListsAllTypes />
   }
+  
+  
 
 
 return (
