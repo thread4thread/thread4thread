@@ -90,7 +90,7 @@ export function CreateList(props) {
         if(description.length < 0) {
             val = {desc: ""}
         } else {
-            val = {description: description};
+            val = {desc: description};
         }
         const currentInfo = Object.assign(listingInfo, val);
         setListingInfo(currentInfo);

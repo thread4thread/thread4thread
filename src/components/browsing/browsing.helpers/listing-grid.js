@@ -44,7 +44,7 @@ export function ListingGrid(props) {
     });
 
     return (
-        <div className={"grid by-" + nCols}>
+        <div className={"grid by-" + nCols }>
             {listingElemArr}
         </div>
     )

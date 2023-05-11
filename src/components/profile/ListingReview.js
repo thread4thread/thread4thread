@@ -80,7 +80,7 @@ export function ListingReview(props) {
       {/* // <!-- Listings --> */}
       {/* <ListingGrid listingsObj={items} nCols={3} max={6}/> */}
 
-      <div className="grid by-3">
+      <div className="top-bot-wrap">
           {/* <a href="listing-details.html"><img src={pinkSkirt} alt="Black tank top, pink+purple skirt" className="grid-item"/></a>
           <a href="listing-details.html"><img src={pinkSkirt} alt="Black tank top, pink+purple skirt" className="grid-item"/></a>
           <a href="listing-details.html"><img src={pinkSkirt} alt="Black tank top, pink+purple skirt" className="grid-item"/></a>

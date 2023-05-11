@@ -133,6 +133,13 @@ export default function App(props) {
       </>
     )
 
+    // const LoginContainer = () => (
+    //   <div className="container">
+    //     <Route exact path="/" render={() => <Redirect to="/welcome" />} />
+    //     <Route path="/login" component={Login} />
+    //   </div>
+    // )
+
 
 
 

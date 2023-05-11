@@ -31,6 +31,10 @@ main {
   padding-bottom: .5em;
 }
 
+.listings {
+  margin-bottom: 100px;
+}
+
 .no-space {
   margin: 0;
   padding: 0;
@@ -121,7 +125,7 @@ h2 {
 
 .by-2 {
   grid-template-columns: repeat(2, 167px);
-  grid-template-rows: repeat(2, 167px);
+  /* grid-template-rows: repeat(2, 167px); */
 
   --bs-div-display: none;
 }
@@ -598,10 +602,12 @@ label {
   position: absolute;
   bottom: 8px;
   left: 8px;
+  right: 8px;
   background-color: black;
   border-radius: .5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+
 }
 
 .title.top-right {
