@@ -113,17 +113,19 @@ export default function App(props) {
         <>
           <TopNav/>
           <main>
-            <Routes element={<RequireAuth/>}>
-              <Route path="/thread4thread" element={<ListsAllTypes/>}/>
-              <Route path="/" element={<ListsAllTypes/>}/>  
-              <Route path='/lists-all-types' element={<ListsAllTypes />} />
-              <Route path="/lists-type-x" element={<ListsTypeX/>}/>
-              <Route path="/search-filter" element={<SearchFilter/>}/>
-              <Route path="/list-details" element={<ListingDetails/>}/>
-              <Route path='/create-list' element={<CreateList user={currentUser}/>}/>
-              <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
-              <Route path='/logout' element={<HamburgerMenu/>}/>
-              <Route path='/results' element={<FilteredResults/>}/>
+            <Routes>
+              <Route element={<RequireAuth/>}>
+                <Route path="/thread4thread" element={<ListsAllTypes/>}/>
+                <Route path="/" element={<ListsAllTypes/>}/>  
+                <Route path='/lists-all-types' element={<ListsAllTypes />} />
+                <Route path="/lists-type-x" element={<ListsTypeX/>}/>
+                <Route path="/search-filter" element={<SearchFilter/>}/>
+                <Route path="/list-details" element={<ListingDetails/>}/>
+                <Route path='/create-list' element={<CreateList user={currentUser}/>}/>
+                <Route path='/my-profile' element={<UserProfile user={currentUser}/>} />
+                <Route path='/logout' element={<HamburgerMenu/>}/>
+                <Route path='/results' element={<FilteredResults/>}/>
+              </Route>
             </Routes> 
           </main>
 

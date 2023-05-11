@@ -2,11 +2,12 @@ import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 import { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateCurrentUser } from 'firebase/auth';
 import {auth} from './f-config';
-import { Link, NavLink, Navigate, Route } from 'react-router-dom';
+import { Link, NavLink, Navigate, Route, redirect, useNavigate } from 'react-router-dom';
 import {getAuth, GoogleAuthProvider, EmailAuthProvider} from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { UserProfile } from '../profile/user-profile';
 import { ListsAllTypes } from '../browsing/lists-all-types';
+// import { home } from '../browsing/lists-all-types';
 
 
 const firebaseUIConfig = {
@@ -30,8 +31,17 @@ export function LogIn(props) {
 
   // Redirect to profile page when logged in
   // change to redirect!!!!!!!
+let navigate = useNavigate();
+
   if (props.user) {
-    return <ListsAllTypes />
+    return (
+      <div className='first-home'>
+        <div >
+        </div>
+        <ListsAllTypes/>
+      </div>
+    )
+
   }
 
 
