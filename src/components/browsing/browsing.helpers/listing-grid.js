@@ -15,7 +15,7 @@ export function ListingGrid(props) {
     // console.log(listingsObj);
     // Apply a limit to number of listings displayed if optional max parameter included
     if (max != null) {
-        listingKeyArr = listingKeyArr.slice(0, max);
+        listingKeyArr = listingKeyArr.slice(0, max); // TODO: Troubleshoot why the max parameter isn't working
     };
 
     //console.log(listingsObj);
