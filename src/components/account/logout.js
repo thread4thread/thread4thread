@@ -47,7 +47,8 @@ import { Button } from "@mui/material";
                   <Button onClick={logout}>  
                     <img src={logoutBTN} alt='logout'/>
                   </Button>
-                  <p className="logout">Logout</p>
+                  {/* TODO: Add text */}
+                  {/* <p className="logout">Logout</p> */}
                 </div>
               </div>
       </>
