@@ -7,7 +7,7 @@ import { signOut, getAuth } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "./f-config";
 import { Link } from 'react-router-dom';
-import logoutBTN from '../../assets/icon/logout.png';
+import logoutBTN from '../../assets/icon/enter.png';
 
 
 import {
@@ -22,6 +22,7 @@ import {
 import { NavLink } from "react-router-dom";
 import { Welcome } from "./welcome";
 import { ListsAllTypes } from "../browsing/lists-all-types";
+import { Button } from "@mui/material";
   
   export function HamburgerMenu(props) {
 
@@ -40,35 +41,16 @@ import { ListsAllTypes } from "../browsing/lists-all-types";
   
     return (
       <>
-        <MDBNavbar>
-          <MDBContainer fluid>
-            <MDBNavbarToggler
-              className='ms-auto'
-              type='button'
-              data-target='#navbarToggleExternalContent'
-              aria-controls='navbarToggleExternalContent'
-              aria-expanded='false'
-              aria-label='Toggle navigation'
-              onClick={() => setShowNavExternal3(!showNavExternal3)}
-            >
               {/* <MDBIcon fas icon='bars' /> */}
-              <div className="col bottom-nav-icon">
+               <div className="col bottom-nav-icon">
                 <div className="row top-nav">
-                  <img src={logoutBTN} alt='logout'/>
+                  <Button onClick={logout}>  
+                    <img src={logoutBTN} alt='logout'/>
+                  </Button>
+                  {/* TODO: Add text */}
+                  {/* <p className="logout">Logout</p> */}
                 </div>
               </div>
-            </MDBNavbarToggler>
-          </MDBContainer>
-        </MDBNavbar>
-  
-        <MDBCollapse show={showNavExternal3}>
-          <div className='p-2'>
-            <MDBBtn className='m-0' color='#8991DC' onClick={logout}>
-              Log Out 
-            </MDBBtn>
-            {/* </Link> */}
-          </div>
-        </MDBCollapse>
       </>
     );
   }

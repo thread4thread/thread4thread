@@ -12,11 +12,14 @@ import NavListing from "./nav-listing";
 export function ListingGrid(props) {
     let { listingsObj, nCols, max } = props;
     let listingKeyArr = Object.keys(listingsObj);
+    console.log(listingsObj);
+    console.log(listingKeyArr);
     // console.log(listingsObj);
     // Apply a limit to number of listings displayed if optional max parameter included
     if (max != null) {
-        listingKeyArr = listingKeyArr.slice(0, max); // TODO: Troubleshoot why the max parameter isn't working
+        listingsObj = listingsObj.slice(0, max);
     };
+    // console.log(listingKeyArr);
 
     //console.log(listingsObj);
 
@@ -33,6 +36,10 @@ export function ListingGrid(props) {
 
     let listingElemArr = listingsObj.map((list) => {
         // console.log(list.filePath);
+        console.log(listingKeyArr.includes(list));
+        if(listingKeyArr.includes(list)) {
+            console.log('has');
+        }
         let listingKey = list.itemID;
         //let listingObj = 'cvadfvad';
         let filePath = list.filePath;
