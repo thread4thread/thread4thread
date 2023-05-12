@@ -6,6 +6,7 @@
 // Output: A grid of listing images, where clicking on one takes the user to the listing's details page.
 
 // HELPERS
+import NoResults from "../no-results";
 import NavListing from "./nav-listing";
 
 export function ListingGrid(props) {
@@ -42,6 +43,10 @@ export function ListingGrid(props) {
             <NavListing navTo="../list-details" src={filePath} alt={alt} item={listingKey} title={title} key={listingKey}/>
         )
     });
+
+    if(listingElemArr.length == 0){
+        return <NoResults/>
+    }
 
     return (
         <div className={"grid by-" + nCols }>

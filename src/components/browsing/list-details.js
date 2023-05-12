@@ -4,6 +4,8 @@
 import { NavLink } from 'react-router-dom';
 import { getDatabase, ref, onValue, get } from 'firebase/database';
 import { useEffect, useState } from 'react';
+import { auth } from '../account/f-config'; 
+import { getAuth } from 'firebase/auth';
 
 
 
@@ -18,7 +20,7 @@ let displayDetails = ['type', 'appearance', 'color', 'condition'];
 
 export function ListingDetails() {
     const listing = localStorage.getItem('listing');
-    console.log(listing);
+    // console.log(listing);
     const [listingsObj, setListingsObj] = useState({}); // TODO: only show results (currently shows 0 results from initial empty object before showing results from db)
 
     // Fetch listing data and set state of listingsObj
@@ -48,11 +50,9 @@ export function ListingDetails() {
 
     let list = {};
     listingsObjArray.map((key) => {
-        //console.log(key[1]);
         let item = key[1];
         if (item.itemID === listing) {
             list = item;
-            console.log(list);
         }
     });
 
@@ -121,8 +121,6 @@ function MakeImage(props) {
 
 function MakeDesc(props) {
     let { listingDesc } = props;
-
-    console.log(listingDesc);
 
     return (
         <div className="description flex-fill side-wrap top-bot-wrap">
