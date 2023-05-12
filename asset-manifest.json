@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/thread4thread/static/css/main.51d2855d.css",
-    "main.js": "/thread4thread/static/js/main.d9cfabd5.js",
+    "main.css": "/thread4thread/static/css/main.a469972b.css",
+    "main.js": "/thread4thread/static/js/main.cbf38dbc.js",
     "static/media/logo2.png": "/thread4thread/static/media/logo2.2759f51b86388a32e1fe.png",
     "static/media/account.png": "/thread4thread/static/media/account.557587208eb9e232f2ca.png",
     "static/media/pink-skirt.jpg": "/thread4thread/static/media/pink-skirt.3cf17405e9f33d953c29.jpg",
@@ -10,11 +10,11 @@
     "static/media/mail-active.png": "/thread4thread/static/media/mail-active.51b08bcbb5af7a861c31.png",
     "static/media/add-active.png": "/thread4thread/static/media/add-active.174a0147071c43be66d4.png",
     "index.html": "/thread4thread/index.html",
-    "main.51d2855d.css.map": "/thread4thread/static/css/main.51d2855d.css.map",
-    "main.d9cfabd5.js.map": "/thread4thread/static/js/main.d9cfabd5.js.map"
+    "main.a469972b.css.map": "/thread4thread/static/css/main.a469972b.css.map",
+    "main.cbf38dbc.js.map": "/thread4thread/static/js/main.cbf38dbc.js.map"
   },
   "entrypoints": [
-    "static/css/main.51d2855d.css",
-    "static/js/main.d9cfabd5.js"
+    "static/css/main.a469972b.css",
+    "static/js/main.cbf38dbc.js"
   ]
 }
