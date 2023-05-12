@@ -19,40 +19,10 @@ export default function NavIcon(props) {
     let {src, classN, navPath} = props;
     let iName = src + "";
     let iconName = "";
-    function handleClick(event) {
-        // event.preventDefault();
-        // let newiName = iName.indexOf('.');
-        // iconName = iName.slice(28, newiName);
-        // event.target.classList.toggle(iconName);
-        // console.log(iconName);
-        //event.target.classList.toggle('active');
-       // console.log(event.target.classList);
-        //console.log(iName);
-        // if(event.target.classList.contains('active')) {
-        //     src = iName.slice(0, newiName) + "-active" + iName.slice(newiName);
-        //     console.log(src);
-        // } 
-
-        // if(event.target.classList.contains(iconName)) {
-        //     src = '../../../assets/icon/' + iconName + '-active.png';
-        //     //console.log(src);
-        // }
-
-        //console.log(src);
-
-        //console.log(src);
-        // else {
-        // let index = applyFilters.indexOf(event.target.value)
-        // applyFilters.splice(index, 1);
-        // }
-    }
-
-   // console.log(src);
-
     
     // TODO: For some reason, only "navbar-brand" works with top-nav icons and "col" works with bot-nav icons. It would be great if there could just be 1 class that works for both.
     return (
-        <NavLink onClick={handleClick} to={navPath} className={iconName + classN}>
+        <NavLink to={navPath} className={iconName + classN}>
             <img src={src} alt={iName}/>
         </NavLink>
     )

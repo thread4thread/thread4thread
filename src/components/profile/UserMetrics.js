@@ -5,7 +5,9 @@
 // TODO: Break into subcomponents
 
 // PACKAGES
-import React from 'react';
+import {React} from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 // ICONS
 import editIcon from '../../assets/icon/edit.png';
@@ -16,7 +18,7 @@ export function UserMetrics(props) {
 
   return (
     <div className="box text-center">
-      <img src={pfp} className="w-25 h-25 no-space" />
+      <img src={pfp} className="pfp w-25 h-25 no-space" />
 
       <div className="tight-box column">
         <div className="box text-center">
@@ -37,9 +39,12 @@ export function UserMetrics(props) {
 
           <div className="box ms-1 ps-1">
             <div className="edit-icon">
-              <a href="../profile/edit-profile.html">
+              {/* <NavLink to="/edit-profile"> */}
+                {/* <img src={editIcon} height="20px" alt="Edit profile" /> */}
+              {/* </NavLink> */}
+              <NavLink to='/edit-profile'>
                 <img src={editIcon} height="20px" alt="Edit profile" />
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>

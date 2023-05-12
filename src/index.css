@@ -53,6 +53,7 @@ h1 {
 h2 {
   font-size: 20px;
 }
+
 /* 
 .section {
   z-index: 0;
@@ -256,6 +257,10 @@ button.navbar-toggler.ms-auto {
 .img-mini {
   width: 2.5em;
   height: 2.5em;
+}
+
+.pfp {
+  border-radius: 3rem;
 }
 
 /*  */
@@ -637,6 +642,17 @@ label {
   border-radius: .5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.csoon {
+  text-align: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.message {
+  margin-top: 300px;
+  vertical-align: middle;
 }
 
 /*  */
