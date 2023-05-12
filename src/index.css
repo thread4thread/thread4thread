@@ -127,7 +127,6 @@ h2 {
 .by-2 {
   grid-template-columns: repeat(2, 167px);
   /* grid-template-rows: repeat(2, 167px); */
-
   --bs-div-display: none;
 }
 
@@ -147,10 +146,12 @@ h2 {
   width: 100%;
   background-color: white;
   z-index: 9999;
+  justify-content: center;
 }
 
 .top-nav img {
   height: 32px;
+  width: 32px;
   border: none;
 }
 
@@ -162,6 +163,14 @@ button.navbar-toggler.ms-auto {
   border: none;
   background-color: #3b4ef7;
 } */
+
+.logout {
+  font-size: 12px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 0px;
+  right: -313px;
+}
 
 .topnav.navbar {
   justify-content: center;
