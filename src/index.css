@@ -31,6 +31,10 @@ main {
   padding-bottom: .5em;
 }
 
+.listings {
+  margin-bottom: 100px;
+}
+
 .no-space {
   margin: 0;
   padding: 0;
@@ -49,6 +53,7 @@ h1 {
 h2 {
   font-size: 20px;
 }
+
 /* 
 .section {
   z-index: 0;
@@ -120,7 +125,9 @@ h2 {
 }
 
 .by-2 {
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 167px);
+  /* grid-template-rows: repeat(2, 167px); */
+
   --bs-div-display: none;
 }
 
@@ -141,6 +148,20 @@ h2 {
   background-color: white;
   z-index: 9999;
 }
+
+.top-nav img {
+  height: 32px;
+  border: none;
+}
+
+button.navbar-toggler.ms-auto {
+  border: none;
+}
+
+/* button.navbar-toggler.ms-auto {
+  border: none;
+  background-color: #3b4ef7;
+} */
 
 .topnav.navbar {
   justify-content: center;
@@ -238,6 +259,10 @@ h2 {
   height: 2.5em;
 }
 
+.pfp {
+  border-radius: 3rem;
+}
+
 /*  */
 /* BUTTONS */
 /*  */
@@ -314,6 +339,10 @@ h2 {
   padding: 10px;
   border: none;
   cursor: pointer;
+}
+
+.first-home {
+  margin-top: 74px;
 }
 
 .accent-button {
@@ -596,10 +625,12 @@ label {
   position: absolute;
   bottom: 8px;
   left: 8px;
+  right: 8px;
   background-color: black;
   border-radius: .5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+
 }
 
 .title.top-right {
@@ -613,6 +644,17 @@ label {
   padding-right: 1rem;
 }
 
+.csoon {
+  text-align: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.message {
+  margin-top: 300px;
+  vertical-align: middle;
+}
+
 /*  */
 /* SEPARATORS */
 /*  */
@@ -622,7 +664,7 @@ label {
   width: 49%
 }
 
-.donate-now {
+/* .donate-now {
   list-style-type: none;
   margin: 25px 0 0 0;
   padding: 0;
@@ -666,4 +708,4 @@ label {
   border: 1px solid #CCC;
   cursor: pointer;
   z-index: 90;
-}
+} */

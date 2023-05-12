@@ -11,27 +11,40 @@ import NavListing from "./nav-listing";
 export function ListingGrid(props) {
     let { listingsObj, nCols, max } = props;
     let listingKeyArr = Object.keys(listingsObj);
-
+    // console.log(listingsObj);
     // Apply a limit to number of listings displayed if optional max parameter included
     if (max != null) {
         listingKeyArr = listingKeyArr.slice(0, max);
     };
 
-    // console.log(listingsObj);
+    //console.log(listingsObj);
 
-    let listingElemArr = listingKeyArr.map((listingKey) => {
-        let listingObj = listingsObj[listingKey];
-        let filePath = listingObj.filePath;
-        let alt = listingObj.title;
-        let title = listingObj.title;
+    // let listingElemArr = listingKeyArr.map((listingKey) => {
+    //     let listingObj = listingsObj[listingKey];
+    //     let filePath = listingObj.filePath;
+    //     let alt = listingObj.title;
+    //     let title = listingObj.title;
+    //     //console.log("nav listing");
+    //     return (
+    //         <NavListing navTo="../list-details" src={filePath} alt={alt} item={listingKey.toString()} title={title} key={listingKey}/>
+    //     )
+    // });
+
+    let listingElemArr = listingsObj.map((list) => {
+        // console.log(list.filePath);
+        let listingKey = list.itemID;
+        //let listingObj = 'cvadfvad';
+        let filePath = list.filePath;
+        let alt = list.title;
+        let title = list.title;
         //console.log("nav listing");
         return (
-            <NavListing navTo="../list-details" src={filePath} alt={alt} item={listingKey.toString()} title={title} key={listingKey}/>
+            <NavListing navTo="../list-details" src={filePath} alt={alt} item={listingKey} title={title} key={listingKey}/>
         )
     });
 
     return (
-        <div className={"grid by-" + nCols}>
+        <div className={"grid by-" + nCols }>
             {listingElemArr}
         </div>
     )
