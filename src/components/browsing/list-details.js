@@ -14,7 +14,7 @@ import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 
 // DATA
 import pfp from './../../assets/img/blank-pfp.png';
-let userHandle = "Taito123";
+let userHandle = "Taito123"; // TODO: Make posting user dynamic
 let displayDetails = ['type', 'appearance', 'color', 'condition'];
 
 
