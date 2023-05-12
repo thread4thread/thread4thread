@@ -5,6 +5,8 @@
 // PACKAGES
 import { useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
+import { useList } from 'react-firebase-hooks/database'
+import { db } from '../account/f-config';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -20,7 +22,7 @@ export function ListsTypeX() {
 
     // Fetch listing data and set state of listingsObj
     useEffect(() => {
-        const db = getDatabase();
+        // const db = getDatabase();
         const listingDataRef = ref(db, "listingData"); // TODO: change to listingData
 
         //returns a function that will "unregister" (turn off) the listener
@@ -50,8 +52,22 @@ export function ListsTypeX() {
 
 function ListingTypeSection(props) {
     let { sectionTitle, listingsObj } = props;
-    let listingKeyArr = Object.keys(listingsObj);
-    let nListings = listingKeyArr.length;
+
+    let items = [];
+    let sectionTitleRef = sectionTitle.toUpperCase();
+
+    listingsObj = Object.entries(listingsObj);
+
+    listingsObj.map((list) => {
+        
+        list = list[1];
+        let type = list.exchangeType.toUpperCase() + "S";
+        if(type === sectionTitleRef) {
+            items.push(list);     
+        }
+    })
+
+    let nListings = items.length;
 
     return (
         <div className="box column top-bot-wrap">
@@ -59,7 +75,7 @@ function ListingTypeSection(props) {
             <SectionHeader sectionTitle={sectionTitle} nListings={nListings}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingsObj={listingsObj} nCols={2}/>
+            <ListingGrid listingsObj={items} nCols={2}/>
         </div>
     )
 }

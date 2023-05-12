@@ -105,7 +105,7 @@ export function SearchFilter() {
 function ApplyButton() {
     return (
         <>
-            <NavLink to="/">
+            <NavLink to="/results">
             <button type="button" className="btn btn-save side-wrap list-btn">Apply</button>
             {/* <!-- Invisible placeholder to add extra space at bottom --> */}
             <button type="button" className="btn invisible list-btn">Apply</button>

@@ -16,20 +16,27 @@ import plusIcon from '../../assets/icon/add.png';
 import userIcon from '../../assets/icon/account.png';
 // import { useResolvedPath } from 'react-router-dom';
 const iconArr = [homeIcon, mailIcon, plusIcon, userIcon]
-const navPaths = ['', 'my-exchanges', 'create-list', 'my-profile'];
+const navPaths = ['', 'coming-soon', 'create-list', 'my-profile'];
 // TODO: Figure out how to import data + put icons in a data structure to be more dynamic
 
 export function BotNav() {
     let i = 0;
+    let iconName = '';
 
     let iconElemArr = iconArr.map((icon) => {
         let navPath = navPaths[i]
+        if(i == 0) {
+            iconName = 'home';
+        } else {
+            let newiName = icon.indexOf('.');
+            iconName = icon.slice(28, newiName);
+        }
+
         i+=1;
-        // console.log(iconArr);
 
         return (
         <NavIcon src={icon}
-            classN={"col bottom-nav-icon"}
+            classN={"col bottom-nav-icon " + iconName}
             navPath={navPath}
             key={icon+""}/>
         )

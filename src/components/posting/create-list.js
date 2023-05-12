@@ -14,13 +14,18 @@ import { NavLink } from 'react-router-dom';
 import { storage } from './../account/f-config';
 import {ref as storageRef, uploadBytes, listAll, getDownloadURL} from 'firebase/storage';
 
-export function CreateList() {
+export function CreateList(props) {
     const [listingInfo, setListingInfo] = useState({});
     const [listingData, setListingData] = useState([]);
     const [imageUpload, setImageUpload] = useState(null);
 
     //reference thread4thread database
     const db = getDatabase();
+
+    let user = props.user;
+    // let uid = user.uid;
+    // console.log(user.uid);
+    //console.log();
 
     //set up connection to db
     useEffect(()=> {
@@ -64,9 +69,10 @@ export function CreateList() {
     function handleItemType(event) {
         event.preventDefault();
         const type = event.target.value;
-        let val = {itemType: type};
+        let val = {type: type};
         const currentInfo = Object.assign(listingInfo, val);
         setListingInfo(currentInfo);
+        console.log("handled item type")
     }
 
     //handle image
@@ -82,9 +88,9 @@ export function CreateList() {
         const description = event.target.value;
         let val;
         if(description.length < 0) {
-            val = {description: ""}
+            val = {desc: ""}
         } else {
-            val = {description: description};
+            val = {desc: description};
         }
         const currentInfo = Object.assign(listingInfo, val);
         setListingInfo(currentInfo);
@@ -157,6 +163,18 @@ export function CreateList() {
         setListingInfo(currentInfo);
     }
 
+    function makeid(length) {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          counter += 1;
+        }
+        return result;
+    }
+
     //submit 
     function submitCallback(event) {
 
@@ -174,6 +192,16 @@ export function CreateList() {
                 let val = {filePath: url};
                 const currentInfo = Object.assign(listingInfo, val);
                 setListingInfo(currentInfo);
+
+                let uid = {uid : user.uid};
+                const currentUID = Object.assign(listingInfo, uid);
+                setListingInfo(currentUID);
+                // console.log(uid);
+
+                let itemID = {itemID: makeid(5)}
+                const currentItemID = Object.assign(listingInfo, itemID);
+                setListingInfo(currentItemID);
+                // console.log(itemID);
             
                 //compile all listing details and push to database
                 const listingRef = ref(db, "listingData");
@@ -305,10 +333,10 @@ export function CreateList() {
                         {/* <!-- Input --> */}
                         <select onBlur={handleCondition} id="condition-choices" className="form-select" aria-label="Condition choices">
                             <option defaultValue>Click to select</option>
-                            <option value="1">New</option>
-                            <option value="2">Excellent</option>
-                            <option value="3">Good</option>
-                            <option value="4">Fair</option>
+                            <option value="New">New</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
                         </select>
                     </div>
 

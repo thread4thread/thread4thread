@@ -26,6 +26,7 @@ export function ListsAllTypes() {
         const unregisterFunction = onValue(listingDataRef, (snapshot) => {
         const listingDataValue = snapshot.val();
         //...set state variable, etc...
+
         setListingsObj(listingDataValue);
         })
 
@@ -36,6 +37,7 @@ export function ListsAllTypes() {
         return cleanup; //effect hook callback returns the cleanup function
     }, []) //empty array is the second argument to the `useEffect()` function.
     //It says to only run this effect on first render
+
 
     return (
         <div className="side-wrap box column">
@@ -54,6 +56,19 @@ export function ListsAllTypes() {
 function ListingTypeSection(props) {
     let { sectionTitle, listingsObj } = props;
 
+    let items = [];
+    let sectionTitleRef = sectionTitle.toUpperCase();
+
+    listingsObj = Object.entries(listingsObj);
+
+    listingsObj.map((list) => {
+        
+        list = list[1];
+        let type = list.exchangeType.toUpperCase() + "S";
+        if(type === sectionTitleRef) {
+            items.push(list);     
+        }
+    })
 
     return (
         <div className="box column top-bot-wrap">
@@ -61,7 +76,7 @@ function ListingTypeSection(props) {
             <SectionHeader sectionTitle={sectionTitle}/>
 
             {/* <!-- Offer listings grid --> */}
-            <ListingGrid listingsObj={listingsObj} nCols={3} max={6}/>
+            <ListingGrid listingsObj={items} nCols={3} max={6}/>
         </div>
     )
 }
