@@ -86,7 +86,8 @@ export function ListingReview(props) {
           <a href="listing-details.html"><img src={pinkSkirt} alt="Black tank top, pink+purple skirt" className="grid-item"/></a>
           <a href="listing-details.html"><img src={pinkSkirt} alt="Black tank top, pink+purple skirt" className="grid-item"/></a>
           <a href="listing-details.html"><img src={pinkSkirt} alt="Black tank top, pink+purple skirt" className="grid-item"/></a> */}
-         <ListingGrid listingsObj={listings} nCols={3} max={6}/>
+          {/* TODO: Fix the listing grid (right now it's going off the screen) */}
+         <ListingGrid listingsObj={listings} nCols={3} max={6}/> 
       </div>
       {/* <ListingGrid listingsObj={listingsObj} cols={3}/> */}
     </div>

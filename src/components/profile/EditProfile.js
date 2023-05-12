@@ -6,7 +6,8 @@ import firebase from 'firebase/compat/app';
 import { updateProfile } from "firebase/auth";
 import { NavLink, Navigate } from "react-router-dom";
 import { UserProfile } from "./user-profile";
-
+import { Link } from 'react-router-dom';
+import { Routes, Route, Router } from 'react-router-dom';
 
 
 export default function EditProfile(props) {
@@ -103,7 +104,7 @@ export default function EditProfile(props) {
 
     return (
        <div className="container bootstrap snippets bootdey">
-          <h1 className="text-primary">Edit Profile</h1>
+          <h1 className="text">Edit Profile</h1>
         <div className="row">
 
             <div className="col-md-3">
@@ -146,9 +147,10 @@ export default function EditProfile(props) {
                     <input className="form-control" type="text" value="janesemail@gmail.com"/>
                   </div>
                 </div> */}
-                <NavLink to="/my-profile">
+                <NavLink to="/user-profile">
                   <button onClick={submitCallback} className="btn btn-save list-btn">Save</button>
                 </NavLink>
+                
               </form>
             </div>
         </div>

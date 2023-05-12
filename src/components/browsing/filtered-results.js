@@ -15,6 +15,7 @@ import ArrowIcon from './../../assets/icon/keyboard-arrow-return.png';
 // HELPERS
 import { ListingGrid } from './browsing.helpers/listing-grid';
 import { type } from '@testing-library/user-event/dist/type';
+import NoResults from './no-results';
 
 export function FilteredResults(props) {
     // Define a state variable that contains an object, where each prop is a listing. Initially empty object.

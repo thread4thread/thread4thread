@@ -42,6 +42,7 @@ import { HamburgerMenu } from './components/account/logout';
 import EditProfile from './components/profile/EditProfile';
 import { FilteredResults } from './components/browsing/filtered-results';
 import CommingSoon from './components/browsing/comming-soon';
+import NoResults from './components/browsing/no-results';
 
 
 
@@ -132,6 +133,7 @@ export default function App(props) {
                 <Route path='/logout' element={<HamburgerMenu/>}/>
                 <Route path='/results' element={<FilteredResults/>}/>
                 <Route path='/coming-soon' element={<CommingSoon/>}/>
+                <Route path='/no-results' element={<NoResults/>}/>
               </Route>
             </Routes> 
           </main>

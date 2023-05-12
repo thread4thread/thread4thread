@@ -6,6 +6,7 @@
 // Output: A grid of listing images, where clicking on one takes the user to the listing's details page.
 
 // HELPERS
+import NoResults from "../no-results";
 import NavListing from "./nav-listing";
 
 export function ListingGrid(props) {
@@ -14,7 +15,7 @@ export function ListingGrid(props) {
     // console.log(listingsObj);
     // Apply a limit to number of listings displayed if optional max parameter included
     if (max != null) {
-        listingKeyArr = listingKeyArr.slice(0, max);
+        listingKeyArr = listingKeyArr.slice(0, max); // TODO: Troubleshoot why the max parameter isn't working
     };
 
     //console.log(listingsObj);
@@ -42,6 +43,10 @@ export function ListingGrid(props) {
             <NavListing navTo="../list-details" src={filePath} alt={alt} item={listingKey} title={title} key={listingKey}/>
         )
     });
+
+    if(listingElemArr.length == 0){
+        return <NoResults/>
+    }
 
     return (
         <div className={"grid by-" + nCols }>
