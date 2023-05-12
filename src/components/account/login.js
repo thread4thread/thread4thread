@@ -35,11 +35,7 @@ let navigate = useNavigate();
 
   if (props.user) {
     return (
-      <div className='first-home'>
-        <div >
-        </div>
-        <ListsAllTypes/>
-      </div>
+      <Navigate to="/"/>
     )
 
   }
